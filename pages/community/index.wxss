@@ -1,0 +1,130 @@
+/* pages/community/index.wxss */
+.m-community-container {
+  font-size: 32rpx;
+  position: relative;
+  background-color: #f2f2f2;
+  padding-bottom: 50rpx;
+}
+
+.m-mark-box {
+  position: relative;
+  padding: 60rpx 0;
+  height: 251rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.m-mark-box view{
+  z-index: 10;
+}
+
+.m-mark-bj{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 371rpx;
+}
+
+.m-mark-block {
+  width: 340rpx;
+  height: 150rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.m-mark-line {
+  height: 90rpx;
+  border-left: 1px solid #ff9b9b;
+  margin-top: 23rpx;
+}
+
+.m-mark-title {
+  font-size: 28rpx;
+}
+
+.m-mark-text {
+  font-size: 56rpx;
+  margin-top: 25rpx;
+}
+
+.u-mark-btn {
+  margin-top: 30rpx;
+  background-color: #fff;
+  color: #ee7d6c;
+  padding: 15rpx 65rpx;
+  border-radius: 35rpx;
+}
+
+.m-article-box {
+  text-align: justify;
+  padding: 35rpx;
+  background-color: #fff;
+}
+
+.m-article-user {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20rpx;
+}
+
+.u-user-photo {
+  height: 85rpx;
+  width: 85rpx;
+  border-radius: 50%;
+  border: 1px solid #dedede;
+}
+
+.u-user-photo image {
+  height: 85rpx;
+  width: 85rpx;
+}
+
+.m-user-info {
+  padding-left: 15rpx;
+  padding-right: 65rpx;
+  padding-top: 3rpx;
+}
+
+.m-user-name {
+  font-size: 36rpx;
+}
+
+.m-user-stime {
+  font-size: 26rpx;
+  color: #777;
+  margin-top: 5rpx;
+}
+
+.m-icon-box{
+  padding-top: 5rpx;
+}
+
+.u-mark-icon {
+  height: 45rpx;
+  width: 38rpx;
+  vertical-align: -2rpx;
+}
+
+.m-icon-box text{
+  font-size: 43rpx;
+  color: red;
+  padding-left: 10rpx;
+}
+
+.m-acticle-container{
+  line-height: 50rpx;
+}
+
+.m-acticle-container text{
+  line-height: 50rpx;
+}
+
+.m-acticle-container image{
+  width: 620rpx;
+  height: 430rpx;
+  margin: 20rpx 0;
+}

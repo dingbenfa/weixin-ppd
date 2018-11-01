@@ -1,0 +1,98 @@
+<!--index.wxml-->
+<import src="../template/search-template.wxml" />
+
+<!-- <template is="search"></template> -->
+
+<view class='index-container'>
+  <!-- 搜索 -->
+  <view class='u-search-box'>
+    <view class='u-search-icon'>
+      <image src='../../assets/images/search-icon.png'></image>
+    </view>
+    <input type='text' placeholder-style="color:#ccc" placeholder='发动机/轮胎' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
+    <view class='u-vioce-icon' catchtap='openVoice'>
+      <image src='../../assets/images/voice-icon.png'></image>
+    </view>
+  </view>
+
+  <!-- <movable-area>
+    <movable-view x="{{x}}" y="{{y}}" direction="all">text</movable-view>
+  </movable-area> -->
+
+  <!-- 焦点图 -->
+  <view class="m-swiper-container">
+    <swiper autoplay="true" circular='true'>
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}" interval="10000">
+        <navigator url="{{item.linkUrl}}" hover-class="navigator-hover">
+          <swiper-item>
+            <image src="{{item.imageUrl}}" class="slide-image" />
+          </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
+    <view class='m-swiper-bottom'></view>
+  </view>
+
+  <!-- 分类 -->
+  <view class='m-category-container'>
+    <block wx:for="{{categoryList}}" wx:key="{{index}}" wx:for-item="item">
+      <view class='m-category-item' bindtap="goCategoryPage" data-categoryId="{{item.id}}">
+        <image class='m-category-icon' src='{{item.iconUrl}}'></image>
+        <view class='m-category-name'>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 列表内容 -->
+  <view class='m-item-box'>
+    <view class='m-item-title'>
+      <image src='../../assets/images/item-title-bg.png'></image>
+      <text>优选频道</text>
+    </view>
+    <view class='m-item-row'>
+      <block wx:for="{{preferenceItemList}}" wx:key="index" wx:for-item="items">
+        <view class='m-item-container' catchtap='goGoodsDetail' data-goodsId='{{items.id}}'>
+          <view class='m-item-icon'>
+            <image src='{{items.imageUrl}}'></image>
+          </view>
+          <view class='m-item-name'>
+            <text>{{items.name}}</text>
+          </view>
+          <text class='m-item-about font-gray'>{{items.description}}</text>
+          <text class='m-item-price font-strong'>{{items.price}}</text>
+        </view>
+      </block>
+    </view>
+
+    <view class='m-item-title'>
+      <image src='../../assets/images/item-title-bg.png'></image>
+      <text>新品上市</text>
+    </view>
+    <view class='m-item-column'>
+      <block wx:for="{{newItemList}}" wx:key="index" wx:for-item="items">
+        <view class='m-item-container' catchtap='goGoodsDetail' data-goodsId='{{items.id}}'>
+          <view class='m-item-icon'>
+            <image src='{{items.imageUrl}}'></image>
+          </view>
+          <view class='m-item-column'>
+            <view class='m-item-name'>
+              <text>{{items.name}}</text>
+            </view>
+            <view>
+              <text class='m-item-about font-gray'>{{items.description}}</text>
+            </view>
+            <view class='m-item-bottom'>
+              <text class='m-item-price font-strong'>{{items.price}}</text>
+              <view class='u-cart-icon' catchtap="toAddCart" data-goodsId="{{items.id}}">
+                <image src='../../assets/images/iconfont-cart-active.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</view>

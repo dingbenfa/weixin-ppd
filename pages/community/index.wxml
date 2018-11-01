@@ -1,0 +1,41 @@
+<!--pages/community/index.wxml-->
+<view class='m-community-container'>
+  <!-- 顶部等级排名 -->
+  <view class='m-mark-box'>
+    <image class='m-mark-bj' src='../../assets/images/community-bj.png'></image>
+    <view class='m-mark-block'>
+      <text class='m-mark-title'>我的等级</text>
+      <view class='m-mark-text'>{{userGrade}}</view>
+    </view>
+    <view class='m-mark-line'></view>
+    <view class='m-mark-block'>
+      <text class='m-mark-title'>我的排名</text>
+      <view class='m-mark-text'>{{userRanking}}</view>
+    </view>
+    <view class='u-mark-btn' bindtap='handleLookUpGrade'>查看排名</view>
+  </view>
+
+  <!-- 社区模块 -->
+  <block wx:for="{{communityList}}" wx:key="index" wx:for-item="item">
+    <view class='m-article-box'>
+        <view class='m-article-user'>
+            <view class='u-user-photo'>
+              <image src='{{item.userPhotoUrl}}'></image>
+            </view>
+            <view class='m-user-info'>
+                <text class='m-user-name'>{{item.userName}}</text>
+                <view class='m-user-stime'>{{item.creatTime}}</view>
+            </view>
+            <view class='m-icon-box'>
+                <image class='u-mark-icon' src='../../assets/images/mark-icon.png'></image>
+                <text>{{item.mark}}</text>
+            </view>
+        </view>
+        <view class='m-acticle-container'>
+            <text>{{item.community}}</text>
+            <image wx:if="{{item.imgUrl!=''}}" src='{{item.imgUrl}}'></image>
+        </view>
+    </view>
+  </block>
+  
+</view>

@@ -1,0 +1,81 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+page{
+  background-color: #f2f2f2;
+}
+
+.font-gray{
+  color: #999;
+}
+
+.font-strong{
+  color: #d74a45;
+}
+
+/* 购物车 */
+.u-cart-icon{
+  width: 21px;
+  height: 21px;
+  border: 1px solid #dedede;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.u-cart-icon image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 搜索 */
+.u-search-box{
+  position: absolute;
+  top: 25rpx;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  background-color: #fff;
+  width: 93%;
+  height: 65rpx;
+  border: 1px solid #dedede;
+  border-radius: 35px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.u-search-box input{
+  font-size: 28rpx;
+  padding-left: 75rpx;
+  padding-right: 65rpx;
+  height:100%;
+}
+
+.u-search-icon{
+  position: absolute;
+  top: 12rpx;
+  left: 22rpx;
+}
+
+.u-search-icon image{
+  width: 18px;
+  height: 18px;
+}
+
+.u-vioce-icon{
+  position: absolute;
+  top: 11rpx;
+  right: 20rpx;
+}
+
+.u-vioce-icon image{
+  width: 20px;
+  height: 20px;
+}

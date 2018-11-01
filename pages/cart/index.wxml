@@ -1,0 +1,59 @@
+<!--pages/cart/index.wxml-->
+<import src="cart-empty/prompt.wxml" />
+<wxs src='../../utils/filter.wxs' module='filter' />
+
+<template is="prompt" data="{{ prompt }}" />
+
+<view class='m-cart-container'>
+  <view class='m-cart-box' hidden="{{ !prompt.hidden }}">
+    <view class='m-cart-opt'>
+      <text class='m-cart-del font-strong' bindtap='goodsSelectedDel'>删除</text>
+    </view>
+    <block wx:for="{{carts.items}}" wx:key="index" wx:for-item="item">
+      <view class='m-product-box'>
+        <view class='m-product-select' bindtap='handleProductCheck' data-goodsid="{{item.id}}">
+          <radio-group class="radio-group" data-selected="{{item.selected}}">
+            <label class="radio">
+              <radio value='{{item.selected}}' color="#d74a45" checked="{{item.selected}}" />
+            </label>
+          </radio-group>
+        </view>
+        <view class='m-product-img'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+
+        <view class='m-product-info'>
+          <text class='m-product-title'>{{item.name}}</text>
+          <text class='m-product-lable'>规格：{{item.size}}  {{item.color}}</text>
+          <view class='m-product-opt'>
+            <view class='m-product-price'>
+              <text class='m-price-icon font-strong'>￥</text>
+              <text class='font-strong'>{{filter.formatAmount(item.price,2,1)}}</text>
+            </view>
+            <view class='m-product-number'>
+              <text class='u-number-btn u-product-reduce {{item.number=="1"?"u-number-dis":""}}' bindtap='updateGoodsNumber' data-goodId='{{item.id}}' data-number='{{item.number}}' data-stype='0'>-</text>
+              <input class='u-product-inp' type='number' value='{{item.number}}' bindblur="handleMinValue" bindinput="handleInputValue" data-goodId='{{item.id}}' maxlength="3"></input>
+              <text class='u-number-btn u-product-add' bindtap='updateGoodsNumber' data-goodId='{{item.id}}' data-number='{{item.number}}' data-stype='1'>+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 去结算 -->
+  <view class='m-cart-calculation'>
+    <view class='u-select-all'>
+      <radio class='u-product-check' value="1" color="#d74a45" checked='{{selected}}' bindtap='handleSelectAll'></radio>
+      <text class="u-select-text">全选</text>
+    </view>
+    <view class='m-cart-total'>
+      <text>总计：</text>
+      <text class='font-strong'>￥{{filter.formatAmount(amountTotal,2,1)}}</text>
+    </view>
+    <view class='m-to-calculation'>
+      <text class='m-calculation-name'>去结算</text>
+      <text class='m-calculation-number'>（{{carts.itemsSel.length}}）</text>
+    </view>
+  </view>
+</view>

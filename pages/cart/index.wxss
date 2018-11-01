@@ -1,0 +1,165 @@
+/* pages/cart/index.wxss */
+@import 'cart-empty/prompt.wxss';
+
+.m-cart-container {
+  font-size: 32rpx;
+  position: relative;
+  background-color: #f2f2f2;
+  padding-bottom: 180rpx;
+}
+
+/* 去结算 */
+.m-cart-calculation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130rpx;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.u-select-all {
+  margin-left: 20rpx;
+}
+
+.u-select-all label {
+  display: inline-block;
+}
+
+.u-select-all .u-select-text {
+  display: block;
+  margin-top: 10rpx;
+  color: #999;
+}
+
+.m-cart-total {
+  text-align: right;
+  width: 390rpx;
+  font-weight: bold;
+  font-size: 37rpx;
+}
+
+.m-to-calculation{
+  height: 100%;
+  background-color: #d74a45;
+  color: #fff;
+  text-align: center;
+  line-height: 128rpx;
+  padding-right: 10rpx;
+  padding-left: 25rpx;
+}
+
+.m-to-calculation .m-calculation-name{
+  font-size: 42rpx;
+}
+
+.m-to-calculation .m-calculation-number{
+  font-size: 28rpx;
+}
+
+/* 购物车商品 */
+.m-cart-box{
+  padding-top: 110rpx;
+}
+
+.m-cart-opt{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+  background-color: #fff;
+  text-align: right;
+  z-index: 1000;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #efefef;
+}
+
+.m-cart-del{
+  padding: 15rpx 35rpx;
+}
+
+.m-product-box{
+  margin-top: 25rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 50rpx 30rpx;
+}
+
+.m-product-box .m-product-img image{
+  width: 190rpx;
+  height: 210rpx;
+  border: 1px solid #ececec;
+}
+
+.m-product-select{
+  margin-right: 15rpx;
+}
+
+.m-product-info{
+  padding-left: 35rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-product-title{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.m-product-lable{
+  margin-top: 15rpx;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.m-product-price{
+  width: 150rpx;
+  font-size: 34rpx;
+}
+
+.m-price-icon{
+  font-size: 28rpx;
+}
+
+.m-product-opt{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 35rpx;
+  line-height: 63rpx;
+}
+
+/* 数量计算 */
+.m-product-number{
+  display: flex;
+  flex-direction: row;
+}
+
+.u-number-btn{
+  font-weight: bold;
+  font-size: 36rpx;
+  text-align: center;
+  padding: 0 25rpx;
+}
+
+.u-number-dis{
+  color: #999;
+}
+
+.u-product-inp{
+  width: 110rpx;
+  height: 60rpx;
+  border: 1px solid #ececec;
+  text-align: center;
+}

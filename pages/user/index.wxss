@@ -1,0 +1,183 @@
+/* pages/user/index.wxss */
+
+.m-user-container {
+  font-size: 32rpx;
+  position: relative;
+  padding-bottom: 50rpx;
+}
+
+.m-user-info {
+  position: relative;
+  background-color: #f75853;
+  height: 160rpx;
+  padding-bottom: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.u-user-img {
+  height: 85rpx;
+  width: 85rpx;
+  border-radius: 50%;
+}
+
+.m-user-info .u-user-img {
+  margin-left: 35rpx;
+}
+
+.u-icon-img {
+  height: 32rpx;
+  width: 32rpx;
+  vertical-align: -5rpx;
+  margin-right: 15rpx;
+}
+
+.m-user-lable {
+  width: 320rpx;
+  text-align: left;
+}
+
+.m-user-name {
+  font-size: 35rpx;
+}
+
+.m-user-grade {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.m-user-set {
+  margin-right: 35rpx;
+}
+
+.u-set-btn {
+  border: 1px solid #fff;
+  border-radius: 35rpx;
+  padding: 15rpx 25rpx;
+  line-height: 35rpx;
+}
+
+/* 优惠券收藏夹积分 */
+
+.m-user-box {
+  background-color: #fff;
+  position: absolute;
+  bottom: -130rpx;
+  left: 35rpx;
+  right: 35rpx;
+  height: 210rpx;
+  z-index: 1000;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 25rpx;
+  padding-top: 6rpx;
+  box-shadow: 0 5px 20px 1px #f6edde;
+}
+
+.m-icon-box {
+  color: rgb(119, 119, 119);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.m-icon-box image {
+  width: 110rpx;
+  height: 110rpx;
+  margin-bottom: 15rpx;
+}
+
+.m-order-box {
+  margin-top: 185rpx;
+  background-color: #fff;
+}
+
+.m-order-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 36rpx;
+  line-height: 95rpx;
+}
+
+.m-order-header navigator {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.m-order-title {
+  font-weight: bold;
+}
+
+.m-order-line {
+  border-top: 1px solid #efefef;
+  margin: 0 36rpx;
+}
+
+.m-user-todos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.m-todo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 165rpx;
+  padding-top: 35rpx;
+  padding-bottom: 55rpx;
+}
+
+.m-todo-box image {
+  height: 52rpx;
+  width: 52rpx;
+  margin-bottom: 20rpx;
+}
+
+.m-todo-box text {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.m-order-other {
+  margin-top: 25rpx;
+  background-color: #fff;
+}
+
+.m-other-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 36rpx;
+}
+
+.u-other-icon {
+  height: 64rpx;
+  width: 64rpx;
+  margin-top: 28rpx;
+}
+
+.u-other-text {
+  width: 585rpx;
+  height: 100%;
+  line-height: 65rpx;
+  font-size: 34rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+  padding: 25rpx 0;
+  padding-right: 36rpx;
+}
+
+.m-next-icon{
+  color: #999;
+}

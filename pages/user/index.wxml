@@ -1,0 +1,86 @@
+<!--pages/user/index.wxml-->
+<view class='m-user-container'>
+  <view class='m-user-info'>
+    <image class='u-user-img' src='../../assets/images/user.png'></image>
+    <view class='m-user-lable'>
+      <text class='m-user-name'>Only You</text>
+      <view class='m-user-grade'>
+        <image class='u-icon-img' src='../../assets/images/level-icon.png'></image>
+        <text>等级：455</text>
+      </view>
+    </view>
+    <view class='m-user-set'>
+      <view class='u-set-btn'>
+        <image class='u-icon-img' src='../../assets/images/set-icon.png'></image>
+        <text>账号管理</text>
+      </view>
+    </view>
+
+    <!-- 收藏夹。。。 -->
+    <view class='m-user-box'>
+      <view class='m-icon-box'>
+        <image src='../../assets/images/collection-icon.png'></image>
+        <text>收藏夹</text>
+      </view>
+      <view class='m-icon-box'>
+        <image src='../../assets/images/coupon-icon.png'></image>
+        <text>优惠券</text>
+      </view>
+      <view class='m-icon-box'>
+        <image src='../../assets/images/integral-icon.png'></image>
+        <text>积分</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='m-order-box'>
+      <view class='m-order-header'>
+        <text class='m-order-title'>我的订单</text>
+        <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover">查看全部订单 ＞</navigator>
+      </view>
+       <view class='m-order-line'></view>
+      <view class='m-user-todos'>
+        <view class='m-todo-box'>
+          <image src='../../assets/images/order-pay-icon.png'></image>
+          <text>待付款</text>
+        </view>
+        <view class='m-todo-box'>
+          <image src='../../assets/images/order-goods-icon.png'></image>
+          <text>待发货</text>
+        </view>
+        <view class='m-todo-box'>
+          <image src='../../assets/images/order-delivery-icon.png'></image>
+          <text>待收货</text>
+        </view>
+        <view class='m-todo-box'>
+          <image src='../../assets/images/order-exit-icon.png'></image>
+          <text>退货售后</text>
+        </view>
+      </view>
+  </view>
+
+  <view class='m-order-other'>
+        <view class='m-other-box'>
+            <image class='u-other-icon' src='../../assets/images/address-icon.png'></image>
+            <view class='u-other-text'>
+              <text>管理收货地址</text>
+              <text class='m-next-icon'>＞</text>
+            </view>
+        </view>
+         <view class='m-other-box'>
+            <image class='u-other-icon' src='../../assets/images/customer-service-icon.png'></image>
+            <view class='u-other-text'>
+              <text>客服电话</text>
+              <text class='m-next-icon'>＞</text>
+            </view>
+        </view>
+         <view class='m-other-box'>
+            <image class='u-other-icon' src='../../assets/images/advise-icon.png'></image>
+            <view class='u-other-text'>
+              <text>意见反馈</text>
+              <text class='m-next-icon'>＞</text>
+            </view>
+        </view>
+  </view>
+
+</view>
