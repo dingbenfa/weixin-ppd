@@ -129,9 +129,14 @@
 }
 
 .m-item-name {
-  padding: 15rpx 0;
+  padding: 15rpx 10rpx;
   font-size: 32rpx;
   font-weight: bold;
+}
+
+.m-item-about {
+  text-align: center;
+  padding: 15rpx 10rpx;
 }
 
 .m-item-about, .m-item-price {
@@ -143,6 +148,10 @@
   flex-direction: column;
   justify-content: center;
   background-color: #fff;
+}
+
+.m-item-text{
+  width: 430rpx;
 }
 
 .m-item-column .m-item-container {
@@ -166,8 +175,9 @@
 }
 
 .m-item-column  .m-item-bottom {
-  height: 90rpx;
+  height: 70rpx;
   line-height: 30px;
+  margin-top: 25rpx;
 }
 
 .m-item-column  .m-item-bottom .u-cart-icon {

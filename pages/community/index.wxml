@@ -20,20 +20,21 @@
     <view class='m-article-box'>
         <view class='m-article-user'>
             <view class='u-user-photo'>
-              <image src='{{item.userPhotoUrl}}'></image>
+              <!-- <image src='{{item.userPhotoUrl}}'></image> -->
+              <image src='../../assets/images/user.png'></image>
             </view>
             <view class='m-user-info'>
-                <text class='m-user-name'>{{item.userName}}</text>
-                <view class='m-user-stime'>{{item.creatTime}}</view>
+                <text class='m-user-name'>{{item.createUserInfo.nickname}}</text>
+                <view class='m-user-stime'>{{item.createTimeString}}</view>
             </view>
             <view class='m-icon-box'>
                 <image class='u-mark-icon' src='../../assets/images/mark-icon.png'></image>
-                <text>{{item.mark}}</text>
+                <text>{{item.createUserInfo.grade}}</text>
             </view>
         </view>
         <view class='m-acticle-container'>
-            <text>{{item.community}}</text>
-            <image wx:if="{{item.imgUrl!=''}}" src='{{item.imgUrl}}'></image>
+            <text>{{item.content}}</text>
+            <!-- <image wx:if="{{item.imgUrl!=''}}" src='{{item.imgUrl}}'></image> -->
         </view>
     </view>
   </block>

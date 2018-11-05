@@ -5,7 +5,10 @@ class HttpService extends WxRequest {
     super(options)
     this.$$prefix = ''
     this.$$path = {
-      home: '/mobile/home/mall'
+      home: '/mobile/home/mall',
+      community: '/mobile/home/community',
+      cart: '/mobile/home/cart',
+      user: '/mobile/home/my'
     }
     this.interceptors.use({
       request(request) {
@@ -42,6 +45,18 @@ class HttpService extends WxRequest {
 
   getHomeInfo() {
     return this.getRequest(this.$$path.home)
+  }
+
+  getCommunityInfo() {
+    return this.getRequest(this.$$path.community)
+  }
+
+  getCartInfo() {
+    return this.getRequest(this.$$path.cart)
+  }
+
+  getUserInfo() {
+    return this.getRequest(this.$$path.user)
   }
 
 }

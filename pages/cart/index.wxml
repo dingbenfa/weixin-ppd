@@ -19,12 +19,13 @@
           </radio-group>
         </view>
         <view class='m-product-img'>
-          <image src='{{item.imgUrl}}'></image>
+         <image src='../../assets/images/items.jpg'></image>
+          <!-- <image src='{{item.itemImageUrl}}'></image> -->
         </view>
 
         <view class='m-product-info'>
-          <text class='m-product-title'>{{item.name}}</text>
-          <text class='m-product-lable'>规格：{{item.size}}  {{item.color}}</text>
+          <text class='m-product-title'>{{item.itemSpecification}}</text>
+          <text class='m-product-lable'>规格：{{item.itemSpecification}}  {{item.itemColor}}</text>
           <view class='m-product-opt'>
             <view class='m-product-price'>
               <text class='m-price-icon font-strong'>￥</text>

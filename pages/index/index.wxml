@@ -76,7 +76,7 @@
           <view class='m-item-icon'>
             <image src='{{items.imageUrl}}'></image>
           </view>
-          <view class='m-item-column'>
+          <view class='m-item-column m-item-text'>
             <view class='m-item-name'>
               <text>{{items.name}}</text>
             </view>

@@ -1,14 +1,12 @@
 //index.js
-import indexData from '../../data/index';
 
 //获取应用实例
 var App = getApp();
 
 Page({
   data: {
-    imgUrls: indexData.imgList,
+    imgUrls: [],
     categoryList: [],
-    indexData: indexData.indexData,
     newItemList: [],
     preferenceItemList: [],
     cartNum: 0,
@@ -25,7 +23,7 @@ Page({
     App.HttpService.getHomeInfo()
     .then(res => {
       const data = res.data;
-      console.log(data)
+      // console.log(data)
       const topBannerList = this.setImgUrl(data.topBannerList, null, "../../assets/images/timg.jpg");
       const newItemList = this.setImgUrl(data.newItemList, null, "../../assets/images/items.jpg");
       const preferenceItemList = this.setImgUrl(data.preferenceItemList, 3, "../../assets/images/items.jpg");

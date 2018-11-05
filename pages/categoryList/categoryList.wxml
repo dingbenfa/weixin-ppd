@@ -1,5 +1,30 @@
 <!--pages/categoryList/categoryList.wxml-->
-<text>正在开发中...</text>
-<view>
-  <text>分类ID：{{id}}</text>
+<view class='m-category-container'>
+  <view class='m-category-head'>
+    <input type='text' class='u-category-search' placeholder-style="color:#ccc" placeholder='发动机/轮胎' value=''></input>
+  </view>
+
+  <view class='m-category-body'>
+      <view class='m-category-aside'>
+          <block wx:for="{{categoryList}}" wx:for-item="item" wx:key="index">
+              <view class='m-category-name {{item.active?"active":""}}' catchtap="handleCategoryShow" data-CategoryId='{{item.id}}'>
+                  <text>{{ item.categoryName }}</text>
+              </view>
+          </block>
+      </view>
+      <view class='m-category-show'>
+            <view class='m-category-title'>
+                <text>{{categoryTitle}}</text>
+            </view>
+            <view class='m-category-content'>
+                <block wx:for="{{nowCategoryShowList}}" wx:for-item="item" wx:key="index">
+                    <view class='m-goods-box' bindtap='handleToGoDetails' data-goodsId='{{item.id}}'>
+                        <!-- <image class='m-goods-img' src='../../assets/images/items.jpg'></image> -->
+                        <image class='m-goods-img' src='{{item.imageUrl}}'></image>
+                        <text class='m-goods-name'>{{item.name}}</text>
+                    </view>
+                </block>
+            </view>
+      </view>
+  </view>
 </view>

@@ -4,8 +4,8 @@
         "pages/community/index",
         "pages/cart/index",
         "pages/user/index",
-        "pages/index/index-detail/index-detail",
-        "pages/categoryList/categoryList"
+        "pages/categoryList/categoryList",
+        "pages/index/index-detail/index-detail"     
     ],
     "window": {
         "backgroundTextStyle": "light",
