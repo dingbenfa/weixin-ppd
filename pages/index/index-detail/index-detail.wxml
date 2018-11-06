@@ -1,3 +1,0 @@
-<!--pages/index/index-detail/index-detail.wxml-->
-<text>正在开发中...</text>
-<view>商品ID: {{goodsId}}</view>

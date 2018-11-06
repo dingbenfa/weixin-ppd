@@ -63,8 +63,8 @@ Page({
   goGoodsDetail(event){
     var id = event.currentTarget.dataset.goodsid;
     wx.navigateTo({
-      url: 'index-detail/index-detail?goodsId=' + id,
-    })
+      url: '../goods/goodsDetails/goodsDetails?goodsId=' + id,
+    });
   },
   //加入购物车
   toAddCart(event){

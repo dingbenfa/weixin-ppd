@@ -1,0 +1,205 @@
+/* pages/goods/goodsDetails/goodsDetails.wxss */
+
+.m-goods-container {
+  color: #333;
+}
+
+.m-goods-header {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.m-goods-title {
+  font-size: 28rpx;
+  padding: 20rpx 56rpx;
+}
+
+.m-goods-header .active {
+  color: #c53122;
+}
+
+/* 商品详情轮播 */
+
+.m-swiper-section {
+  height: 650rpx;
+}
+
+.m-swiper-section swiper {
+  height: 100%;
+}
+
+.m-swiper-section .m-goods-img {
+  width: 100%;
+  height: 650rpx;
+}
+
+/* 商品信息 */
+
+.m-goods-info {
+  padding: 20rpx 25rpx;
+}
+
+.m-goods-name {
+  line-height: 55rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.m-goods-price {
+  padding: 30rpx 0;
+  font-size: 28rpx;
+}
+
+.m-goods-price text {
+  font-size: 45rpx;
+}
+
+.m-goods-sgin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.m-sgin-content text {
+  color: #999;
+  font-size: 27rpx;
+}
+
+.m-sgin-icon {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+.m-goods-coupons {
+  margin-top: 65rpx;
+}
+
+/* 优惠券 */
+
+.m-goods-coupons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.m-coupons-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.m-coupons-content {
+  padding: 0 35rpx;
+}
+
+.m-lable-title {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.m-coupons-line {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+.m-title-icon {
+  padding: 0 15rpx;
+  height: 35rpx;
+  background-color: #fed6dd;
+  border-radius: 10px;
+  font-size: 25rpx;
+  margin-right: 10rpx;
+}
+
+.m-coupons-icon {
+  margin-top: 10rpx;
+}
+
+.u-coupons-icon {
+  position: relative;
+  height: 55rpx;
+  width: 195rpx;
+  margin-right: 15rpx;
+}
+
+.u-coupons-icon image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 55rpx;
+  width: 195rpx;
+}
+
+.u-coupons-icon text {
+  z-index: 10;
+  position: absolute;
+  top: 8rpx;
+  left: 32rpx;
+  font-size: 28rpx;
+  color: #d34641;
+}
+
+.m-goods-choose {
+  margin-top: 25rpx;
+}
+
+.m-goods-choose, .m-goods-parameter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.m-lable-content {
+  padding: 0 35rpx;
+}
+
+/* 商品详情底部 */
+
+.m-goods-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 95rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+}
+
+.m-add-cart {
+  height: 100%;
+  width: 225rpx;
+  background-color: #f19b38;
+  color: #fff;
+  line-height: 95rpx;
+  font-weight: 500;
+  font-size: 35rpx;
+  text-align: center;
+}
+
+.m-to-pay {
+  height: 100%;
+  width: 225rpx;
+  background-color: #d74a45;
+  color: #fff;
+  line-height: 95rpx;
+  font-weight: 500;
+  font-size: 35rpx;
+  text-align: center;
+}
+
+.m-customer-service,.m-user-cart{
+  width: 160rpx;
+  text-align: center;
+  color: #b0b0b0;
+  display: flex;
+  flex-direction: column;
+}

@@ -11,6 +11,8 @@
 
 page{
   background-color: #f2f2f2;
+  color: #333;
+  font-size: 30rpx;
 }
 
 .font-gray{
@@ -78,4 +80,12 @@ page{
 .u-vioce-icon image{
   width: 20px;
   height: 20px;
+}
+
+.m-font-strong{
+  color: #d74a45;
+}
+
+.m-font-grey{
+  color: #999;
 }
