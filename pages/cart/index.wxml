@@ -24,7 +24,7 @@
         </view>
 
         <view class='m-product-info'>
-          <text class='m-product-title'>{{item.itemSpecification}}</text>
+          <text class='m-product-title'>{{item.itemDescription}}</text>
           <text class='m-product-lable'>规格：{{item.itemSpecification}}  {{item.itemColor}}</text>
           <view class='m-product-opt'>
             <view class='m-product-price'>

@@ -1,4 +1,8 @@
 export default {
+    "hotSearchList": [{
+        "id": 543,
+        "name": "汽车配件"
+    }],
     "imgList": [{
             "name": "特价优惠，汽配网",
             "url": "../../assets/images/timg.jpg",
