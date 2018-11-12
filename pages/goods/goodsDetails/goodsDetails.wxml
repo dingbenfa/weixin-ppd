@@ -25,81 +25,89 @@
   </view>
   <!-- 商品信息 -->
   <view class='m-goods-info'>
-    <view class='m-goods-name'>
-      <text>商品名称商品名称商品名称商品名称商品名称商品名称商品名称</text>
+    <view class='m-goods-block'>
+      <view class='m-goods-name'>
+        <text>商品名称商品名称商品名称商品名称商品名称商品名称商品名称</text>
+      </view>
+      <view class='m-goods-price m-font-strong'>￥
+        <text>2999.00</text>
+      </view>
+      <view class='m-goods-sgin'>
+        <view class='m-sgin-content'>
+          <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
+          <text>闪电发货/顺丰包邮</text>
+        </view>
+        <view class='m-sgin-content'>
+          <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
+          <text>超长质保</text>
+        </view>
+        <view class='m-sgin-content'>
+          <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
+          <text>权威质检</text>
+        </view>
+      </view>
     </view>
 
-    <view class='m-goods-price m-font-strong'>￥
-      <text>2999.00</text>
-    </view>
-
-    <view class='m-goods-sgin'>
-      <view class='m-sgin-content'>
-        <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
-        <text>闪电发货/顺丰包邮</text>
-      </view>
-      <view class='m-sgin-content'>
-        <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
-        <text>超长质保</text>
-      </view>
-      <view class='m-sgin-content'>
-        <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
-        <text>权威质检</text>
-      </view>
-    </view>
-
-    <view class='m-goods-coupons'>
-      <view class='m-coupons-left'>
-        <text class='m-lable-title'>优惠</text>
-        <view class='m-coupons-content'>
-          <view class='m-coupons-line'>
-            <text>领券至少可减</text>
-            <text class='m-font-strong'>￥10</text>
-          </view>
-          <view class='m-coupons-line'>
-            <text class='m-title-icon m-coupons-icon m-font-strong'>优惠券</text>
-            <view class='u-coupons-icon'>
-              <image src='../../../assets/images/coupons-icon.png'></image>
-              <text>满300减50</text>
+    <view class='m-goods-block'>
+      <view class='m-goods-coupons'>
+        <view class='m-coupons-box'>
+          <text class='m-lable-title'>优惠</text>
+          <view class='m-coupons-content'>
+            <view class='m-coupons-top m-coupons-line'>
+              <view>
+                <text>领券至少可减</text>
+                <text class='m-font-strong'>￥10</text>
+              </view>
+              <text class='m-lable-title'>领券 ></text>
             </view>
-          </view>
-          <view class='m-coupons-line'>
-            <text class='m-title-icon m-font-strong'>积分</text>
-            <text>购买至少可得18积分</text>
+            <view class='m-coupons-line'>
+              <text class='m-title-icon m-coupons-icon m-font-strong'>优惠券</text>
+              <view class='u-coupons-icon'>
+                <image src='../../../assets/images/coupons-icon.png'></image>
+                <text>满300减50</text>
+              </view>
+              <view class='u-coupons-icon'>
+                <image src='../../../assets/images/coupons-icon.png'></image>
+                <text>满200减20</text>
+              </view>
+            </view>
+            <view class='m-coupons-line'>
+              <text class='m-title-icon m-font-strong'>积分</text>
+              <text>购买至少可得18积分</text>
+            </view>
           </view>
         </view>
       </view>
-      <view>
-        <text class='m-lable-title'>领券 ></text>
-      </view>
     </view>
 
-    <view class='m-goods-choose'>
-      <view>
-        <text class='m-lable-title'>选择</text>
-        <text class='m-lable-content'>已选："外门碗“</text>
+    <view class='m-goods-block'>
+      <view class='m-goods-choose'>
+        <view>
+          <text class='m-lable-title'>选择</text>
+          <text class='m-lable-content'>已选："外门碗“</text>
+        </view>
+        <view>
+          <text class='m-font-grey'>></text>
+        </view>
       </view>
-      <view>
-        <text class='m-font-grey'>></text>
+
+      <view class='m-goods-parameter'>
+        <view>
+          <text class='m-lable-title'>参数</text>
+          <text class='m-lable-content'>品牌：型号</text>
+        </view>
+        <view>
+          <text class='m-font-grey'>></text>
+        </view>
       </view>
     </view>
-
-    <view class='m-goods-parameter'>
-      <view>
-        <text class='m-lable-title'>参数</text>
-        <text class='m-lable-content'>品牌：型号</text>
-      </view>
-      <view>
-        <text class='m-font-grey'>></text>
-      </view>
-    </view>
-
   </view>
+
   <!-- 商品评价 -->
   <view class='m-goods-evaluation'>
     <view class='m-evaluation-header'>
       <text>宝贝评价(42)</text>
-      <text>查看全部 ></text>
+      <text class='m-font-strong'>查看全部 ></text>
     </view>
     <view class='m-evaluation-body'>
       <view class='m-evaluation-box'>
@@ -110,19 +118,20 @@
           <text class='m-evaluation-stime'>17-12-16 08:54</text>
         </view>
       </view>
-      <view>
+      <view class='m-find-more'>
         <text>查看更多评论  ∨</text>
       </view>
     </view>
   </view>
+
   <!-- 商品详情底部 -->
   <view class='m-goods-footer'>
     <view class='m-customer-service'>
-      <image src='../../../assets/images/user.png'></image>
+      <image class='u-opt-image' src='../../../assets/images/customer-service-cc.png'></image>
       <text>客服</text>
     </view>
     <view class='m-user-cart'>
-      <image src='../../../assets/images/user.png'></image>
+      <image class='u-opt-image' src='../../../assets/images/cart-icon.png'></image>
       <text>购物车</text>
     </view>
     <view class='m-add-cart'>加入购物车</view>

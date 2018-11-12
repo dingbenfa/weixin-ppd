@@ -2,6 +2,7 @@
 
 .m-goods-container {
   color: #333;
+  padding-bottom: 105rpx;
 }
 
 .m-goods-header {
@@ -39,6 +40,12 @@
 /* 商品信息 */
 
 .m-goods-info {
+  /* padding: 20rpx 25rpx; */
+}
+
+.m-goods-block {
+  background-color: #fff;
+  margin-bottom: 25rpx;
   padding: 20rpx 25rpx;
 }
 
@@ -61,6 +68,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10rpx;
 }
 
 .m-sgin-content text {
@@ -75,25 +83,24 @@
   vertical-align: bottom;
 }
 
-.m-goods-coupons {
-  margin-top: 65rpx;
-}
-
 /* 优惠券 */
 
 .m-goods-coupons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 5rpx;
 }
 
-.m-coupons-left {
+.m-coupons-box {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .m-coupons-content {
-  padding: 0 35rpx;
+  padding-left: 35rpx;
+  width: 609rpx;
 }
 
 .m-lable-title {
@@ -106,6 +113,12 @@
   flex-direction: row;
   margin-bottom: 20rpx;
   font-size: 28rpx;
+}
+
+.m-coupons-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .m-title-icon {
@@ -146,14 +159,17 @@
 }
 
 .m-goods-choose {
-  margin-top: 25rpx;
+  font-size: 28rpx;
 }
 
 .m-goods-choose, .m-goods-parameter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20rpx 0;
+}
+
+.m-goods-parameter {
+  margin-top: 35rpx;
 }
 
 .m-lable-content {
@@ -167,11 +183,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 95rpx;
+  height: 105rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-top: 1px solid #ddd;
+  background-color: #fff;
+  z-index: 1000;
 }
 
 .m-add-cart {
@@ -179,7 +197,7 @@
   width: 225rpx;
   background-color: #f19b38;
   color: #fff;
-  line-height: 95rpx;
+  line-height: 105rpx;
   font-weight: 500;
   font-size: 35rpx;
   text-align: center;
@@ -190,16 +208,80 @@
   width: 225rpx;
   background-color: #d74a45;
   color: #fff;
-  line-height: 95rpx;
+  line-height: 105rpx;
   font-weight: 500;
   font-size: 35rpx;
   text-align: center;
 }
 
-.m-customer-service,.m-user-cart{
+.m-customer-service, .m-user-cart {
   width: 160rpx;
   text-align: center;
   color: #b0b0b0;
   display: flex;
   flex-direction: column;
+}
+
+/* 宝贝评价 */
+
+.m-goods-evaluation {
+  background-color: #fff;
+  padding: 25rpx 25rpx;
+  padding-bottom: 0;
+}
+
+.m-evaluation-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 31rpx;
+}
+
+.m-evaluation-box {
+  display: flex;
+  flex-direction: row;
+  padding-top: 25rpx;
+  padding-bottom: 35rpx;
+}
+
+.m-user-photo {
+  height: 75rpx;
+  width: 146rpx;
+}
+
+.m-user-evaluation {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+}
+
+.m-evaluation {
+  text-align: justify;
+  margin-top: 15rpx;
+  margin-bottom: 10rpx;
+  color: #000;
+}
+
+.m-user-name {
+  font-size: 26rpx;
+}
+
+.m-evaluation-stime {
+  color: #9a9a9a;
+  font-size: 26rpx;
+}
+
+.m-find-more {
+  text-align: center;
+  color: #636363;
+  font-size: 31rpx;
+  border-top: 1px solid #ddd;
+  padding: 35rpx 0;
+}
+
+.u-opt-image {
+  height: 55rpx;
+  width: 65rpx;
+  margin:auto;
+  margin-top: 5px;
 }
