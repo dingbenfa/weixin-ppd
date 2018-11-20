@@ -2,15 +2,22 @@
 
 .m-goods-container {
   color: #333;
+  padding-top: 45px;
   padding-bottom: 105rpx;
 }
 
 .m-goods-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
   background-color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: center;
   border-bottom: 1px solid #f2f2f2;
+  z-index: 10000;
 }
 
 .m-goods-title {
@@ -245,7 +252,7 @@
 }
 
 .m-user-photo {
-  height: 75rpx;
+  height: 95rpx;
   width: 146rpx;
 }
 
@@ -284,4 +291,10 @@
   width: 65rpx;
   margin:auto;
   margin-top: 5px;
+}
+
+.m-goods-detail{
+  margin-top: 25rpx;
+  padding: 25rpx;
+  background-color: #fff;
 }
