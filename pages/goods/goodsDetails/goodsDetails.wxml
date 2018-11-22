@@ -1,125 +1,131 @@
 <!--pages/goods/goodsDetails/goodsDetails.wxml-->
+
 <view class='m-goods-container'>
   <view class='m-goods-header'>
-    <view class='m-goods-title active'>
+    <view class='m-goods-title {{isActive===1? "active":""}}' data-pointType='1' bindtap='goToPoint'>
       <text>商品</text>
     </view>
-    <view class='m-goods-title'>
+    <view class='m-goods-title {{isActive===2? "active":""}}' data-pointType='2' bindtap='goToPoint'>
       <text>评价</text>
     </view>
-    <view class='m-goods-title'>
+    <view class='m-goods-title {{isActive===3? "active":""}}' data-pointType='3' bindtap='goToPoint'>
       <text>详情</text>
     </view>
   </view>
-  <!-- 商品swiper -->
-  <view class="m-swiper-section">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" indicator-color="#f2f2f2" indicator-active-color="#d74a45">
-      <block wx:for="{{goodsImgList}}" wx:key="index">
-        <swiper-item>
-          <view class="swiper-item">
-            <image class='m-goods-img' src='{{item}}'></image>
-          </view>
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
-  <!-- 商品信息 -->
-  <view class='m-goods-info'>
-    <view class='m-goods-block'>
-      <view class='m-goods-name'>
-        <text>{{ goodsDetailInfo.goodsName }}</text>
-      </view>
-      <view class='m-goods-price m-font-strong'>￥
-        <text>{{ goodsDetailInfo.price }}</text>
-      </view>
-      <view class='m-goods-sgin'>
-        <block wx:for="{{ goodsDetailInfo.CommoditySecurity }}" wx:key="index" wx:for-item="item">
-          <view class='m-sgin-content'>
-            <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
-            <text>{{ item }}</text>
-          </view>
-        </block>
-      </view>
-    </view>
 
-    <view class='m-goods-block'>
-      <view class='m-goods-coupons'>
-        <view class='m-coupons-box'>
-          <text class='m-lable-title'>优惠</text>
-          <view class='m-coupons-content'>
-            <view class='m-coupons-top m-coupons-line'>
-              <view>
-                <text>领券至少可减</text>
-                <text class='m-font-strong'>￥{{ atLeastReducePrice }}</text>
+  <view class='m-goods-body'>
+    <scroll-view scroll-y scroll-into-view="{{ toView }}" bindscroll="scroll" scroll-with-animation="true">
+      <!-- 商品swiper -->
+      <view class="m-swiper-section" id='swiperSection'>
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" indicator-color="#f2f2f2" indicator-active-color="#d74a45">
+          <block wx:for="{{goodsImgList}}" wx:key="index">
+            <swiper-item>
+              <view class="swiper-item">
+                <image class='m-goods-img' src='{{item}}'></image>
               </view>
-              <text class='m-lable-title'>领券 ></text>
-            </view>
-            <view class='m-coupons-line'>
-              <text class='m-title-icon m-coupons-icon m-font-strong'>优惠券</text>
-              <block wx:for="{{ goodsDetailInfo.goodsDiscount.fullSubtraction }}" wx:key="index" wx:for-item="item">
-                <view class='u-coupons-icon'>
-                  <image src='../../../assets/images/coupons-icon.png'></image>
-                  <text>满{{ item.cost }}减{{ item.discount }}</text>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <!-- 商品信息 -->
+      <view class='m-goods-info'>
+        <view class='m-goods-block'>
+          <view class='m-goods-name'>
+            <text>{{ goodsDetailInfo.goodsName }}</text>
+          </view>
+          <view class='m-goods-price m-font-strong'>￥
+            <text>{{ goodsDetailInfo.price }}</text>
+          </view>
+          <view class='m-goods-sgin'>
+            <block wx:for="{{ goodsDetailInfo.CommoditySecurity }}" wx:key="index" wx:for-item="item">
+              <view class='m-sgin-content'>
+                <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
+                <text>{{ item }}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+
+        <view class='m-goods-block'>
+          <view class='m-goods-coupons'>
+            <view class='m-coupons-box'>
+              <text class='m-lable-title'>优惠</text>
+              <view class='m-coupons-content'>
+                <view class='m-coupons-top m-coupons-line'>
+                  <view>
+                    <text>领券至少可减</text>
+                    <text class='m-font-strong'>￥{{ atLeastReducePrice }}</text>
+                  </view>
+                  <text class='m-lable-title' bindtap='openCouponsModal'>领券 ></text>
                 </view>
-              </block>
+                <view class='m-coupons-line'>
+                  <text class='m-title-icon m-coupons-icon m-font-strong'>优惠券</text>
+                  <block wx:for="{{ goodsDetailInfo.goodsDiscount.fullSubtraction }}" wx:key="index" wx:for-item="item">
+                    <view class='u-coupons-icon'>
+                      <image src='../../../assets/images/coupons-icon.png'></image>
+                      <text>满{{ item.cost }}减{{ item.discount }}</text>
+                    </view>
+                  </block>
+                </view>
+                <view class='m-coupons-line'>
+                  <text class='m-title-icon m-font-strong'>积分</text>
+                  <text>购买至少可得{{ goodsDetailInfo.goodsDiscount.goodsPoints }}积分</text>
+                </view>
+              </view>
             </view>
-            <view class='m-coupons-line'>
-              <text class='m-title-icon m-font-strong'>积分</text>
-              <text>购买至少可得{{ goodsDetailInfo.goodsDiscount.goodsPoints }}积分</text>
+          </view>
+        </view>
+
+        <view class='m-goods-block'>
+          <view class='m-goods-choose'>
+            <view>
+              <text class='m-lable-title'>选择</text>
+              <text class='m-lable-content'>已选："外门碗“</text>
+            </view>
+            <view>
+              <text class='m-font-grey'>></text>
+            </view>
+          </view>
+
+          <view class='m-goods-parameter'>
+            <view>
+              <text class='m-lable-title'>参数</text>
+              <text class='m-lable-content'>品牌：型号</text>
+            </view>
+            <view>
+              <text class='m-font-grey'>></text>
             </view>
           </view>
         </view>
       </view>
-    </view>
 
-    <view class='m-goods-block'>
-      <view class='m-goods-choose'>
-        <view>
-          <text class='m-lable-title'>选择</text>
-          <text class='m-lable-content'>已选："外门碗“</text>
+      <!-- 商品评价 -->
+      <view class='m-goods-evaluation' id='goodsEvaluation'>
+        <view class='m-evaluation-header'>
+          <text>宝贝评价({{ goodsEvaluation.length }})</text>
+          <text class='m-font-strong' bindtap='handleLookUpAll'>查看全部 ></text>
         </view>
-        <view>
-          <text class='m-font-grey'>></text>
-        </view>
-      </view>
-
-      <view class='m-goods-parameter'>
-        <view>
-          <text class='m-lable-title'>参数</text>
-          <text class='m-lable-content'>品牌：型号</text>
-        </view>
-        <view>
-          <text class='m-font-grey'>></text>
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <!-- 商品评价 -->
-  <view class='m-goods-evaluation'>
-    <view class='m-evaluation-header'>
-      <text>宝贝评价({{ goodsEvaluation.length }})</text>
-      <text class='m-font-strong' bindtap='handleLookUpAll'>查看全部 ></text>
-    </view>
-    <view class='m-evaluation-body'>
-      <block wx:for="{{ goodsEvaluation }}" wx:key="index">
-        <view class='m-evaluation-box' wx:if="{{ index<goodsEvaluationLimit }}">
-          <image class='m-user-photo' src='{{ item.userImg }}'></image>
-          <view class='m-user-evaluation'>
-            <text class='m-user-name'>{{ item.userName }}</text>
-            <text class='m-evaluation'>{{ item.content }}</text>
-            <text class='m-evaluation-stime'>{{ item.stime }}</text>
+        <view class='m-evaluation-body'>
+          <block wx:for="{{ goodsEvaluation }}" wx:key="index">
+            <view class='m-evaluation-box' wx:if="{{ index<goodsEvaluationLimit }}">
+              <image class='m-user-photo' src='{{ item.userImg }}'></image>
+              <view class='m-user-evaluation'>
+                <text class='m-user-name'>{{ item.userName }}</text>
+                <text class='m-evaluation'>{{ item.content }}</text>
+                <text class='m-evaluation-stime'>{{ item.stime }}</text>
+              </view>
+            </view>
+          </block>
+          <view class='m-find-more' bindtap='handleLookUpMore'>
+            <text>查看更多评论  ∨</text>
           </view>
         </view>
-      </block>
-      <view class='m-find-more' bindtap='handleLookUpMore'>
-        <text>查看更多评论  ∨</text>
       </view>
-    </view>
-  </view>
 
-  <!-- 商品详情 -->
-  <view class='m-goods-detail' style='min-height:1000rpx;'>{{ goodsDetailInfo.goodsContents }}</view>
+      <!-- 商品详情 -->
+      <view class='m-goods-detail' id='goodsDetail' style='min-height:1000rpx;'>{{ goodsDetailInfo.goodsContents }}</view>
+    </scroll-view>
+  </view>
 
   <!-- 商品详情底部 -->
   <view class='m-goods-footer'>
@@ -127,11 +133,39 @@
       <image class='u-opt-image' src='../../../assets/images/customer-service-cc.png'></image>
       <text>客服</text>
     </view>
-    <view class='m-user-cart'>
+    <view class='m-user-cart' bindtap='goToCart'>
       <image class='u-opt-image' src='../../../assets/images/cart-icon.png'></image>
       <text>购物车</text>
     </view>
     <view class='m-add-cart'>加入购物车</view>
     <view class='m-to-pay'>立即购买</view>
   </view>
+
+  <!-- 领券 -->
+  <view class="commodity_screen" bindtap="closeCouponsModal" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view>优惠 <text>×</text></view>
+    <view>领券至少可减
+      <text class='m-font-strong'>¥10</text>
+    </view>
+    <view>促销</view>
+    <view>
+      <text class='m-title-icon m-font-strong'>积分</text>
+      <text>购买可得18积分</text>
+    </view>
+    <view>
+      <view>领券</view>
+      <view>已有积分:1280</view>
+    </view>
+    <view>
+      <view>
+        <view>¥
+          <text>100</text>店铺优惠券</view>
+        <view>满300使用</view>
+        <view>有效期 2018.09.12-2018.12.29</view>
+      </view>
+      <view>立即领取</view>
+    </view>
+  </view>
+
 </view>
