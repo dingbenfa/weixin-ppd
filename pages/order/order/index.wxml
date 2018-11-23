@@ -1,0 +1,48 @@
+<!--pages/order/order/index.wxml-->
+<view class='m-order-container'>
+  <view class='m-order-opt'>
+    <view class='m-order-tags order-tags-active'>全部订单</view>
+    <view class='m-order-tags'>待付款</view>
+    <view class='m-order-tags'>待收货</view>
+    <view class='m-order-tags'>待评价</view>
+  </view>
+
+  <view>
+
+    <view class='m-order-box'>
+      <view class='m-order-header'>
+        <view>
+          <text>订单号:</text>
+          <text>7878978915112</text>
+        </view>
+        <view>等待买家付款</view>
+      </view>
+      <view class='m-order-body'>
+        <view>
+          <image src='../../../assets/images/items.jpg'></image>
+        </view>
+        <view>
+          <view>商品名称商品名称商品名称商品名称商品名称商品名称</view>
+          <view>
+            <text>4434324</text>
+            <text>颜色</text>
+          </view>
+          <view>
+            <view>¥129</view>
+            <view>X1</view>
+          </view>
+        </view>
+        <view></view>
+      </view>
+      <view class='m-order-footer'>
+        <view>
+          共1件商品 合计:¥
+          <text>129.00</text>
+        </view>
+        <view class='u-circular-btn u-btn-grey'>取消订单</view>
+        <view class='u-circular-btn u-btn-red'>付款</view>
+      </view>
+    </view>
+
+  </view>
+</view>

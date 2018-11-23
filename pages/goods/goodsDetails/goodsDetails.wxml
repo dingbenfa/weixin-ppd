@@ -155,18 +155,35 @@
       <text class='m-title-icon m-font-strong'>积分</text>
       <text>购买可得18积分</text>
     </view>
-    <view>
+    <view class='m-coupons-points'>
       <view class='m-title-block'>领券</view>
-      <view>已有积分:1280</view>
+      <view class='m-title-block'>已有积分:1280</view>
     </view>
-    <view>
-      <view>
-        <view>¥
-          <text>100</text>店铺优惠券</view>
-        <view>满300使用</view>
-        <view>有效期 2018.09.12-2018.12.29</view>
+    <view class='m-coupons-case'>
+      <view class='coupons-case-text'>
+        <view class='m-font-strong'>¥
+          <text class='m-font-big'>100</text>店铺优惠券</view>
+        <view class='m-font-strong'>满300使用</view>
+        <view class='m-font-strong'>有效期 2018.09.12-2018.12.29</view>
       </view>
-      <view>立即领取</view>
+      <view class='coupons-case-go m-font-strong' bindtap='getCollectImmediately'>
+        <view class='coupons-line-point line-point-top'></view>
+        <view class='coupons-line-point line-point-bottom'></view>
+        立即领取
+      </view>
+    </view>
+    <view class='m-coupons-case'>
+      <view class='coupons-case-text'>
+        <view class='m-font-strong'>¥
+          <text class='m-font-big'>100</text>店铺优惠券</view>
+        <view class='m-font-strong'>满300使用</view>
+        <view class='m-font-strong'>有效期 2018.09.12-2018.12.29</view>
+      </view>
+      <view class='coupons-case-go m-font-strong' bindtap='getCollectImmediately'>
+        <view class='coupons-line-point line-point-top'></view>
+        <view class='coupons-line-point line-point-bottom'></view>
+        立即领取
+      </view>
     </view>
   </view>
 

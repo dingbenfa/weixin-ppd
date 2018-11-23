@@ -170,5 +170,11 @@ Page({
         showModalStatus: false
       })
     }.bind(this), 200)
+  },
+  //立即领取优惠券
+  getCollectImmediately(ev){
+    wx.showToast({
+      title: "领取成功"
+    });
   }
 })

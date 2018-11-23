@@ -1,12 +1,12 @@
 /* pages/goods/goodsDetails/goodsDetails.wxss */
 
-page,.m-goods-container,.m-goods-body,scroll-view{
+page, .m-goods-container, .m-goods-body, scroll-view {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
   height: 0;
   color: transparent;
@@ -301,17 +301,18 @@ page,.m-goods-container,.m-goods-body,scroll-view{
 .u-opt-image {
   height: 55rpx;
   width: 65rpx;
-  margin:auto;
+  margin: auto;
   margin-top: 5px;
 }
 
-.m-goods-detail{
+.m-goods-detail {
   margin-top: 25rpx;
   padding: 25rpx;
   background-color: #fff;
 }
 
 /* 领券 */
+
 .m-coupons-screen {
   width: 100%;
   height: 100%;
@@ -335,19 +336,20 @@ page,.m-goods-container,.m-goods-body,scroll-view{
   background: #fff;
   padding-top: 35rpx;
   padding: 25rpx;
+  font-size: 28rpx;
 }
 
-.m-modal-title{
+.m-modal-title {
   position: relative;
   text-align: center;
   font-size: 34rpx;
   color: #000;
 }
 
-.m-close-icon{
+.m-close-icon {
   position: absolute;
   top: -5rpx;
-  right: 0;
+  right: -5rpx;
   color: #999;
   font-size: 55rpx;
   text-align: center;
@@ -355,7 +357,60 @@ page,.m-goods-container,.m-goods-body,scroll-view{
   line-height: 25px;
 }
 
-.m-title-block{
+.m-title-block {
   font-size: 29rpx;
   color: #999;
+  line-height: 75rpx;
+}
+
+.m-coupons-points {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.m-coupons-case {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #feecef;
+  border-radius: 15rpx;
+  padding: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.coupons-case-go {
+  position: relative;
+  border-left: 1px dotted #d74a45;
+  padding: 48rpx 38rpx;
+  font-size: 34rpx;
+}
+
+.coupons-case-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 38rpx;
+}
+
+.coupons-case-text .m-font-big {
+  font-size: 41rpx;
+}
+
+.coupons-line-point {
+  position: absolute;
+  height: 32rpx;
+  width: 32rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.line-point-top{
+  top: -26rpx;
+  left: -16rpx;
+}
+
+.line-point-bottom{
+  bottom: -26rpx;
+  left: -16rpx;
 }
