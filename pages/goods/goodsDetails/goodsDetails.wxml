@@ -142,19 +142,21 @@
   </view>
 
   <!-- 领券 -->
-  <view class="commodity_screen" bindtap="closeCouponsModal" wx:if="{{showModalStatus}}"></view>
-  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
-    <view>优惠 <text>×</text></view>
+  <view class="m-coupons-screen" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="m-coupons-modal" wx:if="{{showModalStatus}}">
+    <view class='m-modal-title'>优惠
+      <view class='m-close-icon' bindtap="closeCouponsModal">×</view>
+    </view>
     <view>领券至少可减
       <text class='m-font-strong'>¥10</text>
     </view>
-    <view>促销</view>
+    <view class='m-title-block'>促销</view>
     <view>
       <text class='m-title-icon m-font-strong'>积分</text>
       <text>购买可得18积分</text>
     </view>
     <view>
-      <view>领券</view>
+      <view class='m-title-block'>领券</view>
       <view>已有积分:1280</view>
     </view>
     <view>
