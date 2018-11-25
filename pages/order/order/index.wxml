@@ -1,48 +1,61 @@
 <!--pages/order/order/index.wxml-->
+<wxs src='../../../utils/filter.wxs' module='filter' />
+
 <view class='m-order-container'>
   <view class='m-order-opt'>
-    <view class='m-order-tags order-tags-active'>全部订单</view>
-    <view class='m-order-tags'>待付款</view>
-    <view class='m-order-tags'>待收货</view>
-    <view class='m-order-tags'>待评价</view>
+    <view class='m-order-tags {{orderStatus===666? "order-tags-active":""}}' data-status='666' bindtap='handleOrderStatus'>全部订单</view>
+    <view class='m-order-tags {{orderStatus===0? "order-tags-active":""}}' data-status='0' bindtap='handleOrderStatus'>待付款</view>
+    <view class='m-order-tags {{orderStatus===1? "order-tags-active":""}}' data-status='1' bindtap='handleOrderStatus'>待收货</view>
+    <view class='m-order-tags {{orderStatus===2? "order-tags-active":""}}' data-status='2' bindtap='handleOrderStatus'>待评价</view>
   </view>
 
-  <view>
-
-    <view class='m-order-box'>
+  <block wx:for="{{ userOrderList }}" wx:key="index" wx:for-item="items">
+    <view class='m-order-box' wx:if="{{ orderStatus===666? true:orderStatus===items.orderStatus }}">
       <view class='m-order-header'>
         <view>
-          <text>订单号:</text>
-          <text>7878978915112</text>
+          <text class='m-font-grey'>订单号：</text>
+          <text>{{ items.orderNo }}</text>
         </view>
-        <view>等待买家付款</view>
+        <view class='{{ items.orderStatus===2? "m-font-grey":items.orderStatus===3? "m-font-grey":"m-font-strong" }}'>{{ filter.handleOrderStatus(items.orderStatus) }}</view>
       </view>
       <view class='m-order-body'>
         <view>
-          <image src='../../../assets/images/items.jpg'></image>
+          <image class='m-goods-img' src='../../../assets/images/items.jpg'></image>
         </view>
-        <view>
-          <view>商品名称商品名称商品名称商品名称商品名称商品名称</view>
-          <view>
+        <view class='m-goods-box'>
+          <view class='m-goos-name'>商品名称商品名称商品名称商品名称商品名称商品名称</view>
+          <view class='m-goods-info m-font-grey'>
             <text>4434324</text>
             <text>颜色</text>
           </view>
-          <view>
-            <view>¥129</view>
-            <view>X1</view>
-          </view>
         </view>
-        <view></view>
+        <view class='m-goods-pn'>
+          <view>¥129</view>
+          <view class='m-font-grey'>X1</view>
+        </view>
       </view>
       <view class='m-order-footer'>
-        <view>
-          共1件商品 合计:¥
-          <text>129.00</text>
+        <view class='m-order-total'>
+          <text>共1件商品</text> 合计：¥
+          <text class='m-goods-price'>129.00</text>
         </view>
-        <view class='u-circular-btn u-btn-grey'>取消订单</view>
-        <view class='u-circular-btn u-btn-red'>付款</view>
+        <view class='m-order-pro' wx:if="{{ items.orderStatus===0 }}">
+          <view class='u-circular-btn' data-orderNo='{{ items.orderNo }}' bindtap='headerOrderCancel'>取消订单</view>
+          <view class='u-circular-btn u-btn-red' data-orderNo='{{ items.orderNo }}' bindtap='handleToPay'>付款</view>
+        </view>
+        <view class='m-order-pro' wx:if="{{ items.orderStatus===1 }}">
+          <view class='u-circular-btn' data-orderNo='{{ items.orderNo }}' bindtap='handleLookUpLogistics'>查看物流</view>
+          <view class='u-circular-btn u-btn-red' data-orderNo='{{ items.orderNo }}' bindtap='handleGoodsConfirm'>确认收货</view>
+        </view>
+        <view class='m-order-pro' wx:if="{{ items.orderStatus===2 }}">
+          <view class='u-circular-btn' data-orderNo='{{ items.orderNo }}' bindtap='handleGoodsEvaluate'>去评价</view>
+          <view class='u-circular-btn u-btn-red' data-orderNo='{{ items.orderNo }}' bindtap='handleRepurchase'>再次购买</view>
+        </view>
+        <view class='m-order-pro' wx:if="{{ items.orderStatus===3 || items.orderStatus===4 }}">
+          <view class='u-circular-btn' data-orderNo='{{ items.orderNo }}' bindtap='handleLookUpSimilar'>看相似</view>
+          <view class='u-circular-btn u-btn-red' data-orderNo='{{ items.orderNo }}' bindtap='handleRepurchase'>再次购买</view>
+        </view>
       </view>
     </view>
-
-  </view>
+  </block>
 </view>

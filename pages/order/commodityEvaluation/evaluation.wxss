@@ -1,0 +1,116 @@
+/* pages/order/commodityEvaluation/evaluation.wxss */
+
+.m-evaluation-container {
+  background-color: #fff;
+  padding-bottom: 15rpx;
+}
+
+.evaluation-box-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding: 25rpx 35rpx;
+  line-height: 115rpx;
+}
+
+.evaluation-box-name {
+  padding: 0 25rpx;
+}
+
+.m-goods-img {
+  height: 100rpx;
+  width: 90rpx;
+  border: 1px solid #eee;
+}
+
+.m-goods-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.goods-score-icon {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 10rpx;
+}
+
+.m-evaluation-textarea {
+  padding: 25rpx 35rpx;
+}
+
+.m-evaluation-textarea textarea{
+  width: 100%;
+  height: 180rpx;
+}
+
+.evaluation-textarea-limits{
+  text-align: right;
+  color: #ddd;
+  font-size: 28rpx;
+}
+
+.m-evaluation-upload{
+  padding: 25rpx 35rpx;
+}
+
+.m-evaluation-hid{
+  padding: 0 35rpx;
+}
+
+.evaluation-upload-title text{
+  font-size: 26rpx;
+}
+
+.evaluation-upload-opt{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.evaluation-upload-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  width: 150rpx;
+  height: 150rpx;
+  color: #999;
+  font-size: 25rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.evaluation-upload-btn image{
+  width: 45rpx;
+  height: 45rpx;
+  margin-bottom: 10rpx;
+}
+
+.evaluation-upload-show{
+  background-color: #f7f7f7;
+  width: 150rpx;
+  height: 150rpx;
+  color: #999;
+  font-size: 25rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border: 1px solid #eee;
+}
+
+.evaluation-upload-show image{
+  width: 100%;
+  height: 100%;
+}
+
+.u-evaluation-submit{
+  color: #fff;
+  background-color: #d34641;
+  margin:65rpx 35rpx;
+  border-radius: 55rpx;
+}

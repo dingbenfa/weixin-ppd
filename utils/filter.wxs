@@ -68,7 +68,33 @@ var formatAmount = function(num, cent, isThousand) {
     return (((sign) ? '' : '-') + num);
 };
 
+//过滤订单状态
+var handleOrderStatus = function(status) {
+  switch (status) {
+    case 0:
+      var str = "等待买家付款";
+      break;
+    case 1:
+      var str = "卖家已发货";
+      break;
+    case 2:
+      var str = "已签收";
+      break;
+    case 3:
+      var str = "已完成";
+      break;
+    case 4:
+      var str = "已取消";
+      break;
+    default:
+      var str = "";
+  }
+
+  return str;
+};
+
 module.exports = {
   formatDate: formatDate,
-  formatAmount: formatAmount
+  formatAmount: formatAmount,
+  handleOrderStatus: handleOrderStatus
 };

@@ -18,7 +18,7 @@ Page({
     },
     toView: "swiperSection",
     animationData: {},
-    showModalStatus: true
+    showModalStatus: false
   },
   onLoad: function(options) {
     this.handleAtLeastReduce();

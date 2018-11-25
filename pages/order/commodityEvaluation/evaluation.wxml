@@ -1,0 +1,50 @@
+<!--pages/order/commodityEvaluation/evaluation.wxml-->
+<view class='m-evaluation-container'>
+  <form bindsubmit="bindFormSubmit" content-type="multipart/form-data">
+
+    <view class='m-evaluation-box'>
+      <view class='evaluation-box-header'>
+        <image class='m-goods-img' src='../../../assets/images/items.jpg'></image>
+        <text class='evaluation-box-name'>商品评分</text>
+        <view class='m-goods-score'>
+          <image class='goods-score-icon' src='../../../assets/images/{{ score>0?"score-get-icon.png":"score-icon.png" }}' bindtap='handleGetScore' data-index='1'></image>
+          <image class='goods-score-icon' src='../../../assets/images/{{ score>1?"score-get-icon.png":"score-icon.png" }}' bindtap='handleGetScore' data-index='2'></image>
+          <image class='goods-score-icon' src='../../../assets/images/{{ score>2?"score-get-icon.png":"score-icon.png" }}' bindtap='handleGetScore' data-index='3'></image>
+          <image class='goods-score-icon' src='../../../assets/images/{{ score>3?"score-get-icon.png":"score-icon.png" }}' bindtap='handleGetScore' data-index='4'></image>
+          <image class='goods-score-icon' src='../../../assets/images/{{ score>4?"score-get-icon.png":"score-icon.png" }}' bindtap='handleGetScore' data-index='5'></image>
+        </view>
+      </view>
+      <view class='m-evaluation-textarea'>
+        <textarea placeholder="输入评价内容" name="textarea" focus='true' maxlength="500" placeholder-style="color:#ddd;font-size:28rpx;" bindinput="handleEvaluationLimits" />
+        <view class='evaluation-textarea-limits'>{{ evaluationLength }}/500</view>
+      </view>
+      <view class='m-evaluation-upload'>
+        <view class='evaluation-upload-title'>添加视频/图片
+          <text class='m-font-grey'>（{{uploadFileList.length}}/9）</text>
+        </view>
+        <view class='evaluation-upload-opt'>
+          <view class='evaluation-upload-show' wx:for="{{uploadFileList}}" wx:key="index" wx:for-item="items">
+            <image src='{{ items }}'></image>
+          </view>
+          <view class='evaluation-upload-btn' bindtap='handleUploadFile' data-type='1'>
+            <image src='../../../assets/images/video-icon.png'></image>
+            <text>添加视频</text>
+          </view>
+          <view class='evaluation-upload-btn' bindtap='handleUploadFile' data-type='2'>
+            <image src='../../../assets/images/camera-icon.png'></image>
+            <text>添加图片</text>
+          </view>
+        </view>
+      </view>
+      <view class='m-evaluation-hid'>
+        <radio-group class="radio-group" bindtap="handleIsHidSubmit">
+          <label class="radio">
+            <radio checked='{{ isHid }}' color="#d34641" />匿名发布
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <button class='u-evaluation-submit' form-type="submit"> 提交 </button>
+  </form>
+</view>

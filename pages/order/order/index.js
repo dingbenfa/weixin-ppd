@@ -1,66 +1,68 @@
 // pages/order/order/index.js
+import userOrderInfo from '../../../data/myOrdersInfo';
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    orderStatus: 666, //默认全部
+    userOrderList: userOrderInfo
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //过滤订单状态
+  handleOrderStatus(ev){
+    let orderStatus = Number(ev.currentTarget.dataset.status);
+    this.setData({
+      orderStatus: orderStatus
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //取消订单
+  headerOrderCancel(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.showToast({
+      title: "取消订单成功"
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //去付款
+  handleToPay(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.showToast({
+      title: "跳转去付款"
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  // 查看物流
+  handleLookUpLogistics(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.showToast({
+      title: "跳转查看物流信息"
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  //确认收货
+  handleGoodsConfirm(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.showToast({
+      title: "确认收货成功"
+    });
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  //去评价
+  handleGoodsEvaluate(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.navigateTo({
+      url: '../commodityEvaluation/evaluation?orderNo=' + orderNo,
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //看相似
+  handleLookUpSimilar(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.showToast({
+      title: "跳转查找相似"
+    });
+  },
+  //再次购买
+  handleRepurchase(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.showToast({
+      title: "跳转再次购买"
+    });
   }
 })

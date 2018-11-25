@@ -1,9 +1,11 @@
 /* pages/order/order/index.wxss */
-.m-order-container{
+
+.m-order-container {
   padding-top: 95rpx;
+  padding-bottom: 55rpx;
 }
 
-.m-order-opt{
+.m-order-opt {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,18 +17,109 @@
   box-shadow: 0 1px 18px #ddd;
 }
 
-.m-order-tags{
-  padding: 25rpx 10rpx; 
+.m-order-tags {
+  padding: 25rpx 10rpx;
   font-size: 31rpx;
   border-bottom: 2px solid #fff;
 }
 
-.m-order-opt .order-tags-active{
+.m-order-opt .order-tags-active {
   color: #d34641;
   border-bottom: 2px solid #d34641;
 }
 
-.m-order-box{
+.m-order-box {
   margin-top: 25rpx;
   background-color: #fff;
+  padding: 25rpx 35rpx;
+}
+
+.m-order-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+
+.m-order-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 25rpx;
+}
+
+.m-goods-img {
+  width: 195rpx;
+  height: 215rpx;
+  border: 1px solid #eee;
+}
+
+.m-goods-box {
+  padding: 15rpx 25rpx;
+}
+
+.m-goods-box .m-goos-name {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.m-goods-info {
+  font-size: 26rpx;
+  line-height: 42rpx;
+}
+
+.m-goods-info text {
+  margin-right: 25rpx;
+}
+
+.m-goods-pn {
+  padding: 15rpx 0;
+  text-align: right;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.m-goods-pn .m-font-grey {
+  font-size: 26rpx;
+}
+
+.m-order-footer {
+  text-align: right;
+}
+
+.m-order-total {
+  color: #000;
+  font-size: 26rpx;
+}
+
+.m-order-total text {
+  margin-right: 15rpx;
+}
+
+.m-goods-price {
+  font-size: 35rpx;
+}
+
+.m-order-pro {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 35rpx;
+  padding-bottom: 10rpx;
+}
+
+.u-circular-btn{
+  margin-left: 55rpx;
+  border: 1px solid #ddd;
+  border-radius: 45rpx;
+  padding: 7rpx 25rpx;
+  width: 120rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.u-btn-red{
+  color: #d34641;
+  border: 1px solid #d34641;
 }
