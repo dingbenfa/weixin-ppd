@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/user/address/address",
+    "pages/user/accountManagement/index",
     "pages/index/index",
     "pages/community/index",
     "pages/cart/index",

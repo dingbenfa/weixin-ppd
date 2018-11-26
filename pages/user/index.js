@@ -15,5 +15,11 @@ Page({
         const data = res.data;
         console.log(data)
       });
+  },
+  //跳转账户管理
+  handleNavigateToAccount(ev){
+      wx.navigateTo({
+        url: 'accountManagement/index',
+      })
   }
 })

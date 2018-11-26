@@ -1,0 +1,33 @@
+<!--pages/user/accountManagement/index.wxml-->
+<view class='m-account-container'>
+  <view class='m-account-box'>
+      <view class='m-account-name'>当前登录账号</view>
+      <view class='m-account-info'>
+          <image src='../../../assets/images/user.png'></image>
+          <view class='account-info-text'>
+              <text>id_45675869780fdsfd</text>
+              <text class='m-font-grey'>邮箱：未设置</text>
+          </view>
+      </view>
+      <view class='m-account-items'>
+          <view class='m-font-grey'>修改绑定手机号码</view>
+          <view>
+              <text>139****3224</text>
+              <text class='m-account-next'> > </text>
+          </view>
+      </view>
+       <view class='m-account-items'>
+          <view class='m-font-grey'>修改登录密码</view>
+          <view>
+              <text class='m-account-next'> > </text>
+          </view>
+      </view>
+       <view class='m-account-items' bindtap='handleNavigateToAddr'>
+          <view class='m-font-grey'>收货地址管理</view>
+          <view>
+              <text class='m-account-next'> > </text>
+          </view>
+      </view>
+  </view>
+  <view class='m-account-exit m-font-strong'>退出登录</view>
+</view>

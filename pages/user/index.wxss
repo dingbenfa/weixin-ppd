@@ -1,4 +1,7 @@
 /* pages/user/index.wxss */
+page{
+  color: #333;
+}
 
 .m-user-container {
   font-size: 32rpx;

@@ -9,7 +9,7 @@
         <text>等级：455</text>
       </view>
     </view>
-    <view class='m-user-set'>
+    <view class='m-user-set' bindtap='handleNavigateToAccount'>
       <view class='u-set-btn'>
         <image class='u-icon-img' src='../../assets/images/set-icon.png'></image>
         <text>账号管理</text>

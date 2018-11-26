@@ -1,0 +1,57 @@
+/* pages/user/accountManagement/index.wxss */
+
+.m-account-container {
+  padding-bottom: 55rpx;
+}
+
+.m-account-box {
+  background-color: #fff;
+  padding: 35rpx;
+  padding-bottom: 0;
+}
+
+.m-account-name{
+  line-height: 90rpx;
+}
+
+.m-account-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding: 25rpx 0;
+}
+
+.m-account-info image{
+  width: 105rpx;
+  height: 105rpx;
+  margin-right: 25rpx;
+}
+
+.account-info-text{
+  display: flex;
+  flex-direction: column;
+  line-height: 48rpx;
+}
+
+.m-account-items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  line-height: 85rpx;
+}
+
+.m-account-next{
+  margin-left: 10rpx;
+  font-size: 39rpx;
+}
+
+.m-account-exit{
+  margin-top: 25rpx;
+  background-color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 95rpx;
+}

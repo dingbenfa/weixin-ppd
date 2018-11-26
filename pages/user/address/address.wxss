@@ -1,0 +1,39 @@
+/* pages/user/address/address.wxss */
+.m-address-container{
+  padding-bottom: 55rpx;
+}
+
+.m-address-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35rpx 25rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.m-address-info{
+  padding: 0 25rpx;
+}
+
+.m-address-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.m-address-text image{
+  width: 65rpx;
+  height: 65rpx;
+  margin-right: 25rpx;
+}
+
+.u-address-btn{
+  margin-top: 25rpx;
+  background-color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 95rpx;
+}
