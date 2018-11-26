@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/user/address/address",
-    "pages/user/accountManagement/index",
     "pages/index/index",
     "pages/community/index",
     "pages/cart/index",
     "pages/user/index",
+    "pages/user/address/address",
+    "pages/user/address/addressEdit/index",
+    "pages/user/address/addressAdd/index",
+    "pages/user/accountManagement/index",
     "pages/categoryList/categoryList",
     "pages/goods/goodsDetails/goodsDetails",
     "pages/order/order/index",

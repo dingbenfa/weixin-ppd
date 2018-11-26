@@ -1,0 +1,9 @@
+<template name="prompt">
+  <view class="prompt-container" hidden="{{ promptHidden }}">
+    <view class="prompt-message">
+      <image src="../../../assets/images/addr-empty-icon.png" class="prompt-icon" />
+      <view class="prompt-title">当前暂无详细收货地址</view>
+      <view class="prompt-text">请点击下方按钮新增</view>
+    </view>
+  </view>
+</template>

@@ -1,4 +1,5 @@
 /* pages/user/address/address.wxss */
+@import 'address-empty/prompt.wxss';
 
 .m-address-container {
   padding-bottom: 55rpx;
@@ -22,6 +23,7 @@
 .m-address-info {
   padding-left: 25rpx;
   text-align: justify;
+  min-width: 505rpx;
 }
 
 .m-address-name {

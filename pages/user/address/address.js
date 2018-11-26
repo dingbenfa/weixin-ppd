@@ -1,66 +1,39 @@
 // pages/user/address/address.js
+import userInfo from "../../../data/userInfo.js"
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    addressList: userInfo.address,
+    defaultAddrNum: 1,
+    promptHidden: true
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
+    this.getAddrTemp();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getAddrTemp() {
+    let addressList = this.data.addressList;
+    this.setData({
+      promptHidden: addressList.length !== 0
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //单选地址
+  handleAddrChecked(ev) {
+    let index = ev.currentTarget.dataset.index + 1;
+    this.setData({
+      defaultAddrNum: index
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //跳转编辑
+  handleNavigateToEdit(ev) {
+    let index = ev.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: 'addressEdit/index?index=' + index,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //跳转新增
+  handleNavigateToAdd(ev) {
+    wx.navigateTo({
+      url: 'addressAdd/index',
+    })
   }
 })

@@ -1,0 +1,49 @@
+<!--pages/user/address/addressAdd/index.wxml-->
+<view class='m-addrEdit-container'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='m-addrEdit-items'>
+      <view class='m-items-name m-font-grey'>收货人</view>
+      <view class='m-addrEdit-inp'>
+        <input placeholder="请输入收货人" value='' name="contacts" auto-focus/>
+      </view>
+      <view class='u-input-clear' bindtap='handleInpClearVal' data-name="contacts">×</view>
+    </view>
+    <view class='m-addrEdit-items'>
+      <view class='m-items-name m-font-grey'>联系方式</view>
+      <view class='m-addrEdit-inp'>
+        <input placeholder="请输入联系方式" value='' name="contactsNumber" auto-focus/>
+      </view>
+      <view class='u-input-clear' bindtap='handleInpClearVal' data-name="contactsNumber">×</view>
+    </view>
+    <view class='m-addrEdit-items'>
+      <view class='m-items-name m-font-grey'>所在地址</view>
+      <view class='m-addrEdit-inp'>
+        <picker mode="region" bindchange="bindRegionChange" value="" custom-item="{{customItem}}">
+          <view class="m-font-blue">
+            {{region[0]}},{{region[1]}},{{region[2]}}
+          </view>
+        </picker>
+      </view>
+       <view class='u-input-clear input-clear-hid'>×</view>
+    </view>
+    <view class='m-addrEdit-items'>
+      <view class='m-items-name m-font-grey'>详细地址</view>
+      <view class='m-addrEdit-inp'>
+        <input placeholder="请输入详细地址" name="addrOther" value='' auto-focus/>
+      </view>
+      <view class='u-input-clear' bindtap='handleInpClearVal' data-name="addrOther">×</view>
+    </view>
+    <view class='m-addrEdit-items addrEdit-items-inline'>
+      <view class='m-items-name m-font-grey'>地址标签</view>
+      <view class='m-addrEdit-inp addrEdit-lable-box'>
+        <text class='u-addrEdit-lable {{addressMark==="公司"? "addrEdit-lable-active":""}}' bindtap='handleChangeMark' data-name='公司'>公司</text>
+        <text class='u-addrEdit-lable {{addressMark==="家"? "addrEdit-lable-active":""}}' bindtap='handleChangeMark' data-name='家'>家</text>
+        <text class='u-addrEdit-lable {{addressMark==="学校"? "addrEdit-lable-active":""}}' bindtap='handleChangeMark' data-name='学校'>学校</text>
+        <text class='u-addrEdit-lable'>+</text>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button class='u-circle-btn m-bg-red' formType="submit">提交</button>
+    </view>
+  </form>
+</view>

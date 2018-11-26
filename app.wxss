@@ -23,6 +23,10 @@ page{
   color: #d74a45;
 }
 
+.m-font-blue{
+  color: #4e83f7;
+}
+
 /* 购物车 */
 .u-cart-icon{
   width: 21px;

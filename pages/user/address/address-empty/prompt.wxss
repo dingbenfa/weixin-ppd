@@ -1,0 +1,26 @@
+.prompt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 125rpx 0;
+}
+
+.prompt-icon {
+  height: 180rpx;
+  width: 220rpx;
+}
+
+.prompt-title {
+  margin-top: 25rpx;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 55rpx;
+}
+
+.prompt-text {
+  color: #999;
+  font-size: 26rpx;
+  line-height: 55rpx;
+}
