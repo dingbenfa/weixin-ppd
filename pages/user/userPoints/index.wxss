@@ -1,0 +1,89 @@
+/* pages/user/userPoints/index.wxss */
+.m-points-container{
+  padding: 35rpx;
+  background-color: #fff;
+}
+
+.m-points-box{
+  position: relative;
+  height: 450rpx;
+}
+
+.user-points-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450rpx;
+  border-radius: 15rpx;
+  z-index: 10;
+}
+
+.user-points-show{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450rpx;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff; 
+}
+
+.u-user-photo{
+  height: 110rpx;
+  width: 110rpx;
+  border-radius: 50%;
+  border: 2px solid rgb(245, 157, 42);
+  overflow: hidden;
+}
+
+.u-user-photo image{
+  height: 100%;
+  width: 100%;
+}
+
+.m-user-points{
+  font-size: 35rpx;
+  font-weight: 500;
+  padding: 25rpx;
+}
+
+.u-getPoints-btn{
+  font-size: 36rpx;
+  background-color: #fff;
+  color: #ee953c;
+  padding: 15rpx 40rpx;
+  border-radius: 45rpx;
+  font-weight: 400;
+}
+
+.m-points-show{
+  position: relative;
+  margin-bottom: 25rpx;
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+}
+
+.points-show-line{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid #d89b4e;
+  z-index: 0;
+}
+
+.m-points-icon{
+  height: 55rpx;
+  width: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  background-color: #d89b4e;
+  border-radius: 50%;
+  margin: 0 13rpx;
+}

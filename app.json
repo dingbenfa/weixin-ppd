@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/userPoints/index",
     "pages/index/index",
     "pages/community/index",
     "pages/cart/index",

@@ -1,0 +1,37 @@
+<!--pages/user/userPoints/index.wxml-->
+<view class='m-points-container'>
+  <view class='m-points-box'>
+    <image class='user-points-bg' src='../../../assets/images/user-points-bg.png'></image>
+    <view class='user-points-show'>
+      <view class='u-user-photo'>
+        <image src='../../../assets/images/user.png'></image>
+      </view>
+      <text class='m-user-points'>我的积分：90</text>
+      <view class='m-points-show'>
+        <view class='points-show-line'></view>
+        <view class='m-points-icon'>1</view>
+        <view class='m-points-icon'>2</view>
+        <view class='m-points-icon'>3</view>
+        <view class='m-points-icon'>4</view>
+        <view class='m-points-icon'>5</view>
+        <view class='m-points-icon'>6</view>
+        <view class='m-points-icon'>7</view>
+      </view>
+      <view class='u-getPoints-btn'>已连续签到1天</view>
+    </view>
+  </view>
+  <view>
+    <view>积分明细</view>
+    <view>
+      <view>
+        <text>购物赠送</text>
+        <view>
+          <text>订单号</text>
+          <text>21342132143434532</text>
+        </view>
+        <text>2017-07-08</text>
+      </view>
+      <text>+90</text>
+    </view>
+  </view>
+</view>
