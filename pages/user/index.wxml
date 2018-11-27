@@ -26,7 +26,7 @@
         <image src='../../assets/images/coupon-icon.png'></image>
         <text>优惠券</text>
       </view>
-      <view class='m-icon-box'>
+      <view class='m-icon-box' bindtap='handleNavigateToPoints'>
         <image src='../../assets/images/integral-icon.png'></image>
         <text>积分</text>
       </view>
@@ -60,7 +60,7 @@
   </view>
 
   <view class='m-order-other'>
-        <view class='m-other-box'>
+        <view class='m-other-box' bindtap='handleNavigateToAddress'>
             <image class='u-other-icon' src='../../assets/images/address-icon.png'></image>
             <view class='u-other-text'>
               <text>管理收货地址</text>
@@ -74,7 +74,7 @@
               <text class='m-next-icon'>＞</text>
             </view>
         </view>
-         <view class='m-other-box'>
+         <view class='m-other-box' bindtap='handleNavigateToSuggestions'>
             <image class='u-other-icon' src='../../assets/images/advise-icon.png'></image>
             <view class='u-other-text'>
               <text>意见反馈</text>

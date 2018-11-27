@@ -1,37 +1,48 @@
 <!--pages/user/userPoints/index.wxml-->
 <view class='m-points-container'>
   <view class='m-points-box'>
-    <image class='user-points-bg' src='../../../assets/images/user-points-bg.png'></image>
-    <view class='user-points-show'>
-      <view class='u-user-photo'>
-        <image src='../../../assets/images/user.png'></image>
+    <view class='m-points-view'>
+      <image class='user-points-bg' src='../../../assets/images/user-points-bg.png'></image>
+      <view class='user-points-show'>
+        <view class='u-user-photo'>
+          <image src='../../../assets/images/user.png'></image>
+        </view>
+        <text class='m-user-points'>我的积分：{{userPoints}}</text>
+        <view class='m-points-show'>
+          <view class='points-show-line'></view>
+          <view class='m-points-icon clear-margin-left {{signInNum>0? "m-points-active":""}}'>{{signInNum>0? "✔":1}}</view>
+          <view class='m-points-icon {{signInNum>1? "m-points-active":""}}'>{{signInNum>1? "✔":2}}</view>
+          <view class='m-points-icon {{signInNum>2? "m-points-active":""}}'>{{signInNum>2? "✔":3}}</view>
+          <view class='m-points-icon {{signInNum>3? "m-points-active":""}}'>{{signInNum>3? "✔":4}}</view>
+          <view class='m-points-icon {{signInNum>4? "m-points-active":""}}'>{{signInNum>4? "✔":5}}</view>
+          <view class='m-points-icon {{signInNum>5? "m-points-active":""}}'>{{signInNum>5? "✔":6}}</view>
+          <view class='m-points-icon clear-margin-right {{signInNum>6? "m-points-active":""}}'>{{signInNum>6? "✔":7}}</view>
+        </view>
+        <view class='u-getPoints-btn' bindtap='handleSignInPoints'>{{isSignIn?"已连续签到"+signInNum+"天":"每日签到领取积分"}}</view>
       </view>
-      <text class='m-user-points'>我的积分：90</text>
-      <view class='m-points-show'>
-        <view class='points-show-line'></view>
-        <view class='m-points-icon'>1</view>
-        <view class='m-points-icon'>2</view>
-        <view class='m-points-icon'>3</view>
-        <view class='m-points-icon'>4</view>
-        <view class='m-points-icon'>5</view>
-        <view class='m-points-icon'>6</view>
-        <view class='m-points-icon'>7</view>
-      </view>
-      <view class='u-getPoints-btn'>已连续签到1天</view>
     </view>
   </view>
-  <view>
-    <view>积分明细</view>
-    <view>
-      <view>
-        <text>购物赠送</text>
-        <view>
-          <text>订单号</text>
-          <text>21342132143434532</text>
+
+  <view class='m-points-empty' wx:if="{{pointsList.length===0}}">
+    <image src='../../../assets/images/points-empty-icon.png'></image>
+    <text>暂无积分记录</text>
+  </view>
+
+  <view class='m-points-details' wx:else>
+    <view class='m-points-title'>积分明细</view>
+
+    <block wx:for="{{pointsList}}" wx:key="index">
+      <view class='points-details-box'>
+        <view class='points-details-text'>
+          <text class='points-details-name'>{{item.title}}</text>
+          <view class='points-order-info'>
+            <text class='m-font-grey'>{{item.about}}</text>
+          </view>
+          <text class='m-font-grey'>{{item.stime}}</text>
         </view>
-        <text>2017-07-08</text>
+        <text class='m-points-font m-font-strong'>+{{item.points}}</text>
       </view>
-      <text>+90</text>
-    </view>
+    </block>
+
   </view>
 </view>

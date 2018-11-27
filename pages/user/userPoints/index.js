@@ -1,66 +1,42 @@
 // pages/user/userPoints/index.js
+import userInfo from "../../../data/userInfo.js"
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    userPoints: userInfo.userPoints,
+    pointsList: userInfo.pointsList,
+    signInNum: 1,
+    isSignIn: false
+  },
+  onLoad: function(options) {
 
   },
+  //签到获取积分
+  handleSignInPoints(ev) {
+    let userPoints = this.data.userPoints;
+    let signInNum = this.data.signInNum + 1;
+    let pointsList = this.data.pointsList;
+    let stime = this.getNowDate();
+    let newSignObj = {
+      "title": "签到",
+      "about": "签到获取积分", //积分说明
+      "stime": stime, //时间
+      "points": signInNum
+    };
+    pointsList.unshift(newSignObj);
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+    if (!this.data.isSignIn) {
+      this.setData({
+        userPoints: userPoints + signInNum,
+        signInNum: signInNum,
+        pointsList: pointsList,
+        isSignIn: true
+      });
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  getNowDate(){
+    var myDate = new Date();
+    var time = myDate.toLocaleDateString().split('/').join('-');
+    return time;
   }
 })

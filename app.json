@@ -1,14 +1,17 @@
 {
   "pages": [
-    "pages/user/userPoints/index",
+    "pages/user/suggestions/otherAbnormal/otherAbnormal",
+    "pages/user/suggestions/suggestions",
+    "pages/user/index",
     "pages/index/index",
     "pages/community/index",
     "pages/cart/index",
-    "pages/user/index",
     "pages/user/address/address",
     "pages/user/address/addressEdit/index",
     "pages/user/address/addressAdd/index",
     "pages/user/accountManagement/index",
+    "pages/user/userPoints/index",
+    
     "pages/categoryList/categoryList",
     "pages/goods/goodsDetails/goodsDetails",
     "pages/order/order/index",

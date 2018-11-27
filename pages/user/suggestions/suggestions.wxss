@@ -1,0 +1,27 @@
+/* pages/user/suggestions/suggestions.wxss */
+.m-suggestions-container{
+  padding-left: 35rpx;
+  padding-top: 35rpx;
+  background-color: #fff;
+}
+
+.m-suggestions-name{
+  line-height:75rpx;
+}
+
+.m-next-icon{
+  padding-right: 35rpx;
+  font-size: 45rpx;
+}
+
+.m-suggestions-items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #000;
+  border-bottom: 1px solid #eee;
+  line-height:105rpx;
+}
