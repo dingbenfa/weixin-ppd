@@ -1,1 +1,32 @@
 <!--pages/user/suggestions/otherAbnormal/otherAbnormal.wxml-->
+<view class='m-abnormal-container'>
+  <form bindsubmit="bindFormSubmit">
+    <view class='m-abnormal-box'>
+
+      <view class='m-abnormal-title'>其他异常</view>
+      <view class='m-abnormal-area'>
+        <textarea placeholder="请填写10个字以上的问题描述以便我们提供更好的帮助" focus='true' name="textarea" maxlength='200' bindinput="handleAbnormalLimits"/>
+        <view class='abnormal-area-limits m-font-grey'>{{abnormalLength}}/200</view>
+      </view>
+      <view class='m-abnormal-title'>相关截图（选填）</view>
+      <view class='m-abnormal-other'>
+        <view class='m-abnormal-files' wx:for="{{uploadFileList}}" wx:key="index">
+            <image src='{{item}}'></image>
+        </view>
+        <view class='m-abnormal-photo m-font-grey' bindtap='handleUploadFile'></view>
+      </view>
+
+    </view>
+
+    <view class='m-abnormal-footer'>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox">
+          <checkbox value="" checked='{{agreeCheck}}'/>允许开发者使用当前小程序日志作为修复问题根据。<text class='m-font-blue'>《相关说明》</text>
+        </label>
+      </checkbox-group>
+
+      <button class='u-cirble-btn' form-type="submit"> 提交 </button>
+    </view>
+
+  </form>
+</view>

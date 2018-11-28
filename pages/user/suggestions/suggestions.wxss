@@ -3,6 +3,7 @@
   padding-left: 35rpx;
   padding-top: 35rpx;
   background-color: #fff;
+  border-top: 1px solid #eee;
 }
 
 .m-suggestions-name{

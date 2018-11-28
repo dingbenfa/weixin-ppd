@@ -1,1 +1,95 @@
 /* pages/user/suggestions/otherAbnormal/otherAbnormal.wxss */
+
+.m-abnormal-container {
+  border-top: 1px solid #eee;
+}
+
+.m-abnormal-box {
+  background-color: #fff;
+  padding: 0 35rpx;
+}
+
+.m-abnormal-title {
+  color: #000;
+  font-weight: 400;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}
+
+.m-abnormal-area {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 25rpx 0;
+}
+
+.m-abnormal-area textarea {
+  width: 100%;
+}
+
+.abnormal-area-limits {
+  text-align: right;
+}
+
+.m-abnormal-other {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 15rpx;
+  padding-bottom: 65rpx;
+}
+
+.m-abnormal-files {
+  position: relative;
+  border: 1px solid #eee;
+  height: 150rpx;
+  width: 150rpx;
+  margin-right: 25rpx;
+}
+
+.m-abnormal-photo {
+  position: relative;
+  border: 1px solid #eee;
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.m-abnormal-photo::before {
+  content: "";
+  border-left: 3px solid #eee;
+  position: absolute;
+  top: 25%;
+  left: 48%;
+  height: 80rpx;
+}
+
+.m-abnormal-photo::after {
+  content: "";
+  border-top: 3px solid #eee;
+  position: absolute;
+  top: 48%;
+  right: 25%;
+  width: 80rpx;
+}
+
+.m-abnormal-footer {
+  padding: 35rpx;
+  line-height: 45rpx;
+  font-size: 30rpx;
+}
+
+.m-abnormal-footer checkbox {
+  margin-right: 5rpx;
+}
+
+.u-cirble-btn {
+  color: #fff;
+  background-color: #51aa38;
+  border-radius: 55rpx;
+  margin-top: 65rpx;
+}
+
+.m-abnormal-files image {
+  height: 100%;
+  width: 100%;
+}
