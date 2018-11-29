@@ -19,7 +19,7 @@ export default {
     {
       "contacts": "王麻子", //收货人
       "contactsNumber": "15643257653", //联系方式
-      "address": "上海市青浦区某某路4323弄", //收货地址
+      "address": "上海市青浦区某某路4323弄青浦区某某路4323弄", //收货地址
       "addressMark": "家", //地址标签
     }
   ],

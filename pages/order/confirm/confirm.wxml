@@ -1,1 +1,76 @@
 <!--pages/order/confirm/confirm.wxml-->
+<view class='m-comfirm-container'>
+  <view class='m-confirm-addr' wx:if="{{!!defaultAddr}}">
+    <view class='m-address-name'>
+      <text class='m-text-margin'>{{defaultAddr.contacts}}</text>
+      <text>{{defaultAddr.contactsNumber}}</text>
+    </view>
+    <view class='m-address-info'>
+      <view class='m-address-box'>
+        <image class='u-address-icon' src='../../../assets/images/position-icon.png'></image>
+        <view class='m-address-text'>{{defaultAddr.address}}</view>
+      </view>
+      <view class='m-next-icon m-font-grey'>></view>
+    </view>
+  </view>
+
+  <view class='m-no-addr' wx:if="{{!defaultAddr}}">
+    <view class='m-address-text'>暂无收货地址</view>
+    <view class='m-next-icon m-font-grey'>></view>
+  </view>
+
+  <view class='u-addr-line'>
+    <image src='../../../assets/images/color-line-icon.png'></image>
+  </view>
+
+  <view class='m-order-box'>
+    <view class='m-items-title'>包裹商家自行发货</view>
+    <view class='m-goods-box'>
+      <image class='m-goods-photo' src='../../../assets/images/items.jpg'></image>
+      <view class='m-goods-info'>
+        <view class='m-goods-name'>商品名称商品名称商品名称商品名称商品名称商品名称商品名称</view>
+        <view class='m-goods-other'>
+          <text class='m-font-strong'>¥129.00</text>
+          <text>x1</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='m-order-items'>
+      <view class='m-items-title'>购买数量</view>
+      <view class='u-order-control'>
+        <view class='u-num-btn m-font-grey u-disable-btn'>-</view>
+        <input class='u-num-inp' value='1' bindinput="bindKeyInput" />
+        <view class='u-num-btn m-font-grey'>+</view>
+      </view>
+    </view>
+
+    <view class='m-order-items'>
+      <view class='m-items-title'>配送方式</view>
+      <view class='m-items-title'>
+        <text class='m-text-margin'>快递</text>
+        <text class='m-text-margin'>免邮</text>
+        <text class='m-text-margin m-font-grey m-next-icon'>></text>
+      </view>
+    </view>
+
+    <view class='m-order-items m-flex-start'>
+      <view class='m-items-title'>买家留言</view>
+      <input placeholder="选填：填写内容已和卖家协商一致" auto-focus/>
+    </view>
+
+    <view class='m-order-total'>
+      <text class='m-text-margin'>共1件商品</text>
+      <text class='m-text-margin'>小计：</text>
+      <text class='m-font-strong'>¥129.00</text>
+    </view>
+  </view>
+
+
+
+  <view class='m-confirm-footer'>
+    <text>合计金额：</text>
+    <text class='m-font-strong'>¥129.00</text>
+    <view class='u-order-submit'>提交订单</view>
+  </view>
+</view>
