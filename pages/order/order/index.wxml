@@ -18,7 +18,7 @@
         </view>
         <view class='{{ items.orderStatus===2? "m-font-grey":items.orderStatus===3? "m-font-grey":"m-font-strong" }}'>{{ filter.handleOrderStatus(items.orderStatus) }}</view>
       </view>
-      <view class='m-order-body'>
+      <view class='m-order-body' data-orderNo='{{ items.orderNo }}' bindtap='handleNavigateToOrderDetails'>
         <view>
           <image class='m-goods-img' src='../../../assets/images/items.jpg'></image>
         </view>

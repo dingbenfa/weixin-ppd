@@ -176,5 +176,11 @@ Page({
     wx.showToast({
       title: "领取成功"
     });
+  },
+  //立即购买
+  handleNavagiteToPay(ev){
+      wx.navigateTo({
+        url: '../../order/confirm/confirm',
+      })
   }
 })

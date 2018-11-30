@@ -1,1 +1,2 @@
 /* pages/order/orderDetails/index.wxss */
+.m-order-container{}

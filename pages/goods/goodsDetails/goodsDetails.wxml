@@ -138,7 +138,7 @@
       <text>购物车</text>
     </view>
     <view class='m-add-cart'>加入购物车</view>
-    <view class='m-to-pay'>立即购买</view>
+    <view class='m-to-pay' bindtap='handleNavagiteToPay'>立即购买</view>
   </view>
 
   <!-- 领券 -->

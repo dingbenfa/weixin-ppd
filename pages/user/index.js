@@ -39,5 +39,11 @@ Page({
     wx.navigateTo({
       url: 'suggestions/suggestions',
     })
+  },
+  //跳转所有订单
+  handleNavigateToOrder(ev){
+    wx.navigateTo({
+      url: '../order/order/index',
+    })
   }
 })

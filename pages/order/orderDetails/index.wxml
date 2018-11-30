@@ -1,1 +1,100 @@
 <!--pages/order/orderDetails/index.wxml-->
+<view class='m-order-container'>
+  <view class='m-order-progress'>
+    <view>
+      <text class='m-font-strong'>提交订单</text>
+      <icon type="success" size="25" color="#d74a45" />
+    </view>
+    <view>
+      <text class='m-font-strong'>配送中</text>
+      <icon type="success" size="25" color="#d74a45" />
+    </view>
+    <view>
+      <text class='m-font-strong'>交易完成</text>
+      <icon type="success" size="25" color="#d74a45" />
+    </view>
+  </view>
+
+  <view>
+    <view>
+      <text>您的订单已由本人签收感谢您在平平叮购物，欢迎再次 光临。</text>
+      <text class='m-font-grey'>2018-09-09 12:22:20</text>
+    </view>
+    <view>></view>
+  </view>
+
+  <view>
+    <view>
+      <view>
+        <text>订单状态：</text>
+        <text>已签收</text>
+      </view>
+      <view>
+        <text>订单编号：</text>
+        <text>453543534554</text>
+      </view>
+      <view>
+        <text>订单时间：</text>
+        <text>2018-09-09 12:22:20</text>
+      </view>
+    </view>
+    <view>></view>
+  </view>
+  <view>
+    <view>查看物流</view>
+    <view class='m-font-strong'>再次购买</view>
+  </view>
+
+  <view>
+    <view>
+      <text class='m-font-grey'>商品金额：</text>
+      <text class='m-font-strong'>￥99.00</text>
+      <text>(在线支付)</text>
+    </view>
+
+    <view>
+      <text class='m-font-grey'>收货地址：</text>
+      <text>收货地址收货地址收货地址收货地址收货地址收货地址</text>
+    </view>
+
+    <view>
+      <text class='m-font-grey'>收货人：</text>
+      <text>张三</text>
+    </view>
+
+    <view>
+      <text class='m-font-grey'>配送方式：</text>
+      <text>快递</text>
+    </view>
+  </view>
+
+  <view>
+    <image src=''></image>
+    <view>
+      <view>商品名称商品名称商品名称商品名称</view>
+      <view>
+        <text>43243</text>
+        <text>颜色</text>
+      </view>
+      <view>
+        <text>￥129.00</text>
+        <text>x1</text>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <view>
+      <text>商品总额</text>
+      <text>￥129.00</text>
+    </view>
+    <view>
+      <text>返现</text>
+      <text>-￥9.00</text>
+    </view>
+    <view>
+      <text>实付金额：</text>
+      <text>￥120.00</text>
+    </view>
+  </view>
+</view>

@@ -64,5 +64,12 @@ Page({
     wx.showToast({
       title: "跳转再次购买"
     });
+  },
+  //跳转详情
+  handleNavigateToOrderDetails(ev){
+    let orderNo = ev.currentTarget.dataset.orderno;
+    wx.navigateTo({
+      url: '../orderDetails/index?orderNo=' + orderNo,
+    })
   }
 })

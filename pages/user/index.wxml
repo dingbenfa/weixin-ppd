@@ -36,7 +36,7 @@
   <view class='m-order-box'>
       <view class='m-order-header'>
         <text class='m-order-title'>我的订单</text>
-        <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover">查看全部订单 ＞</navigator>
+        <view class='m-order-next' bindtap='handleNavigateToOrder'>查看全部订单 ＞</view>
       </view>
        <view class='m-order-line'></view>
       <view class='m-user-todos'>
