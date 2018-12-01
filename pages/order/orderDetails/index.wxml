@@ -1,100 +1,101 @@
 <!--pages/order/orderDetails/index.wxml-->
 <view class='m-order-container'>
-  <view class='m-order-progress'>
-    <view>
+  <view class='m-order-progress' wx:if="{{orderStatus!=4}}">
+    <view class='order-progress-status order-progress-line'>
       <text class='m-font-strong'>提交订单</text>
-      <icon type="success" size="25" color="#d74a45" />
+      <icon type="success" size="20" color="#d74a45" />
     </view>
-    <view>
+    <view class='order-progress-status order-progress-lineT'>
       <text class='m-font-strong'>配送中</text>
-      <icon type="success" size="25" color="#d74a45" />
+      <icon type="success" size="20" color="#d74a45" />
     </view>
-    <view>
+    <view class='order-progress-status'>
       <text class='m-font-strong'>交易完成</text>
-      <icon type="success" size="25" color="#d74a45" />
+      <icon type="success" size="20" color="#d74a45" />
     </view>
   </view>
 
-  <view>
-    <view>
+  <view class='m-order-logs' wx:if="{{orderStatus!=4}}">
+    <view class='m-logs-text'>
       <text>您的订单已由本人签收感谢您在平平叮购物，欢迎再次 光临。</text>
       <text class='m-font-grey'>2018-09-09 12:22:20</text>
     </view>
-    <view>></view>
+    <view class='m-font-grey u-next-icon'>></view>
   </view>
 
-  <view>
+  <view class='m-order-cancel m-font-strong' wx:if="{{orderStatus==4}}">您的订单已取消</view>
+
+  <view class='m-order-info'>
     <view>
       <view>
-        <text>订单状态：</text>
-        <text>已签收</text>
-      </view>
+        <text class='m-font-grey'>订单状态：</text>{{orderStatus==4? "已取消":"已签收"}}</view>
       <view>
-        <text>订单编号：</text>
-        <text>453543534554</text>
-      </view>
+        <text class='m-font-grey'>订单编号：</text>453543534554</view>
       <view>
-        <text>订单时间：</text>
-        <text>2018-09-09 12:22:20</text>
-      </view>
+        <text class='m-font-grey'>订单时间：</text>2018-09-09 12:22:20</view>
     </view>
-    <view>></view>
+    <view class='m-font-grey u-next-icon'>></view>
   </view>
-  <view>
-    <view>查看物流</view>
-    <view class='m-font-strong'>再次购买</view>
+  <view class='m-order-opt'  wx:if="{{orderStatus!=4}}">
+    <view class='u-circle-btn'>查看物流</view>
+    <view class='u-circle-btn u-circle-btn-red'>再次购买</view>
   </view>
 
-  <view>
-    <view>
+  <view class='m-order-other'>
+    <view class='m-other-items'>
       <text class='m-font-grey'>商品金额：</text>
       <text class='m-font-strong'>￥99.00</text>
-      <text>(在线支付)</text>
+      <text>（在线支付）</text>
     </view>
 
-    <view>
+    <view class='m-other-items'>
       <text class='m-font-grey'>收货地址：</text>
       <text>收货地址收货地址收货地址收货地址收货地址收货地址</text>
     </view>
 
-    <view>
+    <view class='m-other-items'>
       <text class='m-font-grey'>收货人：</text>
       <text>张三</text>
     </view>
 
-    <view>
+    <view class='m-other-items'>
       <text class='m-font-grey'>配送方式：</text>
       <text>快递</text>
     </view>
   </view>
 
-  <view>
-    <image src=''></image>
-    <view>
+  <view class='m-goods-box'>
+    <image class='m-goods-img' src='../../../assets/images/items.jpg'></image>
+    <view class='m-goods-text'>
       <view>商品名称商品名称商品名称商品名称</view>
-      <view>
+      <view class='m-goods-size m-font-grey'>
         <text>43243</text>
         <text>颜色</text>
       </view>
-      <view>
-        <text>￥129.00</text>
-        <text>x1</text>
+      <view class='m-goods-total'>
+        <text class='m-font-strong'>￥129.00</text>
+        <text class='m-goods-num m-font-grey'>x1</text>
       </view>
     </view>
   </view>
 
-  <view>
-    <view>
+  <view class='m-order-total'>
+    <view class='order-total-items'>
       <text>商品总额</text>
-      <text>￥129.00</text>
+      <text class='m-font-strong'>￥129.00</text>
     </view>
-    <view>
+    <view class='order-total-items'>
       <text>返现</text>
-      <text>-￥9.00</text>
+      <text class='m-font-strong'>-￥9.00</text>
     </view>
-    <view>
+    <view class='order-total-items order-total-items-left'>
       <text>实付金额：</text>
-      <text>￥120.00</text>
+      <text class='m-font-strong'>￥120.00</text>
     </view>
   </view>
+
+  <view class='m-orderDetails-footer'>
+        <image src='../../../assets/images/customer-service-icon.png'></image>
+        <text class='m-font-grey'>联系客服</text>
+  </view>   
 </view>
