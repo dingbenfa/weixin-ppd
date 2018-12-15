@@ -1,6 +1,5 @@
 // pages/categoryList/categoryList.js
 var App = getApp();
-import categoryData from '../../data/category';
 
 Page({
   data: {
@@ -9,19 +8,38 @@ Page({
     nowCategoryShowList:[]
   },
   onLoad: function(options) {
-    this.setData({
-      categoryList: this.handleCategoryActive(categoryData)
-    });
+    this.getCategoryInfo();
+  },
+  getCategoryInfo() {
+    App.HttpService.getCategoryInfo()
+      .then(res => {
+        const data = res.data.responseData;
+        // console.log(data)
+
+        this.setData({
+          categoryList: this.handleCategoryActive(data)
+        });
+      });
   },
   handleCategoryActive(arr){
     arr = arr || [];
     for(var i=0;i<arr.length;i++){
+      arr[i].goodsList = this.setCategoryImgUrl(arr[i].goodsList);//设置静态图片路径
+
       if(i==0){
         arr[i].active = true;
         this.setCategoryTitle(arr[i].categoryName, arr[i].goodsList);
       }else{
         arr[i].active = false;
       }
+    }
+
+    return arr;
+  },
+  //设置静态图片路径
+  setCategoryImgUrl(arr){
+    for (var i = 0; i < arr.length; i++) {
+      arr[i].imageUrl = "../../assets/images/items.jpg";
     }
     return arr;
   },

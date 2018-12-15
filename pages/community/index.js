@@ -15,8 +15,8 @@ Page({
   getCommunityInfo: function() {
     App.HttpService.getCommunityInfo()
       .then(res => {
-        const data = res.data;
-        // console.log(data)
+        const data = res.data.responseData;
+        console.log(data)
         this.setData({
           userGrade: data.topUserSummaryInfo.grade,
           userRanking: data.topUserSummaryInfo.rank,
@@ -26,6 +26,9 @@ Page({
   },
   //查看排名
   handleLookUpGrade(event) {
-    console.log(123);
+    wx.showModal({
+      title: "抱歉！该模块尚未开发",
+      showCancel: false
+    });
   }
 })

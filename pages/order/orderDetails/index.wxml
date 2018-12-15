@@ -36,9 +36,9 @@
     </view>
     <view class='m-font-grey u-next-icon'>></view>
   </view>
-  <view class='m-order-opt'  wx:if="{{orderStatus!=4}}">
-    <view class='u-circle-btn'>查看物流</view>
-    <view class='u-circle-btn u-circle-btn-red'>再次购买</view>
+  <view class='m-order-opt' wx:if="{{orderStatus!=4}}">
+    <view class='u-circle-btn' bindtap='handleLookOrderLogs'>查看物流</view>
+    <view class='u-circle-btn u-circle-btn-red' data-goodsId='' bindtap='handlePayAgin'>再次购买</view>
   </view>
 
   <view class='m-order-other'>
@@ -50,52 +50,54 @@
 
     <view class='m-other-items'>
       <text class='m-font-grey'>收货地址：</text>
-      <text>收货地址收货地址收货地址收货地址收货地址收货地址</text>
+      <text>{{ orderInfo.address }}</text>
     </view>
 
     <view class='m-other-items'>
       <text class='m-font-grey'>收货人：</text>
-      <text>张三</text>
+      <text>{{ orderInfo.contacts }}</text>
     </view>
 
     <view class='m-other-items'>
       <text class='m-font-grey'>配送方式：</text>
-      <text>快递</text>
+      <text>{{ orderInfo.distributionMode }}</text>
     </view>
   </view>
 
-  <view class='m-goods-box'>
-    <image class='m-goods-img' src='../../../assets/images/items.jpg'></image>
-    <view class='m-goods-text'>
-      <view>商品名称商品名称商品名称商品名称</view>
-      <view class='m-goods-size m-font-grey'>
-        <text>43243</text>
-        <text>颜色</text>
-      </view>
-      <view class='m-goods-total'>
-        <text class='m-font-strong'>￥129.00</text>
-        <text class='m-goods-num m-font-grey'>x1</text>
+  <block wx:for="{{ orderInfo.goodsList }}" wx:key="index">
+    <view class='m-goods-box'>
+      <image class='m-goods-img' src='../../../assets/images/items.jpg'></image>
+      <view class='m-goods-text'>
+        <view>{{ item.name }}</view>
+        <view class='m-goods-size m-font-grey'>
+          <text>{{ item.size }}</text>
+          <text>{{ item.color }}</text>
+        </view>
+        <view class='m-goods-total'>
+          <text class='m-font-strong'>￥{{ item.price }}.00</text>
+          <text class='m-goods-num m-font-grey'>x{{ item.number }}</text>
+        </view>
       </view>
     </view>
-  </view>
+  </block>
 
   <view class='m-order-total'>
     <view class='order-total-items'>
       <text>商品总额</text>
-      <text class='m-font-strong'>￥129.00</text>
+      <text class='m-font-strong'>￥{{ orderInfo.orderTotalAmount }}.00</text>
     </view>
     <view class='order-total-items'>
-      <text>返现</text>
-      <text class='m-font-strong'>-￥9.00</text>
+      <text>{{ orderInfo.discount.discountMethod }}</text>
+      <text class='m-font-strong'>-￥{{ orderInfo.discount.amount }}.00</text>
     </view>
     <view class='order-total-items order-total-items-left'>
       <text>实付金额：</text>
-      <text class='m-font-strong'>￥120.00</text>
+      <text class='m-font-strong'>￥{{ orderInfo.realPaymentAmount }}.00</text>
     </view>
   </view>
 
   <view class='m-orderDetails-footer'>
-        <image src='../../../assets/images/customer-service-icon.png'></image>
-        <text class='m-font-grey'>联系客服</text>
-  </view>   
+    <image src='../../../assets/images/customer-service-icon.png'></image>
+    <text class='m-font-grey' bindtap='handleNavagiteToServise'>联系客服</text>
+  </view>
 </view>

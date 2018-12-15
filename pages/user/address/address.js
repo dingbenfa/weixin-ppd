@@ -1,14 +1,30 @@
 // pages/user/address/address.js
-import userInfo from "../../../data/userInfo.js"
+// import userInfo from "../../../data/userInfo.js"
+
+//获取应用实例
+var App = getApp();
 
 Page({
   data: {
-    addressList: userInfo.address,
-    defaultAddrNum: 1,
+    addressList: [],
+    defaultAddrNum: 0,
     promptHidden: true
   },
   onLoad: function(options) {
-    this.getAddrTemp();
+    this.getAccountInfo();
+  },
+  getAccountInfo() {
+    App.HttpService.getAccountInfo()
+      .then(res => {
+        const data = res.data.responseData;
+        // console.log(data.address)
+
+        this.setData({
+          addressList: data.address
+        });
+
+        this.getAddrTemp();
+      });
   },
   getAddrTemp() {
     let addressList = this.data.addressList;

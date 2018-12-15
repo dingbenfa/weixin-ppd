@@ -1,16 +1,21 @@
 // pages/goods/goodsDetails/goodsDetails.js
-import goodsDetailInfo from '../../../data/goodsDetailsInfo';
+// import goodsDetailInfo from '../../../data/goodsDetailsInfo';
+
+//获取应用实例
+var App = getApp();
 
 Page({
   data: {
-    goodsImgList: goodsDetailInfo.imageUrl,
-    goodsDetailInfo: goodsDetailInfo,
+    id:null,
+    goodsImgList: [],
+    goodsDetailInfo: {},
     indicatorDots: true,
     autoplay: false,
     circular: false,
     atLeastReducePrice: 0,
-    goodsEvaluation: goodsDetailInfo.goodsEvaluation,
+    goodsEvaluation: {},
     goodsEvaluationLimit: 2,
+    fullSubtraction:[],
     isActive: 1, //默认选择商品
     scrollCls: {
       evaluation: 0,
@@ -21,7 +26,30 @@ Page({
     showModalStatus: false
   },
   onLoad: function(options) {
-    this.handleAtLeastReduce();
+    this.goods = App.HttpResource('/mobile/home/itemfull', { id: '@id' });
+    this.setData({
+      id: options.id
+    })
+  },
+  onShow() {
+    this.getGoodsDetail(this.data.id)
+  },
+  getGoodsDetail(id) {
+    // App.HttpService.getOrderDetail(id)
+    this.goods.getAsync({ id: id })
+      .then(res => {
+        const data = res.data.responseData;
+        // console.log(data)
+
+        this.setData({
+          goodsDetailInfo: data,
+          goodsImgList: data.imageUrl,
+          goodsEvaluation: [data.goodsEvaluation],
+          fullSubtraction: [data.goodsDiscount.fullSubtraction]
+        })
+
+        this.handleAtLeastReduce();
+      })
   },
   onReady: function() {
     this.queryThePointNodes();
@@ -47,7 +75,7 @@ Page({
   },
   //领券至少可减
   handleAtLeastReduce() {
-    let pArr = this.data.goodsDetailInfo.goodsDiscount.fullSubtraction;
+    let pArr = this.data.fullSubtraction;
     let dArr = [];
     for (let i = 0; i < pArr.length; i++) {
       dArr.push(pArr[i].discount);
@@ -64,6 +92,11 @@ Page({
   //查看全部评论
   handleLookUpAll() {
     console.log("查看全部评论");
+
+    wx.showModal({
+      title: "抱歉！该模块尚未开发",
+      showCancel: false
+    });
   },
   //查看更多评论
   handleLookUpMore() {
@@ -130,6 +163,11 @@ Page({
       url: '../../cart/index'
     })
   },
+  handleAddCart(ev){
+    wx.showToast({
+      title: "加入购物车成功"
+    });
+  },
   //领券
   openCouponsModal: function() {
     // 显示遮罩层
@@ -182,5 +220,18 @@ Page({
       wx.navigateTo({
         url: '../../order/confirm/confirm',
       })
+  },
+  //客服
+  handleNavagiteToServise(){
+    wx.showModal({
+      title: "抱歉！该模块尚未开发",
+      showCancel: false
+    });
+  },
+  handleOpenChoose(){
+    wx.showModal({
+      title: "抱歉！该模块尚未开发",
+      showCancel: false
+    });
   }
 })

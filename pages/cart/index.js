@@ -28,17 +28,17 @@ Page({
   onLoad: function(options) {
     App.HttpService.getCartInfo()
       .then(res => {
-        const data = res.data;
+        const data = res.data.responseData;
         // console.log(data)
         const cartItemList = this.handCartItemList(data.cartItemList);
         this.getCarts(cartItemList);
         this.setCartsNumber();
       });
   },
-  handCartItemList(arr){
+  handCartItemList(arr) {
     arr = arr || [];
-    for(var i=0;i<arr.length;i++){
-      arr[i].id = i+1;
+    for (var i = 0; i < arr.length; i++) {
+      arr[i].id = i + 1;
       arr[i].number = arr[i].itemQuantity;
       arr[i].selected = false;
       arr[i].price = this.handleSplitPrice(arr[i].itemPrice);
@@ -46,7 +46,7 @@ Page({
 
     return arr;
   },
-  handleSplitPrice(price){
+  handleSplitPrice(price) {
     return price.split("￥")[1];
   },
   getCarts(productList) {
@@ -205,7 +205,7 @@ Page({
           }
         }
       });
-    }else{
+    } else {
       wx.showToast({
         title: '请先选择需要删除的商品',
         icon: 'none',
@@ -225,5 +225,18 @@ Page({
     this.handleCartsItems(productArr);
     this.handleIsAllSelected();
     this.setCartsNumber();
+  },
+  //去结算
+  handleNavagiteToCalculation() {
+    if (this.data.carts.itemsSel.length > 0) {
+      wx.navigateTo({
+        url: '../order/confirm/confirm',
+      })
+    } else {
+      wx.showModal({
+        title: "抱歉！您尚选择要结算的商品",
+        showCancel: false
+      });
+    }
   }
 })

@@ -2,7 +2,7 @@ export default {
   userPoints: 2334, //用户所有积分
   goodsName: "商品名称商品名称商品名称商品名称商品名称商品名称",
   price: "2999.00",
-  CommoditySecurity: ["闪电发货/顺丰包邮", "超长质保", "权威质检"], //商品保障
+  commoditySecurity: ["闪电发货/顺丰包邮", "超长质保", "权威质检"], //商品保障
   imageUrl: [
     "../../../assets/images/timg.jpg",
     "../../../assets/images/timg.jpg",

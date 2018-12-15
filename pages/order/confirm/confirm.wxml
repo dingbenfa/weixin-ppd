@@ -1,6 +1,6 @@
 <!--pages/order/confirm/confirm.wxml-->
 <view class='m-comfirm-container'>
-  <view class='m-confirm-addr' wx:if="{{!!defaultAddr}}">
+  <view class='m-confirm-addr' wx:if="{{!!defaultAddr}}" bindtap='handleNavagiteToAddr'>
     <view class='m-address-name'>
       <text class='m-text-margin'>{{defaultAddr.contacts}}</text>
       <text>{{defaultAddr.contactsNumber}}</text>
@@ -71,6 +71,6 @@
   <view class='m-confirm-footer'>
     <text>合计金额：</text>
     <text class='m-font-strong'>¥129.00</text>
-    <view class='u-order-submit'>提交订单</view>
+    <view class='u-order-submit' bindtap='handleSubmitOrder'>提交订单</view>
   </view>
 </view>

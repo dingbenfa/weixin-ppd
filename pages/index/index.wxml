@@ -39,7 +39,7 @@
       <view class='m-category-item' bindtap="goCategoryPage" data-categoryId="{{item.id}}">
         <image class='m-category-icon' src='{{item.iconUrl}}'></image>
         <view class='m-category-name'>
-          <text>{{item.name}}</text>
+          <text>{{item.title}}</text>
         </view>
       </view>
     </block>

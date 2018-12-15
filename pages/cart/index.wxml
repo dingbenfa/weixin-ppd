@@ -53,7 +53,7 @@
       <text class='font-strong'>￥{{filter.formatAmount(amountTotal,2,1)}}</text>
     </view>
     <view class='m-to-calculation'>
-      <text class='m-calculation-name'>去结算</text>
+      <text class='m-calculation-name' bindtap='handleNavagiteToCalculation'>去结算</text>
       <text class='m-calculation-number'>（{{carts.itemsSel.length}}）</text>
     </view>
   </view>

@@ -9,5 +9,15 @@ Page({
       this.setData({
         defaultAddr: userInfo.address[2]
       })
+  },
+  handleNavagiteToAddr(){
+    wx.navigateTo({
+      url: '../../user/address/address',
+    })
+  },
+  handleSubmitOrder(){
+    wx.showToast({
+      title: "提交订单成功"
+    });
   }
 })

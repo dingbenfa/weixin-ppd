@@ -8,7 +8,10 @@ class HttpService extends WxRequest {
       home: '/mobile/home/mall',
       community: '/mobile/home/community',
       cart: '/mobile/home/cart',
-      user: '/mobile/home/my'
+      user: '/mobile/home/my',
+      category: '/mobile/home/categories',
+      account: '/mobile/home/currentUserInfo',
+      orderList: '/mobile/home/my/orderList'
     }
     this.interceptors.use({
       request(request) {
@@ -57,6 +60,18 @@ class HttpService extends WxRequest {
 
   getUserInfo() {
     return this.getRequest(this.$$path.user)
+  }
+
+  getCategoryInfo() {
+    return this.getRequest(this.$$path.category)
+  }
+  
+  getAccountInfo() {
+    return this.getRequest(this.$$path.account)
+  }
+
+  getOrderList() {
+    return this.getRequest(this.$$path.orderList)
   }
 
 }

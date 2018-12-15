@@ -5,18 +5,18 @@
       <view class='m-account-info'>
           <image src='../../../assets/images/user.png'></image>
           <view class='account-info-text'>
-              <text>id_45675869780fdsfd</text>
-              <text class='m-font-grey'>邮箱：未设置</text>
+              <text>{{ accountInfo.name }}</text>
+              <text class='m-font-grey'>{{ accountInfo.email? accountInfo.email:"邮箱：未设置" }}</text>
           </view>
       </view>
-      <view class='m-account-items'>
+      <view class='m-account-items' bindtap='updateUserPhone'>
           <view class='m-font-grey'>修改绑定手机号码</view>
           <view>
-              <text>139****3224</text>
+              <text>{{ accountInfo.phone }}</text>
               <text class='m-account-next'> > </text>
           </view>
       </view>
-       <view class='m-account-items'>
+       <view class='m-account-items' bindtap='updateUserPassword'>
           <view class='m-font-grey'>修改登录密码</view>
           <view>
               <text class='m-account-next'> > </text>
@@ -29,5 +29,5 @@
           </view>
       </view>
   </view>
-  <view class='m-account-exit m-font-strong'>退出登录</view>
+  <view class='m-account-exit m-font-strong' bindtap='userLoginOut'>退出登录</view>
 </view>

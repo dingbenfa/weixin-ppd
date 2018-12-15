@@ -37,7 +37,7 @@
             <text>{{ goodsDetailInfo.price }}</text>
           </view>
           <view class='m-goods-sgin'>
-            <block wx:for="{{ goodsDetailInfo.CommoditySecurity }}" wx:key="index" wx:for-item="item">
+            <block wx:for="{{ goodsDetailInfo.commoditySecurity }}" wx:key="index" wx:for-item="item">
               <view class='m-sgin-content'>
                 <image class='m-sgin-icon' src='../../../assets/images/right-icon.png'></image>
                 <text>{{ item }}</text>
@@ -60,7 +60,7 @@
                 </view>
                 <view class='m-coupons-line'>
                   <text class='m-title-icon m-coupons-icon m-font-strong'>优惠券</text>
-                  <block wx:for="{{ goodsDetailInfo.goodsDiscount.fullSubtraction }}" wx:key="index" wx:for-item="item">
+                  <block wx:for="{{ fullSubtraction }}" wx:key="index" wx:for-item="item">
                     <view class='u-coupons-icon'>
                       <image src='../../../assets/images/coupons-icon.png'></image>
                       <text>满{{ item.cost }}减{{ item.discount }}</text>
@@ -77,7 +77,7 @@
         </view>
 
         <view class='m-goods-block'>
-          <view class='m-goods-choose'>
+          <view class='m-goods-choose' bindtap='handleOpenChoose'>
             <view>
               <text class='m-lable-title'>选择</text>
               <text class='m-lable-content'>已选："外门碗“</text>
@@ -87,7 +87,7 @@
             </view>
           </view>
 
-          <view class='m-goods-parameter'>
+          <view class='m-goods-parameter' bindtap='handleOpenChoose'>
             <view>
               <text class='m-lable-title'>参数</text>
               <text class='m-lable-content'>品牌：型号</text>
@@ -129,7 +129,7 @@
 
   <!-- 商品详情底部 -->
   <view class='m-goods-footer'>
-    <view class='m-customer-service'>
+    <view class='m-customer-service' bindtap='handleNavagiteToServise'>
       <image class='u-opt-image' src='../../../assets/images/customer-service-cc.png'></image>
       <text>客服</text>
     </view>
@@ -137,7 +137,7 @@
       <image class='u-opt-image' src='../../../assets/images/cart-icon.png'></image>
       <text>购物车</text>
     </view>
-    <view class='m-add-cart'>加入购物车</view>
+    <view class='m-add-cart' bindtap='handleAddCart'>加入购物车</view>
     <view class='m-to-pay' bindtap='handleNavagiteToPay'>立即购买</view>
   </view>
 

@@ -1,13 +1,32 @@
 // pages/order/order/index.js
 import userOrderInfo from '../../../data/myOrdersInfo';
 
+//获取应用实例
+var App = getApp();
+
 Page({
   data: {
     orderStatus: 666, //默认全部
     userOrderList: userOrderInfo
   },
   onLoad: function (options) {
+    // console.log(options);
+    this.getOrderList();
+    
+    this.setData({
+      orderStatus: Number(options.orderStatus)
+    })
+  },
+  getOrderList(){
+    App.HttpService.getOrderList()
+      .then(res => {
+        const data = res.data.responseData;
+        console.log(data)
 
+        // this.setData({
+          
+        // });
+      });
   },
   //过滤订单状态
   handleOrderStatus(ev){
