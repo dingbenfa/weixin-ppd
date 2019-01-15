@@ -29,8 +29,9 @@ Page({
     App.HttpService.getCartInfo()
       .then(res => {
         const data = res.data.responseData;
-        // console.log(data)
-        const cartItemList = this.handCartItemList(data.cartItemList);
+        console.log(data)
+
+        let cartItemList = this.handCartItemList(data.cartItemList);
         this.getCarts(cartItemList);
         this.setCartsNumber();
       });
@@ -47,7 +48,7 @@ Page({
     return arr;
   },
   handleSplitPrice(price) {
-    return price.split("￥")[1];
+    return price.split("¥")[1];
   },
   getCarts(productList) {
     this.setData({

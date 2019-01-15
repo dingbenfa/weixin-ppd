@@ -7,7 +7,8 @@ Page({
   data: {
     orderNo: null,
     orderInfo: {},
-    orderStatus: 0 //4---已取消
+    orderStatus: 0,//4---已取消
+    discount: [] //返现
   },
   onLoad: function(options) {
     this.goods = App.HttpResource('/mobile/home/orderDetail', {
@@ -31,7 +32,8 @@ Page({
 
         this.setData({
           orderInfo: data,
-          orderStatus: data.orderStatus
+          orderStatus: data.orderStatus,
+          discount: data.discount || []
         })
       })
   },

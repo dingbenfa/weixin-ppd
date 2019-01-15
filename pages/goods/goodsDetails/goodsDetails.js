@@ -6,16 +6,17 @@ var App = getApp();
 
 Page({
   data: {
-    id:null,
+    id: null,
     goodsImgList: [],
     goodsDetailInfo: {},
     indicatorDots: true,
     autoplay: false,
     circular: false,
     atLeastReducePrice: 0,
-    goodsEvaluation: {},
+    goodsEvaluation: [],
     goodsEvaluationLimit: 2,
-    fullSubtraction:[],
+    fullSubtraction: [],
+    goodsPoints: 0,
     isActive: 1, //默认选择商品
     scrollCls: {
       evaluation: 0,
@@ -26,7 +27,9 @@ Page({
     showModalStatus: false
   },
   onLoad: function(options) {
-    this.goods = App.HttpResource('/mobile/home/itemfull', { id: '@id' });
+    this.goods = App.HttpResource('/mobile/home/itemfull', {
+      id: '@id'
+    });
     this.setData({
       id: options.id
     })
@@ -36,16 +39,23 @@ Page({
   },
   getGoodsDetail(id) {
     // App.HttpService.getOrderDetail(id)
-    this.goods.getAsync({ id: id })
+    this.goods.getAsync({
+        id: id
+      })
       .then(res => {
         const data = res.data.responseData;
-        // console.log(data)
+        console.log(data)
+
+        let goodsDiscount = data.goodsDiscount || [];
+        let goodsPoints = goodsDiscount.length > 0 ? data.goodsDiscount[0].goodsPoints : 0;
+        let fullSubtraction = goodsDiscount.length > 0 ? data.goodsDiscount[0].fullSubtraction : [];
 
         this.setData({
           goodsDetailInfo: data,
           goodsImgList: data.imageUrl,
-          goodsEvaluation: [data.goodsEvaluation],
-          fullSubtraction: [data.goodsDiscount.fullSubtraction]
+          goodsEvaluation: data.goodsEvaluation,
+          fullSubtraction: fullSubtraction,
+          goodsPoints: goodsPoints
         })
 
         this.handleAtLeastReduce();
@@ -163,7 +173,7 @@ Page({
       url: '../../cart/index'
     })
   },
-  handleAddCart(ev){
+  handleAddCart(ev) {
     wx.showToast({
       title: "加入购物车成功"
     });
@@ -210,25 +220,25 @@ Page({
     }.bind(this), 200)
   },
   //立即领取优惠券
-  getCollectImmediately(ev){
+  getCollectImmediately(ev) {
     wx.showToast({
       title: "领取成功"
     });
   },
   //立即购买
-  handleNavagiteToPay(ev){
-      wx.navigateTo({
-        url: '../../order/confirm/confirm',
-      })
+  handleNavagiteToPay(ev) {
+    wx.navigateTo({
+      url: '../../order/confirm/confirm',
+    })
   },
   //客服
-  handleNavagiteToServise(){
+  handleNavagiteToServise() {
     wx.showModal({
       title: "抱歉！该模块尚未开发",
       showCancel: false
     });
   },
-  handleOpenChoose(){
+  handleOpenChoose() {
     wx.showModal({
       title: "抱歉！该模块尚未开发",
       showCancel: false

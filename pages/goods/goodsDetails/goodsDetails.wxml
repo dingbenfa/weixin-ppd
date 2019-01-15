@@ -69,7 +69,7 @@
                 </view>
                 <view class='m-coupons-line'>
                   <text class='m-title-icon m-font-strong'>积分</text>
-                  <text>购买至少可得{{ goodsDetailInfo.goodsDiscount.goodsPoints }}积分</text>
+                  <text>购买至少可得{{ goodsPoints }}积分</text>
                 </view>
               </view>
             </view>

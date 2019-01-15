@@ -86,9 +86,9 @@
       <text>商品总额</text>
       <text class='m-font-strong'>￥{{ orderInfo.orderTotalAmount }}.00</text>
     </view>
-    <view class='order-total-items'>
-      <text>{{ orderInfo.discount.discountMethod }}</text>
-      <text class='m-font-strong'>-￥{{ orderInfo.discount.amount }}.00</text>
+    <view class='order-total-items' wx:for="{{ discount }}" wx:key="index">
+      <text>{{ item.discountMethod }}</text>
+      <text class='m-font-strong'>-￥{{ item.amount }}.00</text>
     </view>
     <view class='order-total-items order-total-items-left'>
       <text>实付金额：</text>

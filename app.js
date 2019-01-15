@@ -42,6 +42,30 @@ App({
   globalData: {
     userInfo: null
   },
+  handleToPayment: function() { //发起支付
+    const self = this;
+
+    this.HttpService.getToPayResult()
+      .then(res => {
+        const data = res.data.responseData;
+        console.log(data)
+
+        wx.requestPayment({
+          'timeStamp': data.timeStamp,
+          'nonceStr': data.nonceStr,
+          'package': data.package,
+          'signType': 'MD5',
+          'paySign': data.paySign,
+          'success': function(res) {
+            self.handlePaymentCompleted(res);
+          },
+          'fail': function(res) {}
+        })
+      });
+  },
+  handlePaymentCompleted: function (res) { //支付完成
+    console.log("支付成功！")
+  },
   WxValidate: (rules, messages) => new WxValidate(rules, messages),
   HttpResource: (url, paramDefaults, actions, options) => new HttpResource(url, paramDefaults, actions, options).init(),
   HttpService: new HttpService({

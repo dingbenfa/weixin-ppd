@@ -44,10 +44,11 @@ Page({
   },
   //去付款
   handleToPay(ev){
-    let orderNo = ev.currentTarget.dataset.orderno;
-    wx.showToast({
-      title: "跳转去付款"
-    });
+    // let orderNo = ev.currentTarget.dataset.orderno;
+    // wx.showToast({
+    //   title: "跳转去付款"
+    // });
+    App.handleToPayment(); //去付款
   },
   // 查看物流
   handleLookUpLogistics(ev){

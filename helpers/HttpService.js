@@ -5,6 +5,7 @@ class HttpService extends WxRequest {
     super(options)
     this.$$prefix = ''
     this.$$path = {
+      pay: '/mobile/toPay',
       home: '/mobile/home/mall',
       community: '/mobile/home/community',
       cart: '/mobile/home/cart',
@@ -46,6 +47,10 @@ class HttpService extends WxRequest {
     })
   }
 
+  getToPayResult() {
+    return this.getRequest(this.$$path.pay)
+  }
+
   getHomeInfo() {
     return this.getRequest(this.$$path.home)
   }
@@ -65,7 +70,7 @@ class HttpService extends WxRequest {
   getCategoryInfo() {
     return this.getRequest(this.$$path.category)
   }
-  
+
   getAccountInfo() {
     return this.getRequest(this.$$path.account)
   }
