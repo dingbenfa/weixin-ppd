@@ -48,7 +48,8 @@ Page({
     return arr;
   },
   handleSplitPrice(price) {
-    return price.split("¥")[1];
+    if (String(price).indexOf("¥") > -1) return price.split("¥")[1];
+    return price;
   },
   getCarts(productList) {
     this.setData({

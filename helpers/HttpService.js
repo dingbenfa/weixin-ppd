@@ -5,7 +5,8 @@ class HttpService extends WxRequest {
     super(options)
     this.$$prefix = ''
     this.$$path = {
-      pay: '/mobile/toPay',
+      pay: '/pays/jspay',
+      session: '/pays/code2session',
       home: '/mobile/home/mall',
       community: '/mobile/home/community',
       cart: '/mobile/home/cart',
@@ -47,8 +48,16 @@ class HttpService extends WxRequest {
     })
   }
 
-  getToPayResult() {
-    return this.getRequest(this.$$path.pay)
+  getToPayResult(params) {
+    return this.getRequest(this.$$path.pay,{
+      data: params
+    })
+  }
+
+  getLoginOpenId(params) {
+    return this.getRequest(this.$$path.session, {
+      data: params
+    })
   }
 
   getHomeInfo() {
