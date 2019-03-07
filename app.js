@@ -21,9 +21,9 @@ App({
         };
         this.HttpService.getLoginOpenId(params)
           .then(res => {
-            console.log(res);
-            
-            this.globalData.openId = res.openId;
+            // console.log(res);
+            let openId = res.data.openid;
+            this.globalData.openId = openId;
           });
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
@@ -55,31 +55,49 @@ App({
   },
   handleToPayment: function (orderNo) { //发起支付
     const self = this;
-
     let params = {
       'openId': this.globalData.openId,
       'orderNumber': orderNo
     };
     this.HttpService.getToPayResult(params)
       .then(res => {
-        const data = res.data.responseData;
-        console.log(data)
-
+        // console.log(res);
+        let resData = res.data;
         wx.requestPayment({
-          'timeStamp': data.timeStamp,
-          'nonceStr': data.nonceStr,
-          'package': data.package,
+          'timeStamp': resData.timeStamp,
+          'nonceStr': resData.nonceStr,
+          'package': resData.pkg,
           'signType': 'MD5',
-          'paySign': data.paySign,
+          'paySign': resData.paySign,
           'success': function(res) {
             self.handlePaymentCompleted(res);
           },
-          'fail': function(res) {}
+          'fail': function(res) {
+            wx.showModal({
+              title: '异常提示',
+              content: '支付失败！',
+              showCancel: false,
+              success(res) {
+                wx.navigateTo({
+                  url: '/pages/order/order/index?orderStatus=0',
+                })
+              }
+            });
+            
+          }
         })
       });
   },
   handlePaymentCompleted: function (res) { //支付完成
-    console.log("支付成功！")
+    // console.log(res);
+    wx.showToast({
+      title: "支付成功！",
+      success: function(){
+        wx.navigateTo({
+          url: '../order/order/index?orderStatus=1',
+        })
+      }
+    });
   },
   WxValidate: (rules, messages) => new WxValidate(rules, messages),
   HttpResource: (url, paramDefaults, actions, options) => new HttpResource(url, paramDefaults, actions, options).init(),
