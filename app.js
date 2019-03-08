@@ -21,7 +21,8 @@ App({
         };
         this.HttpService.getLoginOpenId(params)
           .then(res => {
-            // console.log(res);
+            console.log('获取openid');
+            console.log(res);
             let openId = res.data.openid;
             this.globalData.openId = openId;
           });
@@ -61,7 +62,9 @@ App({
     };
     this.HttpService.getToPayResult(params)
       .then(res => {
-        // console.log(res);
+        console.log('支付接口返回');
+        console.log(res);
+
         let resData = res.data;
         wx.requestPayment({
           'timeStamp': resData.timeStamp,
@@ -89,15 +92,29 @@ App({
       });
   },
   handlePaymentCompleted: function (res) { //支付完成
-    // console.log(res);
+    console.log('支付完成');
+    console.log(res);
+
     wx.showToast({
       title: "支付成功！",
       success: function(){
         wx.navigateTo({
-          url: '../order/order/index?orderStatus=1',
+          url: '/pages/order/order/index?orderStatus=1',
         })
       }
     });
+  },
+  getTestOrderNumber: function(){
+    var orderNo = '11111111111111';
+    for (var j = 0; j < 10; j++) {
+      var randStr = "";
+      for (var i = 0; i < 12; i++) {//此处的12为生成12位数字，可随即更改
+        var randItem = Math.floor(Math.random() * 10);
+        randStr += randItem;
+      }
+      orderNo = "766" + randStr;//此处的766是要求必须已766开头，如果不需要可以去掉并在for循环中填入你要的位数
+    }
+    return orderNo;
   },
   WxValidate: (rules, messages) => new WxValidate(rules, messages),
   HttpResource: (url, paramDefaults, actions, options) => new HttpResource(url, paramDefaults, actions, options).init(),

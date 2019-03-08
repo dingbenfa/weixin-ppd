@@ -45,7 +45,7 @@ Page({
   //去付款
   handleToPay(ev){
     // let orderNo = ev.currentTarget.dataset.orderno;
-    let orderNo = '111111111111';
+    let orderNo = App.getTestOrderNumber(); //获取随机订单号
     App.handleToPayment(orderNo); //去付款
   },
   // 查看物流

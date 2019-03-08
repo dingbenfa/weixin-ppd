@@ -25,7 +25,7 @@ Page({
       confirmText: '去支付',
       success(res) {
         if (res.confirm) {
-          let orderNo = '111111111111';
+          let orderNo = App.getTestOrderNumber(); //获取随机订单号
           App.handleToPayment(orderNo); //去付款
         } else if (res.cancel) {
           wx.navigateTo({
