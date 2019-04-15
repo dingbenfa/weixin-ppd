@@ -1,4 +1,10 @@
 /**app.wxss**/
+.index-container {
+  position: relative;
+  background-color: #f2f2f2;
+  font-size: 32rpx;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -66,7 +72,7 @@ page{
 
 .u-search-icon{
   position: absolute;
-  top: 12rpx;
+  top: 15rpx;
   left: 22rpx;
 }
 

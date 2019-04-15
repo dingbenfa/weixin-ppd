@@ -1,0 +1,8 @@
+<view class="page-body">
+  <view class="page-body-wrapper">
+    <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+    <view class='video-box'>
+      <canvas canvas-id="myCanvas"></canvas>
+    </view>
+  </view>
+</view>

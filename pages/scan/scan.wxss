@@ -1,0 +1,47 @@
+.preview-tips {
+  margin: 20rpx 0;  
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.page-body-wrapper{
+  position: relative;
+  z-index: 0;
+}
+
+.video-box{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* background-color: red; */
+  width: 200px;
+  height: 100px;
+  z-index: 1000;
+}
+
+#myCanvas{
+  width: 200px;
+  height: 100px;
+}
+
+/**index.wxss**/
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+}
+
+/*有些人会有疑问为什么设置了100%却没有100%，其实要到app.wxss里设置一下*/
+/**app.wxss**/
+page{
+  width:100%;
+  height:100%;
+}

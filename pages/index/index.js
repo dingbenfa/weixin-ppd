@@ -24,6 +24,8 @@ Page({
       .then(res => {
         const data = res.data.responseData;
         // console.log(data)
+
+        console.log(App.globalData)
         
         const topBannerList = this.setImgUrl(data.topBannerList, null, "../../assets/images/timg.jpg");
         const newItemList = this.setImgUrl(data.newItemList, null, "../../assets/images/items.jpg");

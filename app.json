@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/electronicCatalogue/carriageResult/index",
+    "pages/electronicCatalogue/components/components",
+    "pages/electronicCatalogue/index/index",
+    "pages/electronicCatalogue/carriage/carriage",
+    "pages/electronicCatalogue/confirmedType/confirmedType",
     "pages/index/index",
     "pages/community/index",
     "pages/cart/index",
@@ -16,7 +21,9 @@
     "pages/order/order/index",
     "pages/order/orderDetails/index",
     "pages/order/confirm/confirm",
-    "pages/order/commodityEvaluation/evaluation"    
+    "pages/order/commodityEvaluation/evaluation",
+    "pages/scan/scan",
+    "pages/webar/webar"
   ],
   "window": {
     "backgroundTextStyle": "light",

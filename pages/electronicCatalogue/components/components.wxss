@@ -1,0 +1,75 @@
+.index-container{
+  background-color: #fff;
+  padding: 0 25rpx;
+  padding-top: 50rpx;
+}
+
+.scan-box{
+  text-align: center;
+  /* border: 2px solid #f1a9b4; */
+  border-radius: 50%;
+  width: 230rpx;
+  height: 230rpx;
+  margin: auto;
+}
+
+.scan-icon{
+  width: 90rpx;
+  height: 90rpx;
+  margin-top: 40rpx;
+}
+
+.scan-text{
+  font-size: 28rpx;
+  color: #d34641;
+  margin-top: 15rpx;
+}
+
+.inp-col-xl{
+  border: 1px solid #cfcfcf;
+  border-radius: 25px;
+  height: 42px;
+  padding-left: 15px;
+  color: #adb0b3;
+  margin-top: 90rpx;
+}
+
+.btn-col-xl{
+  margin-top: 60rpx;
+  background-color: #d34641;
+  color: #fff;
+  border-radius: 25px;
+  height: 42px;
+  line-height: 42px;
+  letter-spacing: 3px;
+}
+
+.search-history-box{
+  margin-top: 150rpx;
+}
+
+.history-more{
+  color: #adb0b3;
+  text-align: center;
+}
+
+.history-title{
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.history-content{
+  border-top: 1px solid #6466e7;
+  margin-top: 35rpx;
+}
+
+.history-item{
+  padding: 25rpx 0;
+  border-bottom: 1px solid #ccc;
+  line-height: 48rpx;
+}
+.history-item-label{
+  color: #adb0b3;
+}
