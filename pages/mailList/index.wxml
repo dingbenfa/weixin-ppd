@@ -1,0 +1,20 @@
+<!--pages/mailList/index.wxml-->
+<view class='index-container'>
+  <!-- 搜索 -->
+  <view class='u-search-box'>
+    <view class='u-search-icon'>
+      <image src='../../assets/images/search-icon.png'></image>
+    </view>
+    <input type='text' placeholder-style="color:#ccc" placeholder='发动机/轮胎' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
+    <view class='u-vioce-icon' catchtap='openVoice'>
+      <image src='../../assets/images/search-icon.png'></image>
+    </view>
+  </view>
+
+  <view class='u-ad-show'>
+    <!-- <view class='u-ad-title'></view>
+    <view class='u-ad-about'></view> -->
+    <image class='u-ad-img' src='/assets/images/timg.jpg'></image>
+  </view>
+
+</view>

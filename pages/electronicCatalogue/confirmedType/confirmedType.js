@@ -1,66 +1,57 @@
 // pages/electronicCatalogue/confirmedType/confirmedType.js
+
+//获取应用实例
+var App = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    type: 1,
+    vin: null,
+    brand: '',
+    displacement: '',
+    gearbox: '',
+    model: '',
+    year: ''
+  },
+  onLoad: function(options) {
+    // console.log(options);
+    this.setData({
+      type: options.type,
+      vin: options.vin
+    });
+  },
+  onReady: function() {
+    this.getSearchCarbasic();
+  },
+  getSearchCarbasic: function() {
+    var params = {
+      'vin': this.data.vin
+    };
+
+    if (this.data.type == 1) {
+      App.HttpService.searchCarbasic(params).then(res => {
+        var data = res.data
+        console.log(data)
+        if (data.code == "0000") {
+          var reData = data.responseData;
+          this.handleResponseData(reData);
+        }
+      })
+    }
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleResponseData: function(data) {
+    this.setData({
+      brand: data.brand,
+      displacement: data.displacement,
+      gearbox: data.gearbox,
+      model: data.model,
+      year: data.year
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleToSearch: function(){
+    App.WxService.navigateTo('/pages/electronicCatalogue/carriageResult/index', {
+      vin: this.data.vin
+    })
   }
 })

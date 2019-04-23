@@ -1,26 +1,28 @@
 <view class='index-container'>
-    <view class='scan-box'></view>
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <view class="section">
-        <input class='inp-col-xl' name="input" placeholder="输入零件号或厂商号进行查询" />
-      </view>
-      <view class="btn-area">
-        <button class='btn-col-xl' form-type="submit">提交</button>
-      </view>
-    </form>
-
-    <view class='search-history-box'>
-        <view class='history-more'>▼</view>
-        <view class='history-title'>最近使用车型</view>
-        <view class='history-content'>
-            <view class='history-item'>
-              <view class='history-item-name'>奥迪Q7，2018</view>
-              <view class='history-item-label'>WFDSFF78FDSF787789787</view>
-            </view>
-            <view class='history-item'>
-              <view class='history-item-name'>奥迪Q7，2018</view>
-              <view class='history-item-label'>WFDSFF78FDSF787789787</view>
-            </view>
-        </view>
+  <view class='scan-box'></view>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <input class='inp-col-xl' name="vin" placeholder="输入零件号或厂商号进行查询" />
     </view>
+    <view class="btn-area">
+      <button class='btn-col-xl' form-type="submit">提交</button>
+    </view>
+  </form>
+
+  <view class='search-history-box'>
+    <view bindtap='handleHistoryMore'>
+      <view class='history-more'>{{nHistoryMore? "▼":"▲"}}</view>
+      <view class='history-title'>最近使用车型</view>
+    </view>
+    <view class='history-content {{nHistoryMore? "":"history-content-hid"}}'>
+      <view class='history-item'>
+        <view class='history-item-name'>奥迪Q7，2018</view>
+        <view class='history-item-label'>WFDSFF78FDSF787789787</view>
+      </view>
+      <view class='history-item'>
+        <view class='history-item-name'>奥迪Q7，2018</view>
+        <view class='history-item-label'>WFDSFF78FDSF787789787</view>
+      </view>
+    </view>
+  </view>
 </view>

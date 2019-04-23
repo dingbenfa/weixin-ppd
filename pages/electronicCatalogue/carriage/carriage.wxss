@@ -73,3 +73,7 @@
 .history-item-label{
   color: #adb0b3;
 }
+
+.history-content-hid{
+  display: none;
+}

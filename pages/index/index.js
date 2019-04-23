@@ -71,18 +71,24 @@ Page({
   //跳转分类
   goCategoryPage(event) {
     var id = event.currentTarget.dataset.categoryid;
+    console.log(id);
+    
     if (id === 5) { //分类
       wx.navigateTo({
-        url: '../categoryList/categoryList?categoryId=' + id
+        url: '/pages/categoryList/categoryList?categoryId=' + id
       })
     } else if (id === 10) { //积分
       wx.navigateTo({
-        url: '../user/userPoints/index'
+        url: '/pages/user/userPoints/index'
       })
     } else if (id === 2) { //社区
       wx.switchTab({
-        url: "../community/index"
+        url: "/pages/community/index"
       });
+    } else if (id === 3){ //电子目录
+      wx.navigateTo({
+        url: '/pages/electronicCatalogue/index/index',
+      })
     } else {
       wx.showModal({
         title: "抱歉！该模块尚未开发",

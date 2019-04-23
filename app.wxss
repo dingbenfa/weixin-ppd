@@ -99,3 +99,7 @@ page{
 .m-font-grey{
   color: #999;
 }
+
+.clear-flex{
+  clear: both;
+}

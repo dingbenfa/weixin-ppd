@@ -1,29 +1,31 @@
 <view class='index-container'>
-    <view class='scan-box'>
-        <image class="scan-icon" src='../../../assets/images/scan-icon.png'></image>
-        <view class='scan-text'>扫描车架号</view>
+  <view class='scan-box' bindtap='handleScanCarriage'>
+    <image class="scan-icon" src='../../../assets/images/scan-icon.png'></image>
+    <view class='scan-text'>扫描车架号</view>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <input class='inp-col-xl' name="vin" value='{{ vin }}' placeholder="输入17位车架号或者5位以上件号进行查询" />
     </view>
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <view class="section">
-        <input class='inp-col-xl' name="input" placeholder="输入17位车架号或者5位以上件号进行查询" />
-      </view>
-      <view class="btn-area">
-        <button class='btn-col-xl' form-type="submit">提交</button>
-      </view>
-    </form>
+    <view class="btn-area">
+      <button class='btn-col-xl' form-type="submit">提交</button>
+    </view>
+  </form>
 
-    <view class='search-history-box'>
-        <view class='history-more'>▼</view>
-        <view class='history-title'>最近使用车型</view>
-        <view class='history-content'>
-            <view class='history-item'>
-              <view class='history-item-name'>奥迪Q7，2018</view>
-              <view class='history-item-label'>WFDSFF78FDSF787789787</view>
-            </view>
-            <view class='history-item'>
-              <view class='history-item-name'>奥迪Q7，2018</view>
-              <view class='history-item-label'>WFDSFF78FDSF787789787</view>
-            </view>
-        </view>
+  <view class='search-history-box'>
+    <view bindtap='handleHistoryMore'>
+      <view class='history-more'>{{nHistoryMore? "▼":"▲"}}</view>
+      <view class='history-title'>最近使用车型</view>
     </view>
+    <view class='history-content {{nHistoryMore? "":"history-content-hid"}}'>
+      <view class='history-item'>
+        <view class='history-item-name'>奥迪Q7，2018</view>
+        <view class='history-item-label'>WFDSFF78FDSF787789787</view>
+      </view>
+      <view class='history-item'>
+        <view class='history-item-name'>奥迪Q7，2018</view>
+        <view class='history-item-label'>WFDSFF78FDSF787789787</view>
+      </view>
+    </view>
+  </view>
 </view>

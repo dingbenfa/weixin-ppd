@@ -13,7 +13,9 @@ class HttpService extends WxRequest {
       user: '/mobile/home/my',
       category: '/mobile/home/categories',
       account: '/mobile/home/currentUserInfo',
-      orderList: '/mobile/home/my/orderList'
+      orderList: '/mobile/home/my/orderList',
+      carbasic: '/engine/carbasic',
+      carcard: '/engine/carcard'
     }
     this.interceptors.use({
       request(request) {
@@ -86,6 +88,18 @@ class HttpService extends WxRequest {
 
   getOrderList() {
     return this.getRequest(this.$$path.orderList)
+  }
+
+  searchCarbasic(params) {
+    return this.getRequest(this.$$path.carbasic, {
+      data: params
+    })
+  }
+
+  getEleTronicResult(params){
+    return this.getRequest(this.$$path.carcard, {
+      data: params
+    })
   }
 
 }

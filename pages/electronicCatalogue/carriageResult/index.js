@@ -1,66 +1,87 @@
 // pages/electronicCatalogue/carriageResult/index.js
+
+//获取应用实例
+var App = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isMore: false,
+    vin: null,
+    searchInpVal: "",
+    saleCode: "",
+    model: "",
+    produceDate: "",
+    motorCode: "",
+    displacement: "",
+    gearbox: "",
+    chassisCode: "",
+    bodyColor: "",
+    decorationColor: "",
+    maintanceRecord: "",
+    insuranceRecord: "",
+    carState: ""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
+    this.setData({
+      vin: options.vin
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onReady: function() {
+    this.getEleTronicResult();
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getEleTronicResult: function() {
+    var params = {
+      'vin': this.data.vin
+    };
+    App.HttpService.getEleTronicResult(params).then(res => {
+      var data = res.data
+      console.log(data)
+      if (data.code == "0000") {
+        var reData = data.responseData;
+        this.handleResponseData(reData);
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleResponseData: function(data) {
+    this.setData({
+      "saleCode": data.saleCode,
+      "model": data.model,
+      "produceDate": data.produceDate,
+      "motorCode": data.motorCode,
+      "displacement": data.displacement,
+      "gearbox": data.gearbox,
+      "chassisCode": data.chassisCode,
+      "bodyColor": data.bodyColor,
+      "decorationColor": data.decorationColor,
+      "maintanceRecord": data.maintanceRecord,
+      "insuranceRecord": data.insuranceRecord,
+      "carState": data.carState
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleSearchValue: function(e) {
+    // console.log(e.detail.value);
+    this.setData({
+      searchInpVal: e.detail.value
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  //搜索
+  handleGoToSearch: function() {
+    console.log(this.data.searchInpVal);
+    wx.showModal({
+      title: "抱歉！该功能正在开发中！！！",
+      showCancel: false
+    });
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  //更多
+  handleItemsMore: function(){
+    this.setData({
+      isMore: !this.data.isMore
+    });
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleToItems: function(){
+    wx.showModal({
+      title: "抱歉！该功能正在开发中！！！",
+      showCancel: false
+    });
   }
 })

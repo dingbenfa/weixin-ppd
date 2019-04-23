@@ -28,9 +28,10 @@
   width: 110rpx;
   height: 65rpx;
   line-height: 65rpx;
-  font-size: 13px;
+  font-size: 12px;
   color: #fff;
   margin-right: 0;
+  padding:0;
 }
 
 .u-ad-show {
@@ -40,7 +41,27 @@
   border-radius: 3px;
   width: 100%;
   height: 385rpx;
+  padding: 25rpx 0;
+}
+
+.u-ad-title{
+  position: absolute;
+  top: 35rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  z-index: 100;
+  font-size: 28rpx;
+}
+
+.u-ad-about{
+  position: absolute;
+  bottom: 25rpx;
+  width: 100%;
+  background-color: rgba(000, 000, 000, 0.5);
+  color: #fff;
   padding: 25rpx;
+  font-size: 28rpx;
 }
 
 .u-ad-img {
@@ -71,4 +92,41 @@
 
 .info-item-show {
   float: right;
+}
+
+.u-other-box {
+  background-color: #fff;
+  padding: 0 25rpx;
+}
+
+.u-opt-icon {
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.u-opt-name {
+  font-size: 26rpx;
+}
+
+.u-opt-item {
+  float: left;
+  width: 17.7%;
+  height: 65px;
+  text-align: center;
+  margin-right: 21rpx;
+  padding-bottom: 10px;
+}
+
+.u-opt-item:nth-child(5n){
+  margin-right: 0;
+}
+
+.u-opt-more{
+  font-size: 24rpx;
+  line-height: 75px;
+  margin: 0;
+}
+
+.opt-hid-item{
+  display: none;
 }

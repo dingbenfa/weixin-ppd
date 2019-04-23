@@ -6,28 +6,28 @@
   <view class='inp-type-item'>
     <view class='inp-type-lable'>品牌</view>
     <view class='inp-type-line'></view>
-    <view class='inp-type-name'>奥迪</view>
+    <view class='inp-type-name'>{{ brand }}</view>
   </view>
   <view class='inp-type-item'>
     <view class='inp-type-lable'>型号</view>
     <view class='inp-type-line'></view>
-    <view class='inp-type-name'>Q7</view>
+    <view class='inp-type-name'>{{ model }}</view>
   </view>
   <view class='inp-type-item'>
     <view class='inp-type-lable'>年份</view>
     <view class='inp-type-line'></view>
-    <view class='inp-type-name'>2018</view>
+    <view class='inp-type-name'>{{ year }}</view>
   </view>
   <view class='inp-type-item'>
     <view class='inp-type-lable'>排量</view>
     <view class='inp-type-line'></view>
-    <view class='inp-type-name'>3.0D</view>
+    <view class='inp-type-name'>{{ displacement }}</view>
   </view>
   <view class='inp-type-item'>
     <view class='inp-type-lable'>变速箱</view>
     <view class='inp-type-line'></view>
-    <view class='inp-type-name'>8AT</view>
+    <view class='inp-type-name'>{{ gearbox }}</view>
   </view>
 
-  <button class='btn-col-xl'>确认，开始选配件</button>
+  <button class='btn-col-xl' bindtap='handleToSearch'>确认，开始选配件</button>
 </view>
