@@ -2,10 +2,10 @@
 <view class='index-container'>
   <!-- 搜索 -->
   <view class='u-search-box'>
-    <view class='u-search-icon'>
-      <image src='../../assets/images/search-icon.png'></image>
+    <view class='u-map-icon'>
+      <image src='../../assets/images/map-icon.png'></image>
     </view>
-    <input type='text' placeholder-style="color:#ccc" placeholder='发动机/轮胎' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
+    <input type='text' placeholder-style="color:#ccc" placeholder='山西西安' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
     <view class='u-vioce-icon' catchtap='openVoice'>
       <image src='../../assets/images/search-icon.png'></image>
     </view>
@@ -15,6 +15,13 @@
     <!-- <view class='u-ad-title'></view>
     <view class='u-ad-about'></view> -->
     <image class='u-ad-img' src='/assets/images/timg.jpg'></image>
+  </view>
+
+  <view class='u-tag-box'>
+      <view class='u-tag-item active'>汽配</view>
+      <view class='u-tag-item'>汽修</view>
+      <view class='u-tag-item'>汽保</view>
+      <view class='u-tag-item'>>></view>
   </view>
 
 </view>

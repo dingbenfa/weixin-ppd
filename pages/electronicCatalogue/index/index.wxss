@@ -1,10 +1,14 @@
 /* pages/electronicCatalogue/carriageResult/index.wxss */
+page{
+  height: 100%;
+}
 
 .index-container {
   position: relative;
   font-size: 32rpx;
   padding-top: 25rpx;
   background-color: #fff;
+  height: 100%;
 }
 
 .u-seach-show {
@@ -15,12 +19,7 @@
 .u-search-box {
   top: 0;
   margin-left: 25rpx;
-  border: none;
-  background-color: #f2f2f2;
-}
-
-.u-search-box {
-  display: inline-block;
+fdsfdsfsdfsdf  display: inline-block;
   width: 565rpx;
 }
 

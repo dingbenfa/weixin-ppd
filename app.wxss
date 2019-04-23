@@ -81,6 +81,17 @@ page{
   height: 18px;
 }
 
+.u-map-icon{
+  position: absolute;
+  top: 12rpx;
+  left: 22rpx;
+}
+
+.u-map-icon image{
+  width: 23px;
+  height: 23px;
+}
+
 .u-vioce-icon{
   position: absolute;
   top: 11rpx;

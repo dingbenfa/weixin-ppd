@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mailList/index",
     "pages/electronicCatalogue/index/index",
     "pages/electronicCatalogue/carriage/carriage",
     "pages/electronicCatalogue/components/components",
     "pages/electronicCatalogue/carriageResult/index",
     "pages/electronicCatalogue/confirmedType/confirmedType",
-    "pages/mailList/index",
     "pages/community/index",
     "pages/cart/index",
     "pages/user/index",
