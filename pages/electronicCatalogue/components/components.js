@@ -17,8 +17,7 @@ Page({
   formSubmit: function (e) {
     // console.log(e.detail.value);
     var vin = e.detail.value.vin;
-    App.WxService.navigateTo('/pages/electronicCatalogue/confirmedType/confirmedType', {
-      type: 2,
+    App.WxService.navigateTo('/pages/electronicCatalogue/confirmedTypeForCp/confirmedType', {
       vin: vin
     })
   },

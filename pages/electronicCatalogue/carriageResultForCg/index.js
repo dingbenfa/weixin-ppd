@@ -22,6 +22,7 @@ Page({
     carState: ""
   },
   onLoad: function(options) {
+    console.log(options);
     this.setData({
       vin: options.vin
     });

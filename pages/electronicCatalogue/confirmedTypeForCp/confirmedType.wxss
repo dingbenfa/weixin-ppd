@@ -1,0 +1,73 @@
+/* pages/electronicCatalogue/confirmedType/confirmedType.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.index-container {
+  background-color: #fff;
+  padding: 0 25rpx;
+  padding-top: 50rpx;
+}
+
+.u-icon-show {
+  text-align: center;
+  padding: 60rpx 0;
+}
+
+.u-icon {
+  width: 135rpx;
+  height: 125rpx;
+}
+
+.inp-type-item {
+  position: relative;
+  border: 1px solid #d4d5dc;
+  border-radius: 3px;
+  padding: 25rpx 0;
+  margin-top: 25rpx;
+}
+
+.inp-type-item view {
+  display: inline-block;
+}
+
+.inp-type-lable {
+  width: 25%;
+  text-align: center;
+  color: #ababab;
+}
+
+.inp-type-line {
+  position: absolute;
+  top: 23rpx;
+  left: 25%;
+  border-left: 1px solid #d4d5dc;
+  height: 40rpx;
+}
+
+.inp-type-more {
+  position: absolute;
+  top: 0;
+  right: 35rpx;
+  padding: 25rpx 0;
+  color: #ababab;
+}
+
+.inp-type-name {
+  padding-left: 55rpx;
+  width: 56%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.btn-col-xl {
+  margin-top: 60rpx;
+  background-color: #d34641;
+  color: #fff;
+  border-radius: 25px;
+  height: 42px;
+  line-height: 42px;
+  letter-spacing: 2px;
+}

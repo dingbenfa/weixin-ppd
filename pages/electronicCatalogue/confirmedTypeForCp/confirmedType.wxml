@@ -1,0 +1,30 @@
+<view class='index-container'>
+  <view class='u-icon-show'>
+    <image class="u-icon" src='../../../assets/images/u-icon.png'></image>
+  </view>
+
+  <view class='inp-type-item' bindtap='handleOpenBrand'>
+    <view class='inp-type-lable'>品牌</view>
+    <view class='inp-type-line'></view>
+    <view class='inp-type-name'>{{ cpDataList[nowIndex].brandname }}</view>
+    <view class='inp-type-more'>></view>
+  </view>
+  <view class='inp-type-item' bindtap='handleOpenModel'>
+    <view class='inp-type-lable'>型号</view>
+    <view class='inp-type-line'></view>
+    <view class='inp-type-name'>{{ cpDataList[nowIndex].carsModel }}</view>
+    <view class='inp-type-more'>></view>
+  </view>
+  <view class='inp-type-item'>
+    <view class='inp-type-lable'>年份</view>
+    <view class='inp-type-line'></view>
+    <view class='inp-type-name'>{{ cpDataList[nowIndex].year }}</view>
+  </view>
+  <view class='inp-type-item'>
+    <view class='inp-type-lable'>投放市场</view>
+    <view class='inp-type-line'></view>
+    <view class='inp-type-name'>{{ cpDataList[nowIndex].market }}</view>
+  </view>
+
+  <button class='btn-col-xl' bindtap='handleToSearch'>确认，开始选配件</button>
+</view>

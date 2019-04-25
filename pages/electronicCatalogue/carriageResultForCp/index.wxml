@@ -1,0 +1,98 @@
+<!--pages/electronicCatalogue/carriageResult/index.wxml-->
+<wxs src='../../../utils/filter.wxs' module='filter' />
+<view class='index-container'>
+  <!-- 搜索 -->
+  <view class='u-seach-show'>
+    <view class='u-search-box'>
+      <view class='u-search-icon'>
+        <image src='/assets/images/search-icon.png'></image>
+      </view>
+      <input type='text' placeholder-style="color:#ccc" placeholder='发动机/轮胎' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
+    </view>
+    <button type="warn" class='search-sx-btn' bindtap='handleGoToSearch'>搜索</button>
+  </view>
+
+  <view class='u-ad-show'>
+    <view class='u-ad-title'>结果仅供参考,图片来源于网络</view>
+    <view class='u-ad-about'>
+      <view>新车价：14.38万</view>
+      <view>大众 速腾 2015款 2.0L 自动时尚型</view>
+    </view>
+    <image class='u-ad-img' src='/assets/images/timg.jpg'></image>
+  </view>
+
+  <view class='u-other-box'>
+    <view class='u-opt-item' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-cart-icon.png'></image>
+      <view class='u-opt-name'>买配件</view>
+    </view>
+    <view class='u-opt-item' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-repair-icon.png'></image>
+      <view class='u-opt-name'>维修记录</view>
+    </view>
+    <view class='u-opt-item' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-danger-icon.png'></image>
+      <view class='u-opt-name'>出险记录</view>
+    </view>
+    <view class='u-opt-item' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
+      <view class='u-opt-name'>车辆状况</view>
+    </view>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
+      <view class='u-opt-name'>其他</view>
+    </view>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
+      <view class='u-opt-name'>其他</view>
+    </view>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
+      <view class='u-opt-name'>其他</view>
+    </view>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
+      <view class='u-opt-name'>其他</view>
+    </view>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
+      <view class='u-opt-name'>其他</view>
+    </view>
+    <view class='u-opt-item u-opt-more' bindtap='handleItemsMore'> {{isMore? "收起 ∧":"更多 ∨"}}</view>
+  </view>
+  <view class='clear-flex'></view>
+
+  <view class='show-gey-bg'></view>
+
+  <view class='u-info-container'>
+    <view class='u-info-items'>
+      <view class='info-item-name'>零件名称</view>
+      <view class='info-item-show'>{{ name }}</view>
+    </view>
+    <view class='u-info-items'>
+      <view class='info-item-name'>有无库存</view>
+      <view class='info-item-show'>{{ filter.handleIsHas(inventory) }}</view>
+    </view>
+    <view class='u-info-items'>
+      <view class='info-item-name'>有无组件</view>
+      <view class='info-item-show'>{{ filter.handleIsHas(hasComponent) }}</view>
+    </view>
+    <view class='u-info-items'>
+      <view class='info-item-name'>有无替换件</view>
+      <view class='info-item-show'>{{ filter.handleIsHas(hasReplace) }}</view>
+    </view>
+    <view class='u-info-items'>
+      <view class='info-item-name'>品牌</view>
+      <view class='info-item-show'>{{ brand }}</view>
+    </view>
+    <view class='u-info-items'>
+      <view class='info-item-name'>模型图</view>
+      <view class='info-item-show'>***</view>
+    </view>
+    <view class='u-info-items'>
+      <view class='info-item-name'>实物图</view>
+      <view class='info-item-show'>***</view>
+    </view>
+  </view>
+
+</view>

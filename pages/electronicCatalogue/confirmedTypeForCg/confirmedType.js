@@ -5,7 +5,6 @@ var App = getApp();
 
 Page({
   data: {
-    type: 1,
     vin: null,
     brand: '',
     displacement: '',
@@ -16,7 +15,6 @@ Page({
   onLoad: function(options) {
     // console.log(options);
     this.setData({
-      type: options.type,
       vin: options.vin
     });
   },
@@ -28,16 +26,14 @@ Page({
       'vin': this.data.vin
     };
 
-    if (this.data.type == 1) {
-      App.HttpService.searchCarbasic(params).then(res => {
-        var data = res.data
-        console.log(data)
-        if (data.code == "0000") {
-          var reData = data.responseData;
-          this.handleResponseData(reData);
-        }
-      })
-    }
+    App.HttpService.searchCarbasic(params).then(res => {
+      var data = res.data
+      console.log(data)
+      if (data.code == "0000") {
+        var reData = data.responseData;
+        this.handleResponseData(reData);
+      }
+    })
 
   },
   handleResponseData: function(data) {
@@ -49,8 +45,8 @@ Page({
       year: data.year
     });
   },
-  handleToSearch: function(){
-    App.WxService.navigateTo('/pages/electronicCatalogue/carriageResult/index', {
+  handleToSearch: function() {
+    App.WxService.navigateTo('/pages/electronicCatalogue/carriageResultForCg/index', {
       vin: this.data.vin
     })
   }

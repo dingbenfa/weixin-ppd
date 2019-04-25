@@ -93,8 +93,19 @@ var handleOrderStatus = function(status) {
   return str;
 };
 
+//过滤是否有无
+var handleIsHas = function(n) {
+  if (n) {
+    var str = '有';
+  } else {
+    var str = '无';
+  }
+  return str;
+};
+
 module.exports = {
   formatDate: formatDate,
   formatAmount: formatAmount,
-  handleOrderStatus: handleOrderStatus
+  handleOrderStatus: handleOrderStatus,
+  handleIsHas: handleIsHas
 };
