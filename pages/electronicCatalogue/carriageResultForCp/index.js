@@ -30,7 +30,7 @@ Page({
   getEleTronicResult: function() {
     var params = {
       'brand': this.data.brandCode,
-      'vin': this.data.vin
+      'pid': this.data.vin
     };
     App.HttpService.getCpSearchInfo(params).then(res => {
       var data = res.data
