@@ -85,14 +85,19 @@
       <view class='info-item-name'>品牌</view>
       <view class='info-item-show'>{{ brand }}</view>
     </view>
-    <view class='u-info-items'>
+    <view class='u-info-items' bindtap='buttonTap' data-type='0'>
       <view class='info-item-name'>模型图</view>
       <view class='info-item-show'>***</view>
     </view>
-    <view class='u-info-items'>
+    <view class='u-info-items' bindtap='buttonTap' data-type='1'>
       <view class='info-item-name'>实物图</view>
       <view class='info-item-show'>***</view>
     </view>
   </view>
 
+  <modal title="{{ modelImageType==0? '模型图':'实物图' }}" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+    <view>
+      <image class="dialog-big-image" src="{{  modelImageType==0? modelImage:images[0] }}" mode='aspectFill'></image>
+    </view>
+  </modal>
 </view>

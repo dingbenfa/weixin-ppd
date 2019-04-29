@@ -35,7 +35,7 @@ App({
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
-            success: res => {              
+            success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -49,12 +49,34 @@ App({
         }
       }
     })
+
+    const updateManager = wx.getUpdateManager()
+    updateManager.onCheckForUpdate(function(res) {
+      // 请求完新版本信息的回调
+      console.log(res.hasUpdate)
+    })
+    updateManager.onUpdateReady(function() {
+      wx.showModal({
+        title: '更新提示',
+        content: '新版本已经准备好，是否重启应用？',
+        success: function(res) {
+          if (res.confirm) {
+            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+            updateManager.applyUpdate()
+          }
+        }
+      })
+    })
+    updateManager.onUpdateFailed(function() {
+      // 新版本下载失败
+    })
+
   },
   globalData: {
     openId: null,
     userInfo: null
   },
-  handleToPayment: function (orderNo) { //发起支付
+  handleToPayment: function(orderNo) { //发起支付
     const self = this;
     let params = {
       'openId': this.globalData.openId,
@@ -86,33 +108,33 @@ App({
                 })
               }
             });
-            
+
           }
         })
       });
   },
-  handlePaymentCompleted: function (res) { //支付完成
+  handlePaymentCompleted: function(res) { //支付完成
     console.log('支付完成');
     console.log(res);
 
     wx.showToast({
       title: "支付成功！",
-      success: function(){
+      success: function() {
         wx.navigateTo({
           url: '/pages/order/order/index?orderStatus=1',
         })
       }
     });
   },
-  getTestOrderNumber: function(){
+  getTestOrderNumber: function() {
     var orderNo = '11111111111111';
     for (var j = 0; j < 10; j++) {
       var randStr = "";
-      for (var i = 0; i < 12; i++) {//此处的12为生成12位数字，可随即更改
+      for (var i = 0; i < 12; i++) { //此处的12为生成12位数字，可随即更改
         var randItem = Math.floor(Math.random() * 10);
         randStr += randItem;
       }
-      orderNo = "766" + randStr;//此处的766是要求必须已766开头，如果不需要可以去掉并在for循环中填入你要的位数
+      orderNo = "766" + randStr; //此处的766是要求必须已766开头，如果不需要可以去掉并在for循环中填入你要的位数
     }
     return orderNo;
   },

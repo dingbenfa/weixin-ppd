@@ -1,4 +1,5 @@
 /* pages/mailList/index.wxss */
+
 .index-container {
   position: relative;
   font-size: 32rpx;
@@ -7,7 +8,7 @@
   border-top: 1px solid #d4d5d7;
 }
 
-.u-search-box{
+.u-search-box {
   margin: 0;
   width: 100%;
   border: none;
@@ -22,10 +23,10 @@
   border-radius: 3px;
   width: 100%;
   height: 385rpx;
-  padding: 15rpx 0;
+  padding-top: 15rpx;
 }
 
-.u-ad-title{
+.u-ad-title {
   position: absolute;
   top: 35rpx;
   width: 100%;
@@ -35,7 +36,7 @@
   font-size: 28rpx;
 }
 
-.u-ad-about{
+.u-ad-about {
   position: absolute;
   bottom: 25rpx;
   width: 100%;
@@ -50,6 +51,188 @@
   height: 100%;
 }
 
-.u-tag-box{
+.u-tag-box {
   border-bottom: 1px solid #d4d5d7;
+}
+
+.u-tag-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.u-tag-box .active {
+  color: #fa4466;
+}
+
+.u-tag-item {
+  border-right: 1px solid #d4d5d7;
+  width: 25%;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 5px 0;
+  margin: 6px 0;
+}
+
+.u-tag-item:last-child {
+  border: none;
+}
+
+/* 滚动 */
+
+.scroll {
+  position: relative;
+  background-color: #f7f5f5;
+  font-size: 28rpx;
+  color: #303133;
+}
+
+.tb, .scroll.tb {
+  display: flex;
+  flex-direction: column;
+}
+
+scroll-view {
+  height: 100vh;
+}
+
+.lr {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+}
+
+.flex {
+  flex: 1;
+}
+
+.category-title {
+  padding: 24rpx;
+  background-color: #f7f5f5;
+}
+
+.list {
+  background-color: white;
+  padding: 12rpx 60rpx 0rpx 12rpx;
+}
+
+.list .item {
+  margin: 12rpx;
+}
+
+.list .item:last-child {
+  margin-bottom: 0;
+}
+
+.list .item image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.list .item text {
+  margin-top: 8rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.letters {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f2f2f2;
+  width: 48rpx;
+}
+
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.hight-light {
+  color: #f40;
+  font-weight: bold;
+}
+
+.mail-item-header {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f2f2f2;
+  width: 100%;
+}
+
+.mail-item-header image {
+  width: 50rpx !important;
+  height: 50rpx !important;
+  vertical-align: -7px;
+  margin-right: 10px;
+}
+
+.mail-item-header  text {
+  color: #c2c2c6;
+  font-size: 31rpx !important;
+}
+
+.mail-items{
+  display: flex;
+  flex-direction: column;
+}
+
+.mail-items-title{
+  font-size: 34rpx;
+  padding: 7px 0;
+}
+
+.mail-items-ls{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  line-height: 50rpx;
+}
+
+.mail-items-about{
+  width: 100%;
+}
+
+.mail-items-lable{
+  width: 90px;
+  color: #c5c5c7;
+}
+
+.mail-items-footer{
+  border-top: 1px solid #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  color: #4d85fc;
+  margin-top: 5px;
+}
+
+.mail-items-footer .iphone-icon{
+  width: 28rpx !important;
+  height: 28rpx !important;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.line-view{
+  background-color: #f2f2f2;
+  height: 10px;
+  width: 200%;
+  margin-left: -50px;
+}
+
+.line-view-hid{
+  display: none;
 }

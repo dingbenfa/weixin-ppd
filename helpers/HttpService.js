@@ -17,7 +17,8 @@ class HttpService extends WxRequest {
       carbasic: '/engine/carbasic',
       carcard: '/engine/carcard',
       searchmodels: '/engine/part/searchmodels',
-      cpSearch: '/engine/part/search'
+      cpSearch: '/engine/part/search',
+      storeList: '/mobile/contract/storeList'
     }
     this.interceptors.use({
       request(request) {
@@ -112,6 +113,12 @@ class HttpService extends WxRequest {
 
   getCpSearchInfo(params) {
     return this.getRequest(this.$$path.cpSearch, {
+      data: params
+    })
+  }
+
+  getStoreList(params){
+    return this.getRequest(this.$$path.storeList, {
       data: params
     })
   }

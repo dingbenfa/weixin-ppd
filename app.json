@@ -2,9 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/electronicCatalogue/carriageResultForCp/index",
+    "pages/mailList/index",
     "pages/electronicCatalogue/confirmedTypeForCp/confirmedType",
     "pages/electronicCatalogue/components/components",
-    "pages/mailList/index",
     "pages/electronicCatalogue/index/index",
     "pages/electronicCatalogue/carriage/carriage",
     "pages/electronicCatalogue/carriageResultForCg/index",

@@ -130,3 +130,7 @@
 .opt-hid-item{
   display: none;
 }
+
+.dialog-big-image{
+  width: 100%;
+}

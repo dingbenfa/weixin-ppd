@@ -89,6 +89,10 @@ Page({
       wx.navigateTo({
         url: '/pages/electronicCatalogue/index/index',
       })
+    } else if (id === 1) { //通讯录
+      wx.navigateTo({
+        url: '/pages/mailList/index',
+      })
     } else {
       wx.showModal({
         title: "抱歉！该模块尚未开发",

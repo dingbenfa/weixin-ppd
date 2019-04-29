@@ -83,8 +83,8 @@ page{
 
 .u-map-icon{
   position: absolute;
-  top: 12rpx;
-  left: 22rpx;
+  top: 4px;
+  left: 12px;
 }
 
 .u-map-icon image{

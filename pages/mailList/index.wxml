@@ -1,27 +1,74 @@
 <!--pages/mailList/index.wxml-->
 <view class='index-container'>
-  <!-- 搜索 -->
-  <view class='u-search-box'>
-    <view class='u-map-icon'>
-      <image src='../../assets/images/map-icon.png'></image>
-    </view>
-    <input type='text' placeholder-style="color:#ccc" placeholder='山西西安' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
-    <view class='u-vioce-icon' catchtap='openVoice'>
-      <image src='../../assets/images/search-icon.png'></image>
-    </view>
-  </view>
+  <view>
 
-  <view class='u-ad-show'>
-    <!-- <view class='u-ad-title'></view>
+    <!-- 搜索 -->
+    <view class='u-search-box'>
+      <view class='u-map-icon'>
+        <image src='../../assets/images/map-icon.png'></image>
+      </view>
+      <input type='text' placeholder-style="color:#ccc" placeholder='山西西安' bindblur="handleSearchValue" value='{{searchInpVal}}'></input>
+      <view class='u-vioce-icon' catchtap='handleSearch'>
+        <image src='../../assets/images/search-icon.png'></image>
+      </view>
+    </view>
+
+    <view class='u-ad-show'>
+      <!-- <view class='u-ad-title'></view>
     <view class='u-ad-about'></view> -->
-    <image class='u-ad-img' src='/assets/images/timg.jpg'></image>
+      <image class='u-ad-img' src='/assets/images/timg.jpg'></image>
+    </view>
+
+    <view class='u-tag-box'>
+      <view class='u-tag-item {{nowType==1? "active":""}}' data-type='1' bindtap='hanleMailListType'>汽配</view>
+      <view class='u-tag-item {{nowType==2? "active":""}}' data-type='2' bindtap='hanleMailListType'>汽修</view>
+      <view class='u-tag-item {{nowType==4? "active":""}}' data-type='4' bindtap='hanleMailListType'>汽保</view>
+      <view class='u-tag-item {{nowType==""? "active":""}}' data-type='' bindtap='hanleMailListType'>>></view>
+    </view>
+
   </view>
 
-  <view class='u-tag-box'>
-      <view class='u-tag-item active'>汽配</view>
-      <view class='u-tag-item'>汽修</view>
-      <view class='u-tag-item'>汽保</view>
-      <view class='u-tag-item'>>></view>
+  <view class="scroll tb">
+    <scroll-view scroll-with-animation scroll-top="{{to}}" scroll-y bindscroll="whenScroll">
+      <block wx:for="{{avatars}}" wx:key="{{item.id}}">
+        <view id="{{item.id === '#' ? 'all' : item.id}}" wx:if="{{item.enabled}}">
+          <view class='category-title'>{{item.id}}</view>
+          <view class='list'>
+            <view class='item tb' wx:for="{{item.items}}" wx:for-item="avatar" wx:key="{{avatar.id}}" data-id="{{avatar.id}}" catchtap=''>
+              <view class='mail-item-header'>
+                <image src="../../assets/images/user.png" mode="aspectFit"></image>
+                <text>{{ avatar.name }}</text>
+              </view>
+              <view class='mail-items'>
+                <view class='mail-items-title'>{{avatar.description}}</view>
+                <view class='mail-items-ls'>
+                  <view class='mail-items-lable'>微信号</view>
+                  <view class='mail-items-about'>{{ avatar.weixin }}</view>
+                </view>
+                <view class='mail-items-ls'>
+                  <view class='mail-items-lable'>联系电话</view>
+                  <view class='mail-items-about'>{{ avatar.phone }}</view>
+                </view>
+                <view class='mail-items-ls'>
+                  <view class='mail-items-lable'>地址</view>
+                  <view class='mail-items-about'>{{ avatar.address }}</view>
+                </view>
+                <view class='mail-items-footer' data-tel='{{ avatar.phone }}' bindtap='handleCallTelNunber'>
+                  <image class='iphone-icon' src="../../assets/images/iphone-icon.png" mode="aspectFit"></image>
+                  <text>拨打电话</text>
+                </view>
+              </view>
+              
+              <view class='{{ index===item.items.length-1? "line-view-hid":"line-view" }}'></view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+    <view class='letters tb'>
+      <text wx:for="{{avatars}}" wx:key="{{item.id}}" class="item flex tb center {{item.enabled ? '' : 'disabled'}} {{item.id === current ? 'hight-light' : ''}}" data-id="{{item.id}}" catchtap='switchLetter'>{{item.id}}</text>
+    </view>
   </view>
 
 </view>

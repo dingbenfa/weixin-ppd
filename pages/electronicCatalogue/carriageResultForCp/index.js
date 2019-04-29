@@ -5,6 +5,7 @@ var App = getApp();
 
 Page({
   data: {
+    modalHidden: true,
     isMore: false,
     vin: '',
     brandCode: '',
@@ -14,7 +15,8 @@ Page({
     hasComponent: '',
     hasReplace: '',
     modelImage: '',
-    images: ''
+    images: '',
+    modelImageType: 0
   },
   onLoad: function(options) {
     console.log(options);
@@ -77,5 +79,35 @@ Page({
       title: "抱歉！该功能正在开发中！！！",
       showCancel: false
     });
+  },
+  /**
+  * 显示弹窗
+  */
+  buttonTap: function (ev) {
+    let type = ev.currentTarget.dataset.type;
+    this.setData({
+      modalHidden: false,
+      modelImageType: type
+    })
+  },
+
+  /**
+   * 点击取消
+   */
+  modalCandel: function () {
+    // do something
+    this.setData({
+      modalHidden: true
+    })
+  },
+
+  /**
+   *  点击确认
+   */
+  modalConfirm: function () {
+    // do something
+    this.setData({
+      modalHidden: true
+    })
   }
 })
