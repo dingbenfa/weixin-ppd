@@ -62,11 +62,11 @@ Page({
   },
   //搜索
   handleGoToSearch: function() {
-    console.log(this.data.searchInpVal);
-    wx.showModal({
-      title: "抱歉！该功能正在开发中！！！",
-      showCancel: false
-    });
+    // console.log(this.data.searchInpVal);
+    var vin = this.data.searchInpVal;
+    App.WxService.navigateTo('/pages/electronicCatalogue/confirmedTypeForCp/confirmedType', {
+      vin: vin
+    })
   },
   //更多
   handleItemsMore: function() {
@@ -81,9 +81,9 @@ Page({
     });
   },
   /**
-  * 显示弹窗
-  */
-  buttonTap: function (ev) {
+   * 显示弹窗
+   */
+  buttonTap: function(ev) {
     let type = ev.currentTarget.dataset.type;
     this.setData({
       modalHidden: false,
@@ -94,7 +94,7 @@ Page({
   /**
    * 点击取消
    */
-  modalCandel: function () {
+  modalCandel: function() {
     // do something
     this.setData({
       modalHidden: true
@@ -104,7 +104,7 @@ Page({
   /**
    *  点击确认
    */
-  modalConfirm: function () {
+  modalConfirm: function() {
     // do something
     this.setData({
       modalHidden: true

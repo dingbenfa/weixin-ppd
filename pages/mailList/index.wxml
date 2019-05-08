@@ -40,25 +40,25 @@
                 <text>{{ avatar.name }}</text>
               </view>
               <view class='mail-items'>
-                <view class='mail-items-title'>{{avatar.description}}</view>
+                <view class='mail-items-title'>{{ avatar.description }}</view>
                 <view class='mail-items-ls'>
                   <view class='mail-items-lable'>微信号</view>
-                  <view class='mail-items-about'>{{ avatar.weixin }}</view>
+                  <view class='mail-items-about'>{{ avatar.weixin? avatar.weixin:"无"}}</view>
                 </view>
                 <view class='mail-items-ls'>
                   <view class='mail-items-lable'>联系电话</view>
-                  <view class='mail-items-about'>{{ avatar.phone }}</view>
+                  <view class='mail-items-about'>{{ avatar.phone? avatar.phone: "无" }}</view>
                 </view>
                 <view class='mail-items-ls'>
                   <view class='mail-items-lable'>地址</view>
-                  <view class='mail-items-about'>{{ avatar.address }}</view>
+                  <view class='mail-items-about'>{{ avatar.address? avatar.address : "无" }}</view>
                 </view>
                 <view class='mail-items-footer' data-tel='{{ avatar.phone }}' bindtap='handleCallTelNunber'>
                   <image class='iphone-icon' src="../../assets/images/iphone-icon.png" mode="aspectFit"></image>
                   <text>拨打电话</text>
                 </view>
               </view>
-              
+
               <view class='{{ index===item.items.length-1? "line-view-hid":"line-view" }}'></view>
             </view>
           </view>

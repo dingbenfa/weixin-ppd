@@ -6,7 +6,7 @@ var App = getApp();
 
 Page({
   data: {
-    searchInpVal: '杭州',
+    searchInpVal: '',
     current: 'A',
     to: 0,
     avatars: [],
@@ -45,10 +45,14 @@ Page({
       item.id = "ding" + key;
     });
     avatarsIndexes.forEach((item, key) => {
-      if (item.id === "H") {
-        item.items = arr;
-        item.enabled = arr.length === 0 ? false : true;
-      }
+      item.items = [];
+      item.enabled = false; 
+      arr.forEach((items, keys) => {
+        if (items.addrCode.toUpperCase() === item.id) {
+          item.items.push(items);
+          item.enabled = item.items.length === 0 ? false : true;
+        }
+      });
     });
     return avatarsIndexes;
   },

@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/electronicCatalogue/carriageResultForCp/index",
     "pages/mailList/index",
+    "pages/electronicCatalogue/carriageResultForCp/index",
     "pages/electronicCatalogue/confirmedTypeForCp/confirmedType",
     "pages/electronicCatalogue/components/components",
     "pages/electronicCatalogue/index/index",
@@ -31,7 +31,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "配车网",
+    "navigationBarTitleText": "平平叮汽配",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

@@ -67,19 +67,19 @@ Page({
   },
   //搜索
   handleGoToSearch: function() {
-    console.log(this.data.searchInpVal);
-    wx.showModal({
-      title: "抱歉！该功能正在开发中！！！",
-      showCancel: false
-    });
+    // console.log(this.data.searchInpVal);
+    let vin = this.data.searchInpVal;
+    App.WxService.navigateTo('/pages/electronicCatalogue/confirmedTypeForCg/confirmedType', {
+      vin: vin
+    })
   },
   //更多
-  handleItemsMore: function(){
+  handleItemsMore: function() {
     this.setData({
       isMore: !this.data.isMore
     });
   },
-  handleToItems: function(){
+  handleToItems: function() {
     wx.showModal({
       title: "抱歉！该功能正在开发中！！！",
       showCancel: false
