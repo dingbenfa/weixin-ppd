@@ -6,10 +6,19 @@ var App = getApp();
 Page({
   data: {
     nHistoryMore: true,
-    vin: ''
+    vin: '',
+    cgHisList: []
   },
   onLoad: function(options) {
-
+    wx.getStorage({
+      key: 'cgHistoryList',
+      success(res) {
+        var cgHisList = res.data || [];
+        this.setData({
+          cgHisList: cgHisList
+        });
+      }
+    });
   },
   onReady: function() {
 

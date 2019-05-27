@@ -18,7 +18,13 @@ class HttpService extends WxRequest {
       carcard: '/engine/carcard',
       searchmodels: '/engine/part/searchmodels',
       cpSearch: '/engine/part/search',
-      storeList: '/mobile/contract/storeList'
+      storeList: '/mobile/contract/storeList',
+      fastfind: '/engine/fastfind',
+      vinmaingrp: '/engine/vinmaingrp',
+      vinsubgrp: '/engine/vinsubgrp',
+      vingrppics: '/engine/vingrppics',
+      pidmodels: '/engine/pidmodels',
+      carstylemaingrps: '/engine/carstylemaingrps'
     }
     this.interceptors.use({
       request(request) {
@@ -54,7 +60,7 @@ class HttpService extends WxRequest {
   }
 
   getToPayResult(params) {
-    return this.getRequest(this.$$path.pay,{
+    return this.getRequest(this.$$path.pay, {
       data: params
     })
   }
@@ -99,7 +105,7 @@ class HttpService extends WxRequest {
     })
   }
 
-  getEleTronicResult(params){
+  getEleTronicResult(params) {
     return this.getRequest(this.$$path.carcard, {
       data: params
     })
@@ -117,8 +123,44 @@ class HttpService extends WxRequest {
     })
   }
 
-  getStoreList(params){
+  getStoreList(params) {
     return this.getRequest(this.$$path.storeList, {
+      data: params
+    })
+  }
+
+  getCarForCGInfo(params) {
+    return this.getRequest(this.$$path.fastfind, {
+      data: params
+    })
+  }
+
+  getVinmaingrpInfo(params) {
+    return this.getRequest(this.$$path.vinmaingrp, {
+      data: params
+    })
+  }
+
+  getVinsubgrpInfo(params) {
+    return this.getRequest(this.$$path.vinsubgrp, {
+      data: params
+    })
+  }
+
+  getVingrppicsInfo(params) {
+    return this.getRequest(this.$$path.vingrppics, {
+      data: params
+    })
+  }
+
+  getPidmodelsInfo(params) {
+    return this.getRequest(this.$$path.pidmodels, {
+      data: params
+    })
+  }
+
+  getCarstylemaingrpsInfo(params) {
+    return this.getRequest(this.$$path.carstylemaingrps, {
       data: params
     })
   }

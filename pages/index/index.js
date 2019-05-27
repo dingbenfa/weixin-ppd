@@ -26,7 +26,7 @@ Page({
         // console.log(data)
 
         console.log(App.globalData)
-        
+
         const topBannerList = this.setImgUrl(data.topBannerList, null, "../../assets/images/timg.jpg");
         const newItemList = this.setImgUrl(data.newItemList, null, "../../assets/images/items.jpg");
         const preferenceItemList = this.setImgUrl(data.preferenceItemList, 3, "../../assets/images/items.jpg");
@@ -72,7 +72,7 @@ Page({
   goCategoryPage(event) {
     var id = event.currentTarget.dataset.categoryid;
     console.log(id);
-    
+
     if (id === 5) { //分类
       wx.navigateTo({
         url: '/pages/categoryList/categoryList?categoryId=' + id
@@ -85,7 +85,7 @@ Page({
       wx.switchTab({
         url: "/pages/community/index"
       });
-    } else if (id === 3){ //电子目录
+    } else if (id === 3) { //电子目录
       wx.navigateTo({
         url: '/pages/electronicCatalogue/index/index',
       })
@@ -141,5 +141,16 @@ Page({
     setTimeout(function() {
       wx.stopRecord() // 结束录音
     }, 10000)
+  },
+  //分享转发
+  onShareAppMessage: function(res) {
+    if (res.from === 'button') {
+      //来自页面内转发
+      console.log(res.target)
+    }
+    return {
+      title: '平平叮汽配',
+      path: '/pages/index/index'
+    };
   }
 })

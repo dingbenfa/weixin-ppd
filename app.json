@@ -1,13 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/electronicCatalogue/searchResultForCp/index",
+    "pages/electronicCatalogue/carriageResultForCg/index",
+    "pages/electronicCatalogue/search/index",
+    "pages/electronicCatalogue/searchResult/index",
     "pages/mailList/index",
     "pages/electronicCatalogue/carriageResultForCp/index",
     "pages/electronicCatalogue/confirmedTypeForCp/confirmedType",
     "pages/electronicCatalogue/components/components",
     "pages/electronicCatalogue/index/index",
     "pages/electronicCatalogue/carriage/carriage",
-    "pages/electronicCatalogue/carriageResultForCg/index",
     "pages/electronicCatalogue/confirmedTypeForCg/confirmedType",
     "pages/community/index",
     "pages/cart/index",
@@ -70,5 +73,6 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
 }

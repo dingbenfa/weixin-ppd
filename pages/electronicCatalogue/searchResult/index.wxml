@@ -1,0 +1,214 @@
+<!--pages/electronicCatalogue/searchResult/index.wxml-->
+<view class='index-container'>
+  <view class='container-head'>
+    <view class='container-head-item {{ theType=="1"? "active":"" }}' data-type='1' bindtap='handleChangeType'>车辆配置</view>
+    <view class='container-head-item {{ theType=="2"? "active":"" }}' data-type='2' bindtap='handleChangeType'>按组查询</view>
+    <view class='container-head-item {{ theType=="3"? "active":"" }}' data-type='3' bindtap='handleChangeType'>按图查找</view>
+    <view class='container-head-item {{ theType=="4"? "active":"" }}' data-type='4' bindtap='handleChangeType'>快速查找</view>
+    <view class='container-head-item {{ theType=="5"? "active":"" }}' data-type='5' bindtap='handleChangeType'>配件图示</view>
+  </view>
+
+  <!-- 车辆配置 -->
+  <view class='container-body' wx:if='{{ theType=="1" && isPicTo=="0" }}'>
+    <view class='car-mian-box'>
+      <view class='car-mian-title'>
+        <view class='{{ theTypeOneSel=="1"? "active":"" }}' data-type='1' bindtap='handleChangeMainSel'>车辆主要信息</view>
+        <view class='{{ theTypeOneSel=="2"? "active":"" }}' data-type='2' bindtap='handleChangeMainSel'>车辆配置信息</view>
+      </view>
+
+      <view class='car-img-show'>
+        <view class='car-img-box'>
+          <image src='{{ carIinfoImgSrc }}'></image>
+        </view>
+        <view class='car-img-info'>车架号[{{ searchInpVal }}]</view>
+      </view>
+
+      <view class='car-main-info' wx:if='{{ theTypeOneSel=="1" }}'>
+        <view class='main-info-item main-info-title'>
+          <view>主要信息</view>
+          <view>说明</view>
+        </view>
+
+        <view class='main-info-item'>
+          <view>销售代码</view>
+          <view>{{ vehicleConfigInfo.mainInfo.xiaoshoudaima }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>车型</view>
+          <view>{{ vehicleConfigInfo.mainInfo.chexing }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>车架号</view>
+          <view>{{ vehicleConfigInfo.mainInfo.chejiahao }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>系列</view>
+          <view>{{ vehicleConfigInfo.mainInfo.xilie }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>年份</view>
+          <view>{{ vehicleConfigInfo.mainInfo.shijian }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>排量</view>
+          <view>{{ vehicleConfigInfo.mainInfo.pailiang }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>发动机型号</view>
+          <view>{{ vehicleConfigInfo.mainInfo.fadongjixinghao }}</view>
+        </view>
+
+        <view class='main-info-item'>
+          <view>功率</view>
+          <view>{{ vehicleConfigInfo.mainInfo.gonglv }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>变速箱</view>
+          <view>{{ vehicleConfigInfo.mainInfo.biansuxiang }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>驱动</view>
+          <view>{{ vehicleConfigInfo.mainInfo.qudong }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>驾驶</view>
+          <view>{{ vehicleConfigInfo.mainInfo.jiashi }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>车身颜色</view>
+          <view>{{ vehicleConfigInfo.mainInfo.cheshenyanse }}</view>
+        </view>
+        <view class='main-info-item'>
+          <view>内饰</view>
+          <view>{{ vehicleConfigInfo.mainInfo.neishi }}</view>
+        </view>
+      </view>
+
+      <view class='car-main-info' wx:if='{{ theTypeOneSel=="2" }}'>
+        <view class='main-info-item main-info-title'>
+          <view>配置信息</view>
+          <view>说明</view>
+        </view>
+
+        <block wx:for="{{ vehicleConfigInfo.configInfo }}" wx:key="{{ index }}">
+          <view class='main-info-item'>
+            <view>{{ index }}</view>
+            <view>{{ item }}</view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 按组查询 -->
+  <view class='container-body group-container-body' wx:if='{{ theType=="2" }}'>
+    <!-- 主组 -->
+    <view class='car-main-info' wx:if='{{ theGroupType=="1" }}'>
+      <view class='main-info-item info-item-col main-info-title'>
+        <view>主组</view>
+      </view>
+
+      <block wx:for="{{ mainGroupList }}" wx:key="{{ index }}">
+        <view class='main-info-item info-item-col' bindtap='handleToSub' data-item='{{ item }}'>
+          <view>{{ item.brandCode }}，{{ item.label }}</view>
+          <view class='main-info-next'>></view>
+        </view>
+      </block>
+
+      <view class='main-info-item info-item-col' wx:if='{{ mainGroupList.length===0 }}'>
+        <view>抱歉，无法查询到主组信息！！！</view>
+      </view>
+    </view>
+
+    <!-- 子组 -->
+    <view class='car-main-info' wx:if='{{ theGroupType=="2" }}'>
+      <view class='main-info-item info-item-col main-info-title' bindtap='handleBackToMain'>
+        <view>主组 {{ theGroupValue.mainGroupName }}</view>
+        <view class='main-info-next'>∧</view>
+      </view>
+      <view class='main-info-item info-item-col'>
+        <view>子组 全部</view>
+      </view>
+
+      <block wx:for="{{ subGroupList }}" wx:key="{{ index }}">
+        <view class='main-info-item info-item-col' bindtap='handleToPic' data-item='{{ item }}'>
+          <view>{{ item.name }}</view>
+          <view class='main-info-next'>></view>
+        </view>
+      </block>
+
+      <view class='main-info-item info-item-col' wx:if='{{ subGroupList.length===0 }}'>
+        <view>抱歉，无法查询到子组信息！！！</view>
+      </view>
+    </view>
+
+    <!-- 图组 -->
+    <view class='car-main-info' wx:if='{{ theGroupType=="3" }}'>
+      <view class='main-info-item info-item-col main-info-title'>
+        <view>主组 {{ theGroupValue.mainGroupName }}</view>
+      </view>
+      <view class='main-info-item info-item-col' bindtap='handleBackToSub'>
+        <view>子组 {{ theGroupValue.subGroupName }}</view>
+        <view class='main-info-next'>∧</view>
+      </view>
+      <view class='main-info-item info-item-col'>
+        <view>图组</view>
+        <view class='pic-filter-show'>
+          <text class='right-circle-icon'>√</text>已过滤
+        </view>
+      </view>
+      <view class='main-info-item info-item-col' bindtap='handleToPicShow' wx:if='{{ picGroupList.length>0 }}'>
+        <view>{{ picGroupList[0].name }},{{ picGroupList[0].genericName }},{{ picGroupList[0].showCode }}</view>
+        <view class='main-info-next'>></view>
+      </view>
+
+      <view class='main-info-item info-item-col' wx:if='{{ picGroupList.length===0 }}'>
+        <view>抱歉，无法查询到图组信息！！！</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 配件图示 -->
+  <view class='container-body group-container-body' wx:if='{{ theType=="5" }}'>
+    <view class='empty-info' wx:if='{{ !theGroupValue.mainGroup || !theGroupValue.subGroup }}'>请先按组查询后查看！！！</view>
+    <view class='car-main-info' wx:if='{{ theGroupValue.mainGroup && theGroupValue.subGroup }}'>
+      <view class='main-info-item info-item-col'>
+        <view>{{ picGroupList[picIndexSel].name }}</view>
+        <view class='pic-filter-show'>
+          <text class='right-circle-icon'>√</text>已过滤
+        </view>
+      </view>
+      <view class='pic-img-box'>
+        <image src='{{ picGroupList[picIndexSel].imgSrc || "../../../assets/images/car-cg-item.png" }}'></image>
+      </view>
+    </view>
+
+    <block wx:for="{{ picGroupList }}" wx:key="{{ index }}">
+      <view class='pic-show-item {{ picIndexSel=="0"? "pic-item-active":"" }}' catchtap='handlePicItemSel' data-index='0'>
+        <view>#{{ index+1 }}</view>
+        <view class='pic-item-name'>
+          <view>{{ item.name }}</view>
+          <view class=''>{{ item.showCode }}</view>
+        </view>
+        <view class='font-gray'>用量：{{ item.number }}</view>
+        <view>
+          <view class='pic-detail-btn' bindtap='handlePicToDetail' data-index='0'>详情</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 配件图示详情 -->
+  <view class='container-body container-pull-body' wx:if='{{ theType=="1" && isPicTo=="1" }}'>
+    <view class='pic-info-item'>配件号： {{ picGroupList[picIndexSel].showCode }}</view>
+    <view class='pic-info-item'>配件名称： {{ picGroupList[picIndexSel].name }}</view>
+    <view class='pic-info-item'>用量： {{ picGroupList[picIndexSel].number }}</view>
+    <view class='pic-info-item'>通用名称： {{ picGroupList[picIndexSel].genericName }}</view>
+  </view>
+
+  <view class='u-cart-box' wx:if='{{ theType=="1" && isPicTo=="1" }}'>
+    <view class='add-cart-btn' bindtap='handleAddCart'>加入购物车</view>
+    <view class='to-pay-btn' bindtap='handleToPay'>立即购买</view>
+  </view>
+</view>

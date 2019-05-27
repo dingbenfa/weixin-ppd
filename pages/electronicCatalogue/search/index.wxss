@@ -1,0 +1,68 @@
+/* pages/electronicCatalogue/search/index.wxss */
+
+.index-container {
+  position: relative;
+  font-size: 32rpx;
+  padding-top: 25rpx;
+  background-color: #fff;
+}
+
+.u-seach-show {
+  position: relative;
+  padding: 0 25rpx;
+  padding-bottom: 25rpx;
+}
+
+.u-search-box {
+  top: 0;
+  margin-left: 25rpx;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+.u-search-box {
+  display: inline-block;
+  width: 565rpx;
+}
+
+.search-sx-btn {
+  width: 110rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  font-size: 12px;
+  color: #fff;
+  margin-right: 0;
+  padding: 0;
+}
+
+.car-search-history {
+  position: relative;
+  font-size: 32rpx;
+  margin-top: 25rpx;
+  background-color: #fff;
+  padding: 0 25rpx;
+}
+
+.search-history-title {
+  padding: 25rpx 0;
+  font-size: 29rpx;
+  color: #919191;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.search-history-item{
+  font-size: 28rpx;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.search-history-val{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 65rpx;
+}
+
+.search-history-info {
+  color: #b5b5b5;
+}

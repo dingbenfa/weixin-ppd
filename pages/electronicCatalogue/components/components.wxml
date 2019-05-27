@@ -15,14 +15,14 @@
       <view class='history-title'>最近使用车型</view>
     </view>
     <view class='history-content {{nHistoryMore? "":"history-content-hid"}}'>
-      <view class='history-item'>
-        <view class='history-item-name'>奥迪Q7，2018</view>
-        <view class='history-item-label'>WFDSFF78FDSF787789787</view>
-      </view>
-      <view class='history-item'>
-        <view class='history-item-name'>奥迪Q7，2018</view>
-        <view class='history-item-label'>WFDSFF78FDSF787789787</view>
-      </view>
+
+      <block wx:for="{{ cgHisList }}" wx:key="{{ index }}">
+        <view class='history-item'>
+          <view class='history-item-name'>{{ item.xilie }} {{ item.chexing }} {{ item.pailiang }}</view>
+          <view class='history-item-label'>{{ item.value }}</view>
+        </view>
+      </block>
+
     </view>
   </view>
 </view>

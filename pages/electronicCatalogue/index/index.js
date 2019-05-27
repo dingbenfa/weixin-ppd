@@ -8,7 +8,7 @@ Page({
     searchInpVal: ''
   },
   onLoad: function (options) {
-
+    
   },
   onReady: function () {
 

@@ -31,7 +31,18 @@ Page({
       if (data.code == "0000") {
         var reData = data.responseData.data || [];
         this.handleResponseData(reData);
-
+      } else {
+        wx.showModal({
+          title: "抱歉！未查询到相关信息，请重试",
+          showCancel: false,
+          success: function(res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/electronicCatalogue/components/components',
+              })
+            }
+          }
+        });
       }
     })
 

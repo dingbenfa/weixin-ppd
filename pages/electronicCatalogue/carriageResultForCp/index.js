@@ -62,10 +62,8 @@ Page({
   },
   //搜索
   handleGoToSearch: function() {
-    // console.log(this.data.searchInpVal);
-    var vin = this.data.searchInpVal;
-    App.WxService.navigateTo('/pages/electronicCatalogue/confirmedTypeForCp/confirmedType', {
-      vin: vin
+    App.WxService.navigateTo('/pages/electronicCatalogue/search/index',{
+      type: 'cpType'
     })
   },
   //更多

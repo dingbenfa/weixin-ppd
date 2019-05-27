@@ -1,0 +1,32 @@
+<!--pages/electronicCatalogue/search/index.wxml-->
+<view class='index-container'>
+  <!-- 搜索 -->
+  <view class='u-seach-show'>
+    <view class='u-search-box'>
+      <view class='u-search-icon'>
+        <image src='/assets/images/search-icon.png'></image>
+      </view>
+      <input type='text' placeholder-style="color:#ccc" placeholder='{{ type=="cgType"? "输入车架号":"输入零件号" }}' bindblur="handleSearchValue" bindfocus='handleSearchToGo' value='{{searchInpVal}}'></input>
+    </view>
+    <button type="warn" class='search-sx-btn' bindtap='handleGoToSearch'>搜索</button>
+  </view>
+</view>
+
+<view class='car-search-history'>
+  <view class='search-history-title'>
+    <text>历史查询记录</text>
+  </view>
+  <view class='search-history-main'>
+
+    <block wx:for="{{ cgHisList }}" wx:key="{{ index }}">
+      <view class='search-history-item' bindtap='handleSearchTheVal' data-vin='{{ item.value }}'>
+        <view class='search-history-val'>
+          <view>{{ item.value }}</view>
+          <view>{{ item.stime }}</view>
+        </view>
+        <view class='search-history-info'>{{ item.xilie }} {{ item.chexing }} {{ item.pailiang }}</view>
+      </view>
+    </block>
+
+  </view>
+</view>
