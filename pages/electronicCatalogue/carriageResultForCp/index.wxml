@@ -22,29 +22,29 @@
   </view>
 
   <view class='u-other-box'>
-    <view class='u-opt-item' bindtap='handleToItems'>
+    <view class='u-opt-item' bindtap='handleToPay'>
       <image class='u-opt-icon' src='/assets/images/dzml/car-cart-icon.png'></image>
       <view class='u-opt-name'>买配件</view>
+    </view>
+    <view class='u-opt-item' bindtap='handleToItems' data-type='1'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-group-icon.png'></image>
+      <view class='u-opt-name'>按组查询</view>
+    </view>
+    <view class='u-opt-item' bindtap='handleToItems' data-type='2'>
+      <image class='u-opt-icon' src='/assets/images/dzml/car-img-icon.png'></image>
+      <view class='u-opt-name'>按图查找</view>
     </view>
     <view class='u-opt-item' bindtap='handleToItems'>
       <image class='u-opt-icon' src='/assets/images/dzml/car-repair-icon.png'></image>
       <view class='u-opt-name'>维修记录</view>
     </view>
-    <view class='u-opt-item' bindtap='handleToItems'>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
       <image class='u-opt-icon' src='/assets/images/dzml/car-danger-icon.png'></image>
       <view class='u-opt-name'>出险记录</view>
     </view>
-    <view class='u-opt-item' bindtap='handleToItems'>
+    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
       <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
       <view class='u-opt-name'>车辆状况</view>
-    </view>
-    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
-      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
-      <view class='u-opt-name'>其他</view>
-    </view>
-    <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
-      <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>
-      <view class='u-opt-name'>其他</view>
     </view>
     <view class='u-opt-item {{isMore? "":"opt-hid-item"}}' bindtap='handleToItems'>
       <image class='u-opt-icon' src='/assets/images/dzml/car-icon.png'></image>

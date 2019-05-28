@@ -21,7 +21,7 @@
   </view>
 
   <view class='u-other-box'>
-    <view class='u-opt-item' bindtap='handleToItems'>
+    <view class='u-opt-item' bindtap='handleToPay'>
       <image class='u-opt-icon' src='/assets/images/dzml/car-cart-icon.png'></image>
       <view class='u-opt-name'>买配件</view>
     </view>

@@ -9,11 +9,13 @@ Page({
     cgHisList: []
   },
   onLoad: function(options) {
+    var self = this;
+
     wx.getStorage({
       key: 'cpHistoryList',
       success(res) {
         var cgHisList = res.data || [];
-        this.setData({
+        self.setData({
           cgHisList: cgHisList
         });
       }

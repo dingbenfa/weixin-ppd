@@ -62,7 +62,7 @@ Page({
   },
   //搜索
   handleGoToSearch: function() {
-    App.WxService.navigateTo('/pages/electronicCatalogue/search/index',{
+    App.WxService.navigateTo('/pages/electronicCatalogue/search/index', {
       type: 'cpType'
     })
   },
@@ -72,11 +72,19 @@ Page({
       isMore: !this.data.isMore
     });
   },
-  handleToItems: function() {
-    wx.showModal({
-      title: "抱歉！该功能正在开发中！！！",
-      showCancel: false
-    });
+  handleToItems: function(ev) {
+    let type = ev.currentTarget.dataset.type;
+    if (type) {
+      App.WxService.navigateTo('/pages/electronicCatalogue/searchResultForCp/index', {
+        vin: this.data.vin,
+        type: 1
+      })
+    } else {
+      wx.showModal({
+        title: "抱歉！该功能正在开发中！！！",
+        showCancel: false
+      });
+    }
   },
   /**
    * 显示弹窗
@@ -106,6 +114,12 @@ Page({
     // do something
     this.setData({
       modalHidden: true
+    })
+  },
+  //立即购买
+  handleToPay: function () {
+    wx.navigateTo({
+      url: '../../order/confirm/confirm',
     })
   }
 })

@@ -30,7 +30,8 @@ Page({
   onLoad: function(options) {
     // console.log(options);
     this.setData({
-      searchInpVal: options.vin || "7P0129620"
+      searchInpVal: options.vin || "7P0129620",
+      theType: options.type || 1
     });
     this.getSearchData();
   },

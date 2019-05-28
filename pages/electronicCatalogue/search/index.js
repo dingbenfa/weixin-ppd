@@ -11,6 +11,8 @@ Page({
   },
   onLoad: function(options) {
     console.log(options);
+
+    var self = this;
     this.setData({
       type: options.type || 'cgType'
     });
@@ -18,8 +20,9 @@ Page({
     wx.getStorage({
       key: options.type == 'cgType' ? 'cgHistoryList' : 'cpHistoryList',
       success(res) {
+        // console.log(res);
         var cgHisList = res.data || [];
-        this.setData({
+        self.setData({
           cgHisList: cgHisList
         });
       }

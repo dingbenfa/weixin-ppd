@@ -6,7 +6,7 @@
       <view class='u-search-icon'>
         <image src='/assets/images/search-icon.png'></image>
       </view>
-      <input type='text' placeholder-style="color:#ccc" placeholder='{{ type=="cgType"? "输入车架号":"输入零件号" }}' bindblur="handleSearchValue" bindfocus='handleSearchToGo' value='{{searchInpVal}}'></input>
+      <input type='text' placeholder-style="color:#ccc" placeholder='{{ type=="cgType"? "输入车架号":"输入零件号" }}' bindinput="handleSearchValue" bindfocus='handleSearchToGo' value='{{searchInpVal}}'></input>
     </view>
     <button type="warn" class='search-sx-btn' bindtap='handleGoToSearch'>搜索</button>
   </view>

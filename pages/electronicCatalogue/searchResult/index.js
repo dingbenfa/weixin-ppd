@@ -27,7 +27,8 @@ Page({
   onLoad: function(options) {
     // console.log(options);
     this.setData({
-      searchInpVal: options.vin || "LBVHZ1105HMJ14266"
+      searchInpVal: options.vin || "LBVHZ1105HMJ14266",
+      theType: options.type || 1
     });
     this.getSearchData();
   },
